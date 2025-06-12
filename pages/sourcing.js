@@ -87,7 +87,7 @@ export default function Sourcing() {
                 </ul>
               </div>
               <div className="bg-white rounded-lg shadow p-4 border-t-4 border-secondary flex flex-col items-center">
-                <img src="/cm.jpg" alt="Contract Manufacturing" className="w-full max-w-xs rounded-lg shadow mb-4" />
+                <img src="/CM.jpg" alt="Contract Manufacturing" className="w-full max-w-xs rounded-lg shadow mb-4" />
                 <div className="text-3xl mb-2">🏭</div>
                 <div className="font-bold text-accent mb-1">Final Assemblies & Contract Manufacturing</div>
                 <ul className="list-disc list-inside text-gray-700 text-sm">

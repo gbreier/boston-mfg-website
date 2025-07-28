@@ -1,11 +1,205 @@
 import Head from 'next/head';
+import { useState } from 'react';
 
 export default function Home() {
+  const [formStatus, setFormStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus({ type: '', message: '' });
+
+    const formData = new FormData(e.target);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      company: formData.get('company'),
+      title: formData.get('title'),
+      inquiry: formData.get('inquiry'),
+      projectStage: formData.get('projectStage') || '',
+      message: formData.get('message'),
+      consent: formData.get('consent') === 'on'
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setFormStatus({
+          type: 'success',
+          message: result.message
+        });
+        // Reset form
+        e.target.reset();
+        // Track analytics event
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', {
+            event_category: 'engagement',
+            event_label: 'contact_form',
+            value: 1
+          });
+        }
+      } else {
+        throw new Error(result.detail || 'Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setFormStatus({
+        type: 'error',
+        message: 'Unable to submit your request. Please try again or contact us directly at contact@boston-mfg.com.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Head>
-        <title>Boston Manufacturing Group</title>
-        <meta name="description" content="Prototype to production manufacturing solutions. Sourcing, technical support, quality control, and more." />
+        <title>AI Manufacturing Consulting & Supply Chain Solutions | Boston Manufacturing Group</title>
+        <meta name="description" content="Leading manufacturing consulting firm specializing in AI-powered supply chain disruption analysis, prototype to production support, intelligent sourcing, and quality control solutions for global manufacturers." />
+        <meta name="keywords" content="AI manufacturing consulting, supply chain disruption analysis, prototype to production, manufacturing quality control, intelligent sourcing, Boston manufacturing, AI supply chain solutions" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://boston-mfg.com" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI Manufacturing Consulting & Supply Chain Solutions | Boston Manufacturing Group" />
+        <meta property="og:description" content="Leading manufacturing consulting firm specializing in AI-powered supply chain disruption analysis, prototype to production support, and intelligent sourcing solutions." />
+        <meta property="og:image" content="https://boston-mfg.com/bmg-logo.png" />
+        <meta property="og:url" content="https://boston-mfg.com" />
+        <meta property="og:site_name" content="Boston Manufacturing Group" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Manufacturing Consulting & Supply Chain Solutions | Boston Manufacturing Group" />
+        <meta name="twitter:description" content="Leading manufacturing consulting firm specializing in AI-powered supply chain disruption analysis and prototype to production support." />
+        <meta name="twitter:image" content="https://boston-mfg.com/bmg-logo.png" />
+        
+        {/* Structured Data - Organization */}
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Boston Manufacturing Group",
+              "alternateName": "BMG",
+              "url": "https://boston-mfg.com",
+              "logo": "https://boston-mfg.com/bmg-logo.png",
+              "description": "Leading manufacturing consulting firm specializing in AI-powered supply chain disruption analysis, prototype to production support, intelligent sourcing, and quality control solutions.",
+              "foundingLocation": {
+                "@type": "Place",
+                "name": "Boston, Massachusetts, USA"
+              },
+              "areaServed": "Worldwide",
+              "serviceType": ["Manufacturing Consulting", "Supply Chain Analysis", "Quality Control", "Sourcing Solutions", "AI Manufacturing Solutions"],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-617-410-8155",
+                "email": "contact@boston-mfg.com",
+                "contactType": "Customer Service",
+                "availableLanguage": "English"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/boston-manufacturing-group/"
+              ],
+              "founder": [
+                {
+                  "@type": "Person",
+                  "name": "Guy Breier",
+                  "jobTitle": "Chief Executive Officer",
+                  "alumniOf": ["Tel Aviv University", "Boston College"],
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "Boston Manufacturing Group"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+        
+        {/* Structured Data - Local Business */}
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "Boston Manufacturing Group",
+              "image": "https://boston-mfg.com/bmg-logo.png",
+              "url": "https://boston-mfg.com",
+              "telephone": "+1-617-410-8155",
+              "email": "contact@boston-mfg.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Boston",
+                "addressRegion": "MA",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "42.3601",
+                "longitude": "-71.0589"
+              },
+              "openingHours": "Mo-Fr 09:00-17:00",
+              "priceRange": "$$$$",
+              "serviceArea": {
+                "@type": "Place",
+                "name": "Worldwide"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Manufacturing Consulting Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "AI Supply Chain Disruption Analysis",
+                      "description": "AI-powered analysis of Bill of Materials, historical KPIs, and market intelligence to generate realistic supply chain disruption scenarios and actionable mitigation strategies."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Intelligent Sourcing Solutions",
+                      "description": "Global sourcing services for electronics, metals, plastics, motors, batteries, and complete assemblies with quality assurance."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Manufacturing Quality Control",
+                      "description": "Comprehensive quality control measures and supplier audits to ensure products meet and exceed industry standards."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Prototype to Production Support",
+                      "description": "End-to-end technical support guiding products from prototype phase through high-volume manufacturing."
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
       </Head>
       <main className="bg-gray-900 min-h-screen font-sans">
         {/* Logo */}
@@ -403,12 +597,160 @@ export default function Home() {
 
         {/* Contact */}
         <section className="py-16 px-4 bg-blue-900 text-white" id="contact">
-          <h2 className="text-3xl font-bold text-center mb-6">Let's Connect</h2>
-          <div className="max-w-xl mx-auto text-center">
-            <p className="mb-4">Ready to take your idea to production? Contact us today.</p>
-            <p className="mb-2 font-semibold">Email: <a href="mailto:contact@boston-mfg.com" className="underline">contact@boston-mfg.com</a></p>
-            <p className="mb-2 font-semibold">Phone: <a href="tel:16174108155" className="underline">(617) 410-8155</a></p>
-            <p className="text-sm mt-6">© {new Date().getFullYear()} Boston Manufacturing Group</p>
+          <h2 className="text-3xl font-bold text-center mb-6">Ready to Transform Your Manufacturing Operations?</h2>
+          <div className="max-w-4xl mx-auto">
+            {/* Clear Value Proposition */}
+            <div className="text-center mb-8">
+              <p className="text-xl mb-4">BMG provides manufacturing and AI consulting services to companies looking to optimize their operations, reduce costs, and scale production.</p>
+              <p className="text-lg text-blue-200 mb-6">We work with COOs, Engineering Managers, and Manufacturing Leaders who need expert guidance from prototype to high-volume production.</p>
+            </div>
+            
+            {/* Contact Form */}
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-blue-800 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-4">Contact Our Manufacturing Experts</h3>
+                {/* Status Message */}
+                {formStatus.message && (
+                  <div className={`p-4 rounded-lg mb-4 ${
+                    formStatus.type === 'success' 
+                      ? 'bg-green-100 border border-green-400 text-green-700' 
+                      : 'bg-red-100 border border-red-400 text-red-700'
+                  }`}>
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        {formStatus.type === 'success' ? (
+                          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                        ) : (
+                          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm font-medium">{formStatus.message}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <form id="contactForm" className="space-y-4" onSubmit={(e) => handleFormSubmit(e)}>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium mb-1">First Name *</label>
+                      <input type="text" id="firstName" name="firstName" required className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white placeholder-blue-300" placeholder="Your first name" />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium mb-1">Last Name *</label>
+                      <input type="text" id="lastName" name="lastName" required className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white placeholder-blue-300" placeholder="Your last name" />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-1">Business Email *</label>
+                    <input type="email" id="email" name="email" required className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white placeholder-blue-300" placeholder="your.name@company.com" />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium mb-1">Company Name *</label>
+                    <input type="text" id="company" name="company" required className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white placeholder-blue-300" placeholder="Your company name" />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="title" className="block text-sm font-medium mb-1">Your Role/Title *</label>
+                    <input type="text" id="title" name="title" required className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white placeholder-blue-300" placeholder="e.g., COO, Engineering Manager, VP Manufacturing" />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="inquiry" className="block text-sm font-medium mb-1">I am interested in: *</label>
+                    <select id="inquiry" name="inquiry" required className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white">
+                      <option value="">Please select your primary interest</option>
+                      <option value="ai-supply-chain">AI Supply Chain Disruption Analysis</option>
+                      <option value="manufacturing-consulting">Manufacturing Operations Consulting</option>
+                      <option value="global-sourcing">Global Sourcing & Supplier Management</option>
+                      <option value="quality-control">Quality Control & Process Improvement</option>
+                      <option value="prototype-production">Prototype to Production Support</option>
+                      <option value="general-consultation">General Manufacturing Consultation</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="projectStage" className="block text-sm font-medium mb-1">Current Project Stage</label>
+                    <select id="projectStage" name="projectStage" className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white">
+                      <option value="">Select current stage (optional)</option>
+                      <option value="concept">Concept/Design Phase</option>
+                      <option value="prototype">Prototype Development</option>
+                      <option value="pilot">Pilot Production</option>
+                      <option value="scaling">Scaling/Volume Production</option>
+                      <option value="operational">Ongoing Operations Optimization</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-1">Project Details *</label>
+                    <textarea id="message" name="message" required rows="4" className="w-full px-3 py-2 bg-blue-700 border border-blue-600 rounded text-white placeholder-blue-300" placeholder="Briefly describe your manufacturing challenge, project goals, and how BMG can help..."></textarea>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <input type="checkbox" id="consent" name="consent" required className="mt-1 mr-2" />
+                    <label htmlFor="consent" className="text-sm text-blue-200">I confirm that I represent a company seeking manufacturing consulting services (not a vendor/supplier) and consent to being contacted by BMG about our manufacturing solutions. *</label>
+                  </div>
+                  
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className={`w-full font-semibold py-3 px-6 rounded transition duration-200 ${
+                      isSubmitting 
+                        ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+                        : 'bg-white text-blue-900 hover:bg-blue-50'
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending Request...
+                      </div>
+                    ) : (
+                      'Request Manufacturing Consultation'
+                    )}
+                  </button>
+                </form>
+              </div>
+              
+              {/* Direct Contact Info */}
+              <div>
+                <div className="bg-blue-800 p-6 rounded-lg mb-6">
+                  <h3 className="text-xl font-semibold mb-4">Direct Contact</h3>
+                  <div className="space-y-3">
+                    <p className="font-semibold">📧 Email: <a href="mailto:contact@boston-mfg.com" className="underline hover:text-blue-200">contact@boston-mfg.com</a></p>
+                    <p className="font-semibold">📞 Phone: <a href="tel:16174108155" className="underline hover:text-blue-200">(617) 410-8155</a></p>
+                    <p className="text-blue-200 text-sm">Business hours: Monday-Friday, 9 AM - 5 PM EST</p>
+                  </div>
+                </div>
+                
+                {/* What to Expect */}
+                <div className="bg-blue-800 p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold mb-4">What to Expect</h3>
+                  <ul className="space-y-2 text-blue-200">
+                    <li className="flex items-start"><span className="mr-2">✓</span>Initial consultation within 24-48 hours</li>
+                    <li className="flex items-start"><span className="mr-2">✓</span>Detailed assessment of your manufacturing challenges</li>
+                    <li className="flex items-start"><span className="mr-2">✓</span>Customized proposal with clear next steps</li>
+                    <li className="flex items-start"><span className="mr-2">✓</span>Access to our global manufacturing network</li>
+                    <li className="flex items-start"><span className="mr-2">✓</span>Ongoing partnership and support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            {/* Footer */}
+            <div className="text-center border-t border-blue-800 pt-6">
+              <p className="text-blue-200 mb-2">Boston Manufacturing Group - Your Partner from Prototype to Production</p>
+              <p className="text-sm">© {new Date().getFullYear()} Boston Manufacturing Group. All rights reserved.</p>
+            </div>
           </div>
         </section>
       </main>

@@ -5,7 +5,100 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About | Boston Manufacturing Group</title>
+        <title>About Our Manufacturing Consulting Experts | Five-Phase Approach | Boston Manufacturing Group</title>
+        <meta name="description" content="Meet BMG's manufacturing consulting experts including CEO Guy Breier and our proven Five-Phase Assessment Process. Harvard, MIT, and Boston College faculty deliver world-class manufacturing solutions from prototype to production." />
+        <meta name="keywords" content="manufacturing consulting experts, Five-Phase Assessment Process, Guy Breier CEO, manufacturing quality control expert, Boston College faculty, MIT manufacturing, prototype to production consulting" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://boston-mfg.com/about" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Our Manufacturing Consulting Experts | Five-Phase Approach | Boston Manufacturing Group" />
+        <meta property="og:description" content="Meet BMG's manufacturing consulting experts and our proven Five-Phase Assessment Process developed by faculty from Harvard, MIT, and Boston College." />
+        <meta property="og:image" content="https://boston-mfg.com/guy-breier.png" />
+        <meta property="og:url" content="https://boston-mfg.com/about" />
+        <meta property="og:site_name" content="Boston Manufacturing Group" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Our Manufacturing Consulting Experts | Boston Manufacturing Group" />
+        <meta name="twitter:description" content="Meet BMG's manufacturing consulting experts and our proven Five-Phase Assessment Process." />
+        <meta name="twitter:image" content="https://boston-mfg.com/guy-breier.png" />
+        
+        {/* Structured Data - About Page */}
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "About Boston Manufacturing Group",
+              "description": "Learn about BMG's manufacturing consulting experts and our proven Five-Phase Assessment Process developed by faculty from leading institutions.",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Boston Manufacturing Group",
+                "description": "Manufacturing consulting firm providing services from prototype to production with expertise from Harvard, MIT, and Boston College faculty.",
+                "employee": [
+                  {
+                    "@type": "Person",
+                    "name": "Guy Breier",
+                    "@id": "https://boston-mfg.com/about#guy-breier",
+                    "jobTitle": "Chief Executive Officer",
+                    "description": "Manufacturing and quality control expert with decades of international experience and creator of the proprietary Five Phase Assessment Process.",
+                    "alumniOf": [
+                      {
+                        "@type": "EducationalOrganization",
+                        "name": "Tel Aviv University",
+                        "description": "Engineering degree"
+                      },
+                      {
+                        "@type": "EducationalOrganization", 
+                        "name": "Boston College",
+                        "description": "MBA"
+                      }
+                    ],
+                    "worksFor": {
+                      "@type": "Organization",
+                      "name": "Boston Manufacturing Group"
+                    },
+                    "hasOccupation": {
+                      "@type": "Occupation",
+                      "name": "Manufacturing Consultant",
+                      "occupationLocation": {
+                        "@type": "Place",
+                        "name": "Boston, MA"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Dr. Ron Rubin",
+                    "@id": "https://boston-mfg.com/about#ron-rubin",
+                    "jobTitle": "Advisor",
+                    "description": "Distinguished Boston College faculty member and founder of Rubin/Anders Scientific with Ph.D. from Harvard University.",
+                    "alumniOf": [
+                      {
+                        "@type": "EducationalOrganization",
+                        "name": "Harvard University",
+                        "description": "Ph.D."
+                      }
+                    ],
+                    "affiliation": [
+                      {
+                        "@type": "EducationalOrganization",
+                        "name": "Boston College"
+                      },
+                      {
+                        "@type": "EducationalOrganization",
+                        "name": "Massachusetts Institute of Technology"
+                      }
+                    ]
+                  }
+                ]
+              }
+            })
+          }}
+        />
       </Head>
       <main className="bg-background min-h-screen font-sans">
         <div className="flex justify-center pt-10 pb-4 bg-background">

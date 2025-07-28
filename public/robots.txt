@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://boston-mfg.com/sitemap.xml
+
+# Allow important pages
+Allow: /about
+Allow: /sourcing  
+Allow: /reports
+Allow: /reports/*
+
+# Block admin/development pages if they exist
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Block common bot targets
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+# Crawl delay (optional - can help with server load)
+Crawl-delay: 1
+
+# Additional crawling guidelines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block some less important bots if needed
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: / 

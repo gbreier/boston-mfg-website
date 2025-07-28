@@ -5,7 +5,202 @@ export default function Sourcing() {
   return (
     <>
       <Head>
-        <title>Sourcing | Boston Manufacturing Group</title>
+        <title>Global Manufacturing Sourcing & Supply Chain Solutions | Electronics, Metals, Plastics | Boston Manufacturing Group</title>
+        <meta name="description" content="BMG's intelligent global sourcing services across 7 strategic manufacturing regions worldwide. Expert sourcing for electronics, PCBA, metals, plastics, motors, batteries, and complete assemblies with quality assurance and cost optimization." />
+        <meta name="keywords" content="global manufacturing sourcing, intelligent sourcing solutions, electronics sourcing, PCBA sourcing, precision machining, injection molding, manufacturing supply chain, China sourcing, Germany manufacturing, global supplier network" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://boston-mfg.com/sourcing" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Global Manufacturing Sourcing & Supply Chain Solutions | Boston Manufacturing Group" />
+        <meta property="og:description" content="BMG's intelligent global sourcing services across 7 strategic manufacturing regions worldwide. Expert sourcing for electronics, metals, plastics, and complete assemblies." />
+        <meta property="og:image" content="https://boston-mfg.com/world-map.jpg" />
+        <meta property="og:url" content="https://boston-mfg.com/sourcing" />
+        <meta property="og:site_name" content="Boston Manufacturing Group" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Global Manufacturing Sourcing Solutions | Boston Manufacturing Group" />
+        <meta name="twitter:description" content="BMG's intelligent global sourcing services across 7 strategic manufacturing regions worldwide." />
+        <meta name="twitter:image" content="https://boston-mfg.com/world-map.jpg" />
+        
+        {/* Structured Data - Service Page */}
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Global Manufacturing Sourcing Solutions",
+              "description": "Intelligent global sourcing services for electronics, metals, plastics, motors, batteries, and complete assemblies across strategic manufacturing regions worldwide.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Boston Manufacturing Group",
+                "url": "https://boston-mfg.com"
+              },
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "United States",
+                  "description": "California - Advanced Electronics & Tech, Boston - Precision Manufacturing & R&D"
+                },
+                {
+                  "@type": "Place", 
+                  "name": "Germany",
+                  "description": "Precision Machinery & Automotive Manufacturing"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Italy", 
+                  "description": "Industrial Design & High-End Manufacturing"
+                },
+                {
+                  "@type": "Place",
+                  "name": "China",
+                  "description": "Shanghai - Advanced Manufacturing Hub, Shenzhen - Electronics & Innovation Center"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Japan",
+                  "description": "Tokyo - Robotics & Precision Technology"
+                }
+              ],
+              "serviceType": [
+                "Electronics Sourcing",
+                "PCBA Manufacturing", 
+                "Precision Machining",
+                "Injection Molding",
+                "3D Printing",
+                "Motor Sourcing",
+                "Battery Sourcing",
+                "Contract Manufacturing"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Global Sourcing Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Electronics Sourcing",
+                      "description": "PCBA, electronic components, cable systems, and power supplies sourcing with quality control."
+                    }
+                  },
+                  {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Metals & Plastics Manufacturing",
+                      "description": "Precision machining, stamping, castings, welding, injection molding, 3D printing, vacuum forming, and extrusion services."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service", 
+                      "name": "Motors, Batteries & Assemblies",
+                      "description": "BLDC, universal, induction motors; Li-Ion, Ni-MH, Lead-Acid batteries; final assemblies and contract manufacturing."
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
+        
+        {/* Structured Data - Manufacturing Locations */}
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "BMG Global Manufacturing Network",
+              "description": "Strategic manufacturing partners across 7 key global regions",
+              "itemListElement": [
+                {
+                  "@type": "Place",
+                  "position": 1,
+                  "name": "California Manufacturing Hub",
+                  "description": "Advanced Electronics & Technology Manufacturing",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "37.4419",
+                    "longitude": "-122.1430"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "position": 2,
+                  "name": "Boston Manufacturing Hub", 
+                  "description": "Precision Manufacturing & R&D",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "42.3601",
+                    "longitude": "-71.0589"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "position": 3,
+                  "name": "Germany Manufacturing Hub",
+                  "description": "Precision Machinery & Automotive",
+                  "geo": {
+                    "@type": "GeoCoordinates", 
+                    "latitude": "48.1351",
+                    "longitude": "11.5820"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "position": 4,
+                  "name": "Italy Manufacturing Hub",
+                  "description": "Industrial Design & High-End Manufacturing",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "45.4642",
+                    "longitude": "9.1900"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "position": 5,
+                  "name": "Shanghai Manufacturing Hub",
+                  "description": "Advanced Manufacturing Hub",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "31.2304",
+                    "longitude": "121.4737"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "position": 6,
+                  "name": "Shenzhen Manufacturing Hub",
+                  "description": "Electronics & Innovation Center", 
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "22.3193",
+                    "longitude": "114.1694"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "position": 7,
+                  "name": "Tokyo Manufacturing Hub",
+                  "description": "Robotics & Precision Technology",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "35.6762",
+                    "longitude": "139.6503"
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </Head>
       <main className="bg-background min-h-screen font-sans">
         <div className="flex justify-center pt-10 pb-4 bg-background">

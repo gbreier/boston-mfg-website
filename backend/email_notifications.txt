@@ -218,3 +218,25 @@ Project Stage: scaling
 Message: Testing enhanced contact page design
 Consent: True
 =====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 14:36:04
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr dsdsd
+Service Interest: ai-supply-chain
+Project Stage: prototype
+Message: sdsd
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 14:44:23
+From: Adam Breier <adam.breier@icloud.com>
+Company: sdds
+Title: ddwe
+Service Interest: manufacturing-consulting
+Project Stage: pilot
+Message: sxsd
+Consent: True
+=====================================

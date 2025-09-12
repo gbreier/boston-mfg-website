@@ -211,7 +211,7 @@ export default function Sourcing() {
         <section className="max-w-4xl mx-auto py-12 px-4">
           <h1 className="text-4xl font-bold text-secondary mb-6 text-center">Sourcing</h1>
           <p className="text-lg text-accent mb-8 text-center">
-            At Boston Manufacturing Group (BMG), sourcing is more than just procurement—it's a strategic process that ensures your product is built with the best materials, components, and partners available. Our sourcing services are designed to deliver quality, reliability, and cost-effectiveness across a wide range of technical domains.
+            At Boston Manufacturing Group (BMG), sourcing is more than just procurement—it's a strategic process that ensures your product is built with the best materials, components, and partners available. Our AI-powered sourcing platform analyzes supplier capabilities, quality metrics, and market dynamics to identify the optimal manufacturing partners for your specific requirements. Our sourcing services are designed to deliver quality, reliability, and cost-effectiveness across a wide range of technical domains.
           </p>
 
           {/* Global Sourcing Network Section */}

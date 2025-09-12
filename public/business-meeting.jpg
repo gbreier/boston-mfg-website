@@ -1,0 +1,10 @@
+PLACEHOLDER - Please replace this file with the actual business meeting image.
+
+The image should show a professional business meeting with people around a conference table and a presentation showing growth charts, as provided in the original request.
+
+To add the actual image:
+1. Save the business meeting image you provided as "business-meeting.jpg"
+2. Copy it to the /Users/guybreier/Documents/Venture/Boston-mfg/public/ folder
+3. Replace this placeholder file
+
+The contact page is already configured to display this image with proper styling and fallback handling.

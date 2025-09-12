@@ -92,22 +92,77 @@ export default function Contact() {
           </div>
         </nav>
 
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Manufacturing Operations?</h1>
-            <p className="text-xl mb-4">BMG provides manufacturing and AI consulting services to companies looking to optimize their operations, reduce costs, and scale production.</p>
-            <p className="text-lg text-blue-200 mb-8">We work with COOs, Engineering Managers, and Manufacturing Leaders who need expert guidance from prototype to high-volume production.</p>
+        {/* Hero Section with Professional Image */}
+        <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Manufacturing Operations?</h1>
+                <p className="text-xl mb-4">BMG provides manufacturing and AI consulting services to companies looking to optimize their operations, reduce costs, and scale production.</p>
+                <p className="text-lg text-blue-200 mb-8">We work with COOs, Engineering Managers, and Manufacturing Leaders who need expert guidance from prototype to high-volume production.</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <div className="flex items-center text-blue-200">
+                    <svg className="w-5 h-5 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Expert Manufacturing Consultants
+                  </div>
+                  <div className="flex items-center text-blue-200">
+                    <svg className="w-5 h-5 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    24-48 Hour Response
+                  </div>
+                </div>
+              </div>
+              
+              {/* Professional Image */}
+              <div className="relative">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+                  {/* Placeholder for business meeting image */}
+                  <div className="aspect-video bg-gradient-to-br from-white/20 to-white/5 rounded-xl flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-16 h-16 mx-auto mb-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <p className="text-white/80 text-sm">Professional Manufacturing Consultation</p>
+                      <p className="text-white/60 text-xs mt-1">Strategic Planning • Process Optimization • Growth Solutions</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400/20 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-indigo-400/20 rounded-full blur-xl"></div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Get Your Free Manufacturing Consultation</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Connect with our expert team to discuss your manufacturing challenges and discover how we can help optimize your operations.</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Our Manufacturing Experts</h2>
+              <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900">Send Us a Message</h3>
+                    <p className="text-sm text-gray-600">Fill out the form below and we'll get back to you</p>
+                  </div>
+                </div>
                 
                 {/* Status Message */}
                 {formStatus.message && (
@@ -234,26 +289,110 @@ export default function Contact() {
               </div>
               
               {/* Contact Information & What to Expect */}
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Direct Contact Info */}
-                <div className="bg-white p-8 rounded-lg shadow-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Direct Contact</h3>
-                  <div className="space-y-3">
-                    <p className="font-semibold text-gray-700">📧 Email: <a href="mailto:contact@boston-mfg.com" className="text-blue-600 underline hover:text-blue-800">contact@boston-mfg.com</a></p>
-                    <p className="font-semibold text-gray-700">📞 Phone: <a href="tel:16174108155" className="text-blue-600 underline hover:text-blue-800">(617) 410-8155</a></p>
-                    <p className="text-gray-600 text-sm">Business hours: Monday-Friday, 9 AM - 5 PM EST</p>
+                <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900">Get In Touch</h3>
+                      <p className="text-sm text-gray-600">Reach us directly for immediate assistance</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <svg className="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Email</p>
+                        <a href="mailto:contact@boston-mfg.com" className="text-blue-600 hover:text-blue-800 transition-colors">contact@boston-mfg.com</a>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <svg className="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Phone</p>
+                        <a href="tel:16174108155" className="text-blue-600 hover:text-blue-800 transition-colors">(617) 410-8155</a>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <svg className="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Business Hours</p>
+                        <p className="text-gray-600">Monday-Friday, 9 AM - 5 PM EST</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
                 {/* What to Expect */}
-                <div className="bg-white p-8 rounded-lg shadow-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">What to Expect</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start"><span className="mr-2 text-green-600">✓</span>Initial consultation within 24-48 hours</li>
-                    <li className="flex items-start"><span className="mr-2 text-green-600">✓</span>Detailed assessment of your manufacturing challenges</li>
-                    <li className="flex items-start"><span className="mr-2 text-green-600">✓</span>Customized proposal with clear next steps</li>
-                    <li className="flex items-start"><span className="mr-2 text-green-600">✓</span>Access to our global manufacturing network</li>
-                    <li className="flex items-start"><span className="mr-2 text-green-600">✓</span>Ongoing partnership and support</li>
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-xl border border-blue-100">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900">What to Expect</h3>
+                      <p className="text-sm text-gray-600">Your journey with BMG</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Initial consultation within 24-48 hours</p>
+                        <p className="text-sm text-gray-600 mt-1">Quick response to understand your needs</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Detailed assessment of your manufacturing challenges</p>
+                        <p className="text-sm text-gray-600 mt-1">Comprehensive analysis of your current operations</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Customized proposal with clear next steps</p>
+                        <p className="text-sm text-gray-600 mt-1">Tailored solutions for your specific requirements</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Access to our global manufacturing network</p>
+                        <p className="text-sm text-gray-600 mt-1">Connect with vetted suppliers worldwide</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <div>
+                        <p className="font-semibold text-gray-900">Ongoing partnership and support</p>
+                        <p className="text-sm text-gray-600 mt-1">Long-term relationship for continued success</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>

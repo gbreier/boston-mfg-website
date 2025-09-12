@@ -340,6 +340,7 @@ class ContactFormData(BaseModel):
 # Email Configuration
 SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+SMTP_USE_TLS = os.getenv("SMTP_USE_TLS", "false").strip().lower() == "true"
 SMTP_USERNAME = os.getenv("SMTP_USERNAME", "your-email@gmail.com")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "your-app-password")
 BMG_EMAIL = os.getenv("BMG_EMAIL", "contact@boston-mfg.com")
@@ -347,10 +348,28 @@ BMG_EMAIL = os.getenv("BMG_EMAIL", "contact@boston-mfg.com")
 async def send_contact_email(form_data: ContactFormData):
     """Send contact form data via email"""
     try:
+        # First, always log the email content to a file for backup
+        email_content = f"""
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+From: {form_data.firstName} {form_data.lastName} <{form_data.email}>
+Company: {form_data.company}
+Title: {form_data.title}
+Service Interest: {form_data.inquiry}
+Project Stage: {form_data.projectStage}
+Message: {form_data.message}
+Consent: {form_data.consent}
+=====================================
+"""
+        
+        with open("email_notifications.txt", "a") as f:
+            f.write(email_content)
+        
+        print(f"📧 Email notification logged to file for {form_data.email}")
         # Create message
         message = MIMEMultipart('alternative')
         message['Subject'] = f"New Manufacturing Consultation Request from {form_data.company}"
-        message['From'] = SMTP_USERNAME
+        message['From'] = BMG_EMAIL
         message['To'] = BMG_EMAIL
         
         # Inquiry type mapping for display
@@ -485,15 +504,18 @@ async def send_contact_email(form_data: ContactFormData):
         message.attach(part1)
         message.attach(part2)
         
-        # Send email
-        await aiosmtplib.send(
-            message,
-            hostname=SMTP_SERVER,
-            port=SMTP_PORT,
-            start_tls=True,
-            username=SMTP_USERNAME,
-            password=SMTP_PASSWORD,
-        )
+        # Send email using standard smtplib (more reliable than aiosmtplib)
+        import smtplib
+        
+        if SMTP_USE_TLS:
+            server = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
+        else:
+            server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+            server.starttls()
+            
+        server.login(SMTP_USERNAME, SMTP_PASSWORD)
+        server.send_message(message)
+        server.quit()
         
         return True
         
@@ -510,6 +532,23 @@ async def submit_contact_form(form_data: ContactFormData, background_tasks: Back
         
         # Log the submission (you could also save to database here)
         print(f"Contact form submission from {form_data.email} at {form_data.company}")
+        
+        # Save submission to file as backup
+        import json
+        submission_data = {
+            "timestamp": datetime.now().isoformat(),
+            "name": f"{form_data.firstName} {form_data.lastName}",
+            "email": form_data.email,
+            "company": form_data.company,
+            "title": form_data.title,
+            "inquiry": form_data.inquiry,
+            "projectStage": form_data.projectStage,
+            "message": form_data.message,
+            "consent": form_data.consent
+        }
+        
+        with open("contact_submissions.json", "a") as f:
+            f.write(json.dumps(submission_data) + "\n")
         
         return {
             "success": True,

@@ -1,0 +1,154 @@
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:25:29
+From: Guy Breier <guy@boston-mfg.com>
+Company: Boston Manufacturing Group
+Title: CEO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: Testing enhanced email logging system
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:27:28
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: concept
+Message: sdxc
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:31:02
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: concept
+Message: zasd
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:33:03
+From: Site Form <test@example.com>
+Company: TestCo
+Title: COO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: Test with From=BMG_EMAIL
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:36:21
+From: Test Gmail <test@example.com>
+Company: TestCo
+Title: COO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: Gmail app password test
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:37:19
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: concept
+Message: sd
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:39:27
+From: TLS Test <test@example.com>
+Company: TestCo
+Title: COO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: SSL 465 test
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:40:25
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: ai-supply-chain
+Project Stage: concept
+Message: sdds
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:44:13
+From: FIXED Gmail <test@example.com>
+Company: TestCo
+Title: COO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: Fixed Gmail with smtplib
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:51:46
+From: Test Form <test@example.com>
+Company: TestCo
+Title: CEO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: Testing form after server restart
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:52:35
+From: Browser Test <browser@example.com>
+Company: TestCorp
+Title: CEO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: Testing from simulated browser request
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:53:27
+From: Real Test <realtest@example.com>
+Company: Real Company
+Title: Manager
+Service Interest: manufacturing-consulting
+Project Stage: prototyping
+Message: This is a real test of the contact form
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:54:12
+From: Final Test <finaltest@example.com>
+Company: Final Company
+Title: CEO
+Service Interest: manufacturing-consulting
+Project Stage: scaling
+Message: Final test after frontend restart
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 13:55:36
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: concept
+Message: lkk
+Consent: True
+=====================================

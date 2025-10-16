@@ -3,6 +3,27 @@ import Link from 'next/link';
 
 const reports = [
   {
+    title: 'Nvidia\'s $100 Billion Deal: AI Enters a New Phase of Computing Power',
+    author: 'Guy Breier, CEO, BMG',
+    date: 'Oct 2, 2025',
+    summary: 'Nvidia\'s $100 billion commitment to OpenAI marks a pivotal shift in AI development, where computing power—not talent or ideas—has become the primary constraint. This ambitious deal raises critical questions about infrastructure, market concentration, and the economic viability of ever-larger AI models.',
+    url: '/reports/nvidia-openai-100-billion-deal',
+  },
+  {
+    title: 'You\'ve Got to See This: Smart Factory in Action',
+    author: 'Guy Breier, CEO, BMG',
+    date: 'Sep 25, 2025',
+    summary: 'Witness the seamless integration of robots, sensors, and real-time data at FUJI\'s Smart Factory. From effortless material navigation to inline inspections and proactive issue detection, this is manufacturing\'s future unfolding—swifter, more intelligent, and exceptionally reliable.',
+    url: '/reports/fuji-smart-factory',
+  },
+  {
+    title: 'Toyota\'s $2M Investment in STEM Education: Opportunities and Questions',
+    author: 'Guy Breier, CEO, BMG',
+    date: 'Apr 17, 2024',
+    summary: 'Toyota has committed $2 million to boost STEM education in North Carolina through its Driving Possibilities initiative. While this investment aims to prepare students for future careers and close educational gaps, it raises important questions about corporate influence in education and long-term accountability.',
+    url: '/reports/toyota-stem-education-investment',
+  },
+  {
     title: 'Trust but Verify: Why Supplier Qualification Must Be Rooted in Process Capability',
     author: 'Guy Breier, CEO, BMG',
     date: 'Feb 8, 2021',
@@ -73,6 +94,72 @@ export default function Reports() {
                   {
                     "@type": "Article",
                     "position": 1,
+                    "headline": "Nvidia's $100 Billion Deal: AI Enters a New Phase of Computing Power",
+                    "description": "Nvidia's $100 billion commitment to OpenAI marks a pivotal shift in AI development, where computing power—not talent or ideas—has become the primary constraint.",
+                    "author": {
+                      "@type": "Person",
+                      "name": "Guy Breier"
+                    },
+                    "datePublished": "2025-10-02T00:00:00.000Z",
+                    "publisher": {
+                      "@type": "Organization",
+                      "name": "Boston Manufacturing Group"
+                    },
+                    "url": "https://boston-mfg.com/reports/nvidia-openai-100-billion-deal",
+                    "mainEntityOfPage": {
+                      "@type": "WebPage",
+                      "@id": "https://boston-mfg.com/reports/nvidia-openai-100-billion-deal"
+                    },
+                    "articleSection": "Technology & AI",
+                    "keywords": ["AI", "Nvidia", "OpenAI", "computing power", "data centers"]
+                  },
+                  {
+                    "@type": "Article",
+                    "position": 2,
+                    "headline": "You've Got to See This: Smart Factory in Action",
+                    "description": "Witness the seamless integration of robots, sensors, and real-time data at FUJI's Smart Factory. The future of manufacturing is unfolding—swifter, more intelligent, and exceptionally reliable.",
+                    "author": {
+                      "@type": "Person",
+                      "name": "Guy Breier"
+                    },
+                    "datePublished": "2025-09-25T00:00:00.000Z",
+                    "publisher": {
+                      "@type": "Organization",
+                      "name": "Boston Manufacturing Group"
+                    },
+                    "url": "https://boston-mfg.com/reports/fuji-smart-factory",
+                    "mainEntityOfPage": {
+                      "@type": "WebPage",
+                      "@id": "https://boston-mfg.com/reports/fuji-smart-factory"
+                    },
+                    "articleSection": "Manufacturing Technology",
+                    "keywords": ["smart factory", "automation", "robotics", "Industry 4.0", "FUJI", "manufacturing automation"]
+                  },
+                  {
+                    "@type": "Article",
+                    "position": 3,
+                    "headline": "Toyota's $2M Investment in STEM Education: Opportunities and Questions",
+                    "description": "Toyota has committed $2 million to boost STEM education in North Carolina through its Driving Possibilities initiative, raising important questions about corporate influence in education.",
+                    "author": {
+                      "@type": "Person",
+                      "name": "Guy Breier"
+                    },
+                    "datePublished": "2024-04-17T00:00:00.000Z",
+                    "publisher": {
+                      "@type": "Organization",
+                      "name": "Boston Manufacturing Group"
+                    },
+                    "url": "https://boston-mfg.com/reports/toyota-stem-education-investment",
+                    "mainEntityOfPage": {
+                      "@type": "WebPage",
+                      "@id": "https://boston-mfg.com/reports/toyota-stem-education-investment"
+                    },
+                    "articleSection": "Education & Corporate Responsibility",
+                    "keywords": ["STEM education", "Toyota", "corporate investment", "education policy", "North Carolina"]
+                  },
+                  {
+                    "@type": "Article",
+                    "position": 4,
                     "headline": "Trust but Verify: Why Supplier Qualification Must Be Rooted in Process Capability",
                     "description": "When manufacturers assess suppliers, there's a tension between trust and verification. Learn why statistical process capability analysis is essential for supplier qualification.",
                     "author": {
@@ -94,7 +181,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 2,
+                    "position": 5,
                     "headline": "P2P Blog",
                     "description": "Welcome to the Boston Manufacturing Group (BMG) Prototype-to-Production™ blog. BMG supports manufacturing efforts that include sourcing, technical support, and quality control.",
                     "author": {
@@ -116,7 +203,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 3,
+                    "position": 6,
                     "headline": "Hardware startups and the best path to high-volume manufacturing",
                     "description": "A proper manufacturing process can position a hardware startup months and even years ahead of its competition.",
                     "author": {

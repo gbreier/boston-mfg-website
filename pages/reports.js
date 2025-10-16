@@ -29,24 +29,24 @@ export default function Reports() {
   return (
     <>
       <Head>
-        <title>Manufacturing Industry Reports & Insights | Supplier Qualification, Hardware Startups | Boston Manufacturing Group</title>
-        <meta name="description" content="Expert manufacturing industry reports and insights from BMG's thought leaders. Learn about supplier qualification, hardware startup manufacturing strategies, and prototype-to-production best practices from industry experts with Harvard and MIT backgrounds." />
+        <title>Manufacturing Industry Published Articles & Insights | Supplier Qualification, Hardware Startups | Boston Manufacturing Group</title>
+        <meta name="description" content="Expert manufacturing industry published articles and insights from BMG's thought leaders. Learn about supplier qualification, hardware startup manufacturing strategies, and prototype-to-production best practices from industry experts with Harvard and MIT backgrounds." />
         <meta name="keywords" content="manufacturing industry reports, supplier qualification process, hardware startup manufacturing, prototype to production insights, manufacturing quality control, industrial process capability, BMG thought leadership" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://boston-mfg.com/reports" />
         
         {/* Open Graph / Social Media */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Manufacturing Industry Reports & Insights | Boston Manufacturing Group" />
-        <meta property="og:description" content="Expert manufacturing industry reports and insights from BMG's thought leaders on supplier qualification, hardware startups, and prototype-to-production strategies." />
+        <meta property="og:title" content="Manufacturing Industry Published Articles & Insights | Boston Manufacturing Group" />
+        <meta property="og:description" content="Expert manufacturing industry published articles and insights from BMG's thought leaders on supplier qualification, hardware startups, and prototype-to-production strategies." />
         <meta property="og:image" content="https://boston-mfg.com/bmg-logo.png" />
         <meta property="og:url" content="https://boston-mfg.com/reports" />
         <meta property="og:site_name" content="Boston Manufacturing Group" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Manufacturing Industry Reports & Insights | Boston Manufacturing Group" />
-        <meta name="twitter:description" content="Expert manufacturing industry reports and insights from BMG's thought leaders." />
+        <meta name="twitter:title" content="Manufacturing Industry Published Articles & Insights | Boston Manufacturing Group" />
+        <meta name="twitter:description" content="Expert manufacturing industry published articles and insights from BMG's thought leaders." />
         <meta name="twitter:image" content="https://boston-mfg.com/bmg-logo.png" />
         
         {/* Structured Data - Blog/Articles Collection */}
@@ -56,8 +56,8 @@ export default function Reports() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "CollectionPage",
-              "name": "Manufacturing Industry Reports & Insights",
-              "description": "Expert manufacturing industry reports and insights from Boston Manufacturing Group's thought leaders",
+              "name": "Manufacturing Industry Published Articles & Insights",
+              "description": "Expert manufacturing industry published articles and insights from Boston Manufacturing Group's thought leaders",
               "publisher": {
                 "@type": "Organization",
                 "name": "Boston Manufacturing Group",
@@ -182,9 +182,9 @@ export default function Reports() {
           </Link>
         </div>
         <section className="max-w-3xl mx-auto py-12 px-4">
-          <h1 className="text-4xl font-bold text-secondary mb-6 text-center">Reports</h1>
+          <h1 className="text-4xl font-bold text-secondary mb-6 text-center">Published Articles</h1>
           <p className="text-lg text-accent mb-8 text-center">
-            Explore our latest reports, insights, and case studies on manufacturing, sourcing, and quality control. Our team regularly publishes findings and recommendations to help you stay ahead in the industry.
+            Explore our latest published articles, insights, and case studies on manufacturing, sourcing, and quality control. Our team regularly publishes findings and recommendations to help you stay ahead in the industry.
           </p>
           <div className="space-y-8">
             {reports.map((report, idx) => (

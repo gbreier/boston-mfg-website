@@ -166,7 +166,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-6">Navigating the path from idea to production with world-class manufacturing solutions and support.</p>
             <div className="flex flex-col md:flex-row justify-center gap-4 mt-4">
               <a href="/contact" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded shadow hover:bg-secondary transition">Contact Us</a>
-              <a href="/reports" className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded shadow hover:bg-primary transition">View Reports</a>
+              <a href="/reports" className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded shadow hover:bg-primary transition">Published Articles</a>
               <a href="/sourcing" className="inline-block bg-accent text-white font-semibold px-8 py-3 rounded shadow hover:bg-primary transition">Sourcing</a>
               <a href="/about" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded shadow hover:bg-secondary transition">About</a>
             </div>

@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 const reports = [
   {
-    title: 'Trust but Verify - Supplier Qualification by Process Capability',
+    title: 'Trust but Verify: Why Supplier Qualification Must Be Rooted in Process Capability',
     author: 'Guy Breier, CEO, BMG',
     date: 'Feb 8, 2021',
-    summary: 'Years back, I was in charge of supplier and manufacturing quality for one of the large US-based companies designing and selling complex... ',
+    summary: 'When manufacturers assess suppliers, there\'s a tension between trust and verification. Too often, procurement teams accept first-article samples at face value—and that can lead to serious failures downstream. Learn why statistical process capability analysis is essential for supplier qualification.',
     url: '/reports/trust-but-verify-supplier-qualification-by-process-capability',
   },
   {
@@ -73,8 +73,8 @@ export default function Reports() {
                   {
                     "@type": "Article",
                     "position": 1,
-                    "headline": "Trust but Verify - Supplier Qualification by Process Capability",
-                    "description": "Years back, I was in charge of supplier and manufacturing quality for one of the large US-based companies designing and selling complex products.",
+                    "headline": "Trust but Verify: Why Supplier Qualification Must Be Rooted in Process Capability",
+                    "description": "When manufacturers assess suppliers, there's a tension between trust and verification. Learn why statistical process capability analysis is essential for supplier qualification.",
                     "author": {
                       "@type": "Person",
                       "name": "Guy Breier"

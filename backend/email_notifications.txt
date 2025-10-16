@@ -240,3 +240,245 @@ Project Stage: pilot
 Message: sxsd
 Consent: True
 =====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:01:55
+From: Test User <test@example.com>
+Company: Test Co
+Title: Test
+Service Interest: general-consultation
+Project Stage: 
+Message: Test message
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:04:28
+From: Test User <test@example.com>
+Company: Test Company
+Title: CEO
+Service Interest: general-consultation
+Project Stage: 
+Message: Testing email functionality with real credentials
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:05:27
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: prototype
+Message: sd
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:06:58
+From: Test Email <test@example.com>
+Company: Test Company
+Title: CEO
+Service Interest: general-consultation
+Project Stage: 
+Message: Testing fixed email configuration
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:07:43
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: prototype
+Message: ddcf
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:08:48
+From: Guy Test <gbreier@gmail.com>
+Company: Boston Manufacturing Group
+Title: CEO
+Service Interest: general-consultation
+Project Stage: 
+Message: Testing the fixed email configuration - this should work now!
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:09:32
+From: Final Test <gbreier@gmail.com>
+Company: Boston Manufacturing Group
+Title: CEO
+Service Interest: general-consultation
+Project Stage: 
+Message: Final test with corrected Gmail app password format
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:10:10
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: pilot
+Message: sx
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:11:00
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: prototype
+Message: sddscd
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:14:36
+From: Test Backend <test@example.com>
+Company: Test
+Title: Test
+Service Interest: general-consultation
+Project Stage: 
+Message: Testing restarted backend
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:15:37
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: pilot
+Message: xcz
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:16:09
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: global-sourcing
+Project Stage: prototype
+Message: sd
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-12 15:16:54
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: ai-supply-chain
+Project Stage: scaling
+Message: sdc
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-13 09:23:24
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: pilot
+Message: wqedqwe
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-28 09:26:09
+From: Test User <test@example.com>
+Company: Test Company
+Title: Manager
+Service Interest: general-consultation
+Project Stage: concept
+Message: This is a test message
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-28 09:27:06
+From: Browser Test <browser@example.com>
+Company: Browser Company
+Title: Tester
+Service Interest: general-consultation
+Project Stage: concept
+Message: Testing from browser context
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-28 09:27:25
+From: Final Test <final@example.com>
+Company: Test Company
+Title: Manager
+Service Interest: general-consultation
+Project Stage: concept
+Message: Final test message
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-28 09:28:53
+From: Guy Breier <breier_guy@hotmail.com>
+Company: BMG
+Title: CEO
+Service Interest: ai-supply-chain
+Project Stage: pilot
+Message: dfsdf
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-28 09:30:34
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: pilot
+Message: sdfasd - asdf
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-09-28 09:32:53
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: manufacturing-consulting
+Project Stage: prototype
+Message: xcvx
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-10-09 10:19:05
+From: Permanent Fix <fix@example.com>
+Company: Test Company
+Title: Manager
+Service Interest: general-consultation
+Project Stage: concept
+Message: Testing permanent fix for recurring issue
+Consent: True
+=====================================
+
+=== NEW CONTACT FORM SUBMISSION ===
+Timestamp: 2025-10-09 10:20:22
+From: Guy Breier <gbreier@gmail.com>
+Company: Boston Manufacturing Gtoup
+Title: Mr
+Service Interest: global-sourcing
+Project Stage: prototype
+Message: asd
+Consent: True
+=====================================

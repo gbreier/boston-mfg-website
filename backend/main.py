@@ -506,13 +506,14 @@ Consent: {form_data.consent}
         
         # Send email using standard smtplib (more reliable than aiosmtplib)
         import smtplib
+        import ssl
         
-        if SMTP_USE_TLS:
-            server = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
-        else:
-            server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-            server.starttls()
-            
+        # Create a secure SSL context
+        context = ssl.create_default_context()
+        
+        # Use SMTP with STARTTLS for Gmail (port 587)
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        server.starttls(context=context)
         server.login(SMTP_USERNAME, SMTP_PASSWORD)
         server.send_message(message)
         server.quit()

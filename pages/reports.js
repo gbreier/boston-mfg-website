@@ -18,7 +18,7 @@ const reports = [
   },
   {
     title: 'Hardware startups and the best path to high-volume manufacturing',
-    author: 'Ron Rubin PhD, Managing Director, BMG',
+    author: 'Guy Breier, CEO, BMG',
     date: 'Jan 29, 2021',
     summary: 'A proper manufacturing process can position a hardware startup months and even years ahead of its competition.',
     url: '/reports/hardware-startups-and-the-best-path-to-high-volume-manufacturing',
@@ -121,7 +121,7 @@ export default function Reports() {
                     "description": "A proper manufacturing process can position a hardware startup months and even years ahead of its competition.",
                     "author": {
                       "@type": "Person",
-                      "name": "Dr. Ron Rubin"
+                      "name": "Guy Breier"
                     },
                     "datePublished": "2021-01-29T00:00:00.000Z",
                     "publisher": {

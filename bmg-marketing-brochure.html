@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston Manufacturing Group - Marketing Brochure</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            padding: 0.5in;
+            page-break-after: always;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 20px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+        
+        .company-info {
+            text-align: right;
+            color: #1e40af;
+        }
+        
+        .company-info h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .company-info p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 15px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 15px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .service-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .service-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .capability-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .capability-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        
+        .capability-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .capability-card li {
+            font-size: 13px;
+            color: #475569;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .capability-card li:before {
+            content: "•";
+            color: #3b82f6;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .process-steps {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .process-steps h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .process-steps ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .process-steps li {
+            counter-increment: step-counter;
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        .process-steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #3b82f6;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .founders {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .founder-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .founder-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #3b82f6;
+        }
+        
+        .founder-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        
+        .founder-card .title {
+            font-size: 14px;
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .founder-card p {
+            font-size: 12px;
+            color: #475569;
+            text-align: left;
+            line-height: 1.5;
+        }
+        
+        .contact-info {
+            background: #1e40af;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .contact-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .contact-info .highlight {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="header">
+            <img src="public/bmg-logo.png" alt="Boston Manufacturing Group Logo" class="logo">
+            <div class="company-info">
+                <h1>Boston Manufacturing Group</h1>
+                <p>Your Partner from Prototype to Production</p>
+            </div>
+        </div>
+        
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #dc2626; margin-bottom: 25px;">
+            <p style="font-size: 14px; color: #374151; line-height: 1.6; margin: 0;">
+                <strong>Today's manufacturers face mounting pressures:</strong> rising costs, global supply chain risk, and limited resources to manage increasingly complex operations. Too often, high-value talent spends hours buried in spreadsheets, manually reviewing data, or recreating analyses that AI can now automate in seconds. BMG bridges this gap by combining world-class manufacturing experience with cutting-edge tools to deliver sustainable improvements in productivity, cost, and quality.
+            </p>
+        </div>
+        
+        <div class="hero">
+            <h2>Navigating the Path from Idea to Production</h2>
+            <p>World-class manufacturing solutions and support with a revolutionary combination of hands-on assessment and solutions from leading manufacturing minds, including faculty from Harvard, MIT, and Boston College.</p>
+        </div>
+        
+        <div class="section">
+            <h3>Our Core Services</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Intelligent Sourcing</h4>
+                    <p>We identify and procure the best materials and resources for your product, ensuring cost-effectiveness and quality.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Technical Support</h4>
+                    <p>Our experts provide ongoing guidance throughout the manufacturing process, keeping your product development on track.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Quality Control</h4>
+                    <p>Stringent quality control measures ensure your products meet and exceed industry standards.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>🚀 AI-Powered Manufacturing Intelligence</h3>
+            <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: white;">AI Supply Chain Disruption Analysis System</h4>
+                <p style="font-size: 14px; margin-bottom: 15px; opacity: 0.95;">Revolutionary AI system that analyzes your Bill of Materials, historical KPIs, and market intelligence to generate realistic supply chain disruption scenarios and actionable mitigation strategies. Enhanced with component-specific analysis, supplier vulnerability assessment, and automated BOM processing.</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
+                    <div>
+                        <h5 style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #93c5fd;">🧠 Advanced AI Analysis</h5>
+                        <p style="font-size: 12px; opacity: 0.9;">AI-powered scenario generation with historical data integration and statistical risk modeling</p>
+                    </div>
+                    <div>
+                        <h5 style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #93c5fd;">📊 Real-Time Intelligence</h5>
+                        <p style="font-size: 12px; opacity: 0.9;">Dynamic market intelligence with geopolitical, economic, and industry trend analysis</p>
+                    </div>
+                    <div>
+                        <h5 style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #93c5fd;">🎯 Personalized Plans</h5>
+                        <p style="font-size: 12px; opacity: 0.9;">Context-aware action plans tailored to your constraints and organizational needs</p>
+                    </div>
+                    <div>
+                        <h5 style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #93c5fd;">🔍 Component Analysis</h5>
+                        <p style="font-size: 12px; opacity: 0.9;">Multi-tier intelligence with supplier verification and alternative sourcing</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 16px; font-weight: 700; color: #93c5fd;">5-7</div>
+                        <div style="font-size: 10px; opacity: 0.8;">Realistic Scenarios</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 16px; font-weight: 700; color: #93c5fd;">10,000+</div>
+                        <div style="font-size: 10px; opacity: 0.8;">Components</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 16px; font-weight: 700; color: #93c5fd;">&lt;30s</div>
+                        <div style="font-size: 10px; opacity: 0.8;">Analysis Time</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 16px; font-weight: 700; color: #93c5fd;">AI</div>
+                        <div style="font-size: 10px; opacity: 0.8;">Powered</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <h5 style="font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #93c5fd;">📋 Advanced BOM Analysis Capabilities:</h5>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 11px; opacity: 0.9;">
+                        <div>• Automatic CSV parsing with header detection</div>
+                        <div>• Component statistics calculation</div>
+                        <div>• Supplier and manufacturer analysis</div>
+                        <div>• Cost impact assessment</div>
+                        <div>• Component-specific risk modeling</div>
+                        <div>• Alternative sourcing recommendations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>Manufacturing Capabilities</h3>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h4>Electronics</h4>
+                    <ul>
+                        <li>PCBA</li>
+                        <li>Electronic components</li>
+                        <li>Cable systems</li>
+                        <li>Power supplies</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <h4>Metals & Plastics</h4>
+                    <ul>
+                        <li>Precision machining</li>
+                        <li>Stamping, castings, welding</li>
+                        <li>Injection molding, 3D printing</li>
+                        <li>Vacuum forming, extrusion</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <h4>Motors, Batteries & Assemblies</h4>
+                    <ul>
+                        <li>BLDC, universal, induction motors</li>
+                        <li>Li-Ion, Ni-MH, Lead-Acid batteries</li>
+                        <li>Final assemblies & contract manufacturing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="process-steps">
+            <h4>The BMG Five Phase Approach</h4>
+            <ol>
+                <li><strong>Initial Engagement:</strong> Comprehensive consultation to meticulously identify the breadth and depth of your challenge, issue, or requirement.</li>
+                <li><strong>Audit and Assessment:</strong> Detailed exploration of your existing challenges with comprehensive evaluation of your product's current state and production strategy.</li>
+                <li><strong>Report and Proposal Delivery:</strong> Concise report outlining identified issues and recommended actions with transparent project scope and costs.</li>
+                <li><strong>Expert Engagement and Project Management:</strong> Deployment of globally recognized manufacturing experts with close collaboration and project oversight.</li>
+                <li><strong>Sustain:</strong> Persistent partnership until your product is successfully delivered with continuous monitoring and quality assurance.</li>
+            </ol>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="header">
+            <img src="public/bmg-logo.png" alt="Boston Manufacturing Group Logo" class="logo">
+            <div class="company-info">
+                <h1>Boston Manufacturing Group</h1>
+                <p>Manufacturing Excellence & Innovation</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>Meet Our Leadership Team</h3>
+            <div class="founders">
+                <div class="founder-card">
+                    <img src="public/guy-breier.png" alt="Guy Breier" class="founder-photo">
+                    <h4>Guy Breier</h4>
+                    <div class="title">Chief Executive Officer</div>
+                    <p>Guy Breier combines decades of international expertise in Operations, Manufacturing, and Quality Control with an impressive academic background. Holding an Engineering degree from Tel Aviv University and an MBA from Boston College, he has also enriched his knowledge as a Professor of Operations at Boston University. His innovative approach culminated in the creation of the proprietary Five Phase Assessment Process, a game-changer in the manufacturing industry. This unique process has powered the successful delivery of millions of premium-quality products and realized cumulative savings exceeding hundreds of millions of dollars for manufacturing plants around the globe.</p>
+                </div>
+                <div class="founder-card">
+                    <img src="public/ron-rubin.png" alt="Dr. Ron Rubin" class="founder-photo">
+                    <h4>Dr. Ron Rubin</h4>
+                    <div class="title">Advisor</div>
+                    <p>Dr. Ron Rubin, a distinguished member of the Boston College faculty, is also the esteemed founder of Rubin/Anders Scientific, a premier scientific placement agency serving an impressive roster of law firms and corporate clientele. His academic laurels include a Ph.D. from Harvard University, reinforcing his status as a leader in the scientific community. In addition to his contributions at Boston College, Dr. Rubin has also shared his knowledge as a lecturer at the prestigious Massachusetts Institute of Technology (MIT), showcasing his commitment to fostering the next generation of scientific minds.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>Why Choose Boston Manufacturing Group?</h3>
+            <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
+                    <div>
+                        <h4 style="color: #1e40af; font-size: 16px; margin-bottom: 10px;">✓ Proven Track Record</h4>
+                        <p style="font-size: 13px; color: #475569;">Millions of premium-quality products delivered with hundreds of millions in cost savings realized.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #1e40af; font-size: 16px; margin-bottom: 10px;">✓ Academic Excellence</h4>
+                        <p style="font-size: 13px; color: #475569;">Faculty and expertise from Harvard, MIT, and Boston College.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #1e40af; font-size: 16px; margin-bottom: 10px;">✓ AI-Powered Intelligence</h4>
+                        <p style="font-size: 13px; color: #475569;">Revolutionary AI system for supply chain analysis and risk mitigation strategies.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #1e40af; font-size: 16px; margin-bottom: 10px;">✓ Personal Approach</h4>
+                        <p style="font-size: 13px; color: #475569;">Tailored solutions for your individual manufacturing needs and challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>AI-Enhanced Manufacturing Consulting</h3>
+            <div style="background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); padding: 20px; border-radius: 8px; border: 2px solid #3b82f6;">
+                <p style="font-size: 14px; color: #475569; margin-bottom: 15px; text-align: center;"><strong>BMG combines traditional manufacturing expertise with cutting-edge AI technology</strong></p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div style="background: white; padding: 15px; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                        <h4 style="color: #1e40af; font-size: 14px; margin-bottom: 8px;">🤖 AI Analytics</h4>
+                        <ul style="font-size: 12px; color: #475569; margin: 0; padding-left: 15px;">
+                            <li>BOM risk assessment with component-specific analysis</li>
+                            <li>Supply chain disruption modeling (5-7 realistic scenarios)</li>
+                            <li>Component alternative analysis with supplier verification</li>
+                            <li>Automated CSV parsing and data processing</li>
+                            <li>Real-time market intelligence integration</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; padding: 15px; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                        <h4 style="color: #1e40af; font-size: 14px; margin-bottom: 8px;">👥 Human Expertise</h4>
+                        <ul style="font-size: 12px; color: #475569; margin: 0; padding-left: 15px;">
+                            <li>Manufacturing process optimization</li>
+                            <li>Quality control implementation</li>
+                            <li>Supplier relationship management</li>
+                            <li>Five Phase Assessment Process</li>
+                            <li>Academic expertise from Harvard, MIT, Boston College</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 6px; border: 1px solid #e2e8f0;">
+                    <h4 style="color: #1e40af; font-size: 14px; margin-bottom: 10px; text-align: center;">🎯 Enhanced Scenario Generation</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 11px; color: #475569;">
+                        <div>• Component-specific risk modeling</div>
+                        <div>• Supplier vulnerability assessment</div>
+                        <div>• Production timeline impact analysis</div>
+                        <div>• Automated mitigation strategy recommendations</div>
+                        <div>• Real-time supplier data integration</div>
+                        <div>• Cost impact calculations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>Industries We Serve</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px;">
+                <div style="text-align: center; padding: 15px; background: #f1f5f9; border-radius: 8px;">
+                    <div style="font-size: 24px; margin-bottom: 8px;">🔬</div>
+                    <div style="font-size: 13px; font-weight: 600; color: #1e40af;">Medical Devices</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: #f1f5f9; border-radius: 8px;">
+                    <div style="font-size: 24px; margin-bottom: 8px;">💻</div>
+                    <div style="font-size: 13px; font-weight: 600; color: #1e40af;">Electronics</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: #f1f5f9; border-radius: 8px;">
+                    <div style="font-size: 24px; margin-bottom: 8px;">🏭</div>
+                    <div style="font-size: 13px; font-weight: 600; color: #1e40af;">Industrial</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: #f1f5f9; border-radius: 8px;">
+                    <div style="font-size: 24px; margin-bottom: 8px;">🚗</div>
+                    <div style="font-size: 13px; font-weight: 600; color: #1e40af;">Automotive</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>Our Global Manufacturing Network</h3>
+            <p style="font-size: 14px; color: #475569; margin-bottom: 15px;">BMG maintains strategic partnerships with manufacturing facilities worldwide, ensuring optimal cost-effectiveness, quality, and delivery for your specific requirements.</p>
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 13px; color: #64748b; margin-bottom: 10px;"><strong>Key Manufacturing Regions:</strong></p>
+                <p style="font-size: 13px; color: #475569;">North America • Europe • Asia-Pacific • Strategic Global Partners</p>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h4>Ready to Transform Your Manufacturing Operations with AI?</h4>
+            <p>Get your free consultation and discover how BMG's AI-powered solutions can optimize your operations, reduce costs, and scale production while mitigating supply chain risks.</p>
+            <div style="margin-top: 15px;">
+                <p class="highlight">📧 contact@boston-mfg.com</p>
+                <p class="highlight">📞 (617) 410-8155</p>
+                <p style="font-size: 12px; margin-top: 10px; opacity: 0.9;">Initial consultation within 24-48 hours • AI analysis demo available</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

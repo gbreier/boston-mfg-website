@@ -90,11 +90,6 @@ export default function NvidiaOpenAIDeal() {
         />
       </Head>
       <main className="bg-background min-h-screen font-sans">
-        <div className="flex justify-center pt-10 pb-4 bg-background">
-          <Link href="/">
-            <img src="/bmg-logo.png" alt="Boston Manufacturing Group logo" className="h-16 w-auto cursor-pointer" />
-          </Link>
-        </div>
         <article className="max-w-4xl mx-auto py-12 px-4">
           {/* Breadcrumb */}
           <nav className="text-sm text-accent mb-6">
@@ -184,14 +179,22 @@ export default function NvidiaOpenAIDeal() {
 
           </div>
 
-          {/* Back to Reports */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
+          {/* Navigation Links */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex justify-between items-center">
             <Link href="/reports" legacyBehavior>
               <a className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
                 Back to All Reports
+              </a>
+            </Link>
+            <Link href="/" legacyBehavior>
+              <a className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Home
               </a>
             </Link>
           </div>

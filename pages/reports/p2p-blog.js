@@ -8,11 +8,6 @@ export default function P2PBlog() {
         <title>P2P Blog | Boston Manufacturing Group</title>
       </Head>
       <main className="bg-background min-h-screen font-sans">
-        <div className="flex justify-center pt-10 pb-4 bg-background">
-          <Link href="/reports">
-            <img src="/bmg-logo.png" alt="Boston Manufacturing Group logo" className="h-16 w-auto cursor-pointer" />
-          </Link>
-        </div>
         <section className="max-w-3xl mx-auto py-12 px-4">
           <h1 className="text-3xl font-bold text-secondary mb-4">P2P Blog</h1>
           <div className="flex items-center gap-3 mb-2">
@@ -32,8 +27,25 @@ export default function P2PBlog() {
             <p>Chestnut Hill, MA</p>
           </article>
         </section>
-        <div className="flex justify-center pb-12">
-          <a href="/" className="mt-8 inline-block bg-primary text-white font-semibold px-6 py-3 rounded shadow hover:bg-secondary transition">Back to Home</a>
+        <div className="max-w-3xl mx-auto px-4 pb-12">
+          <div className="mt-12 pt-8 border-t border-gray-200 flex justify-between items-center">
+            <Link href="/reports" legacyBehavior>
+              <a className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to All Reports
+              </a>
+            </Link>
+            <Link href="/" legacyBehavior>
+              <a className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Home
+              </a>
+            </Link>
+          </div>
         </div>
       </main>
     </>

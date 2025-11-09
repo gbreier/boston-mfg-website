@@ -168,6 +168,7 @@ export default function Home() {
               <a href="/contact" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded shadow hover:bg-secondary transition">Contact Us</a>
               <a href="/reports" className="inline-block bg-secondary text-white font-semibold px-8 py-3 rounded shadow hover:bg-primary transition">Published Articles</a>
               <a href="/sourcing" className="inline-block bg-accent text-white font-semibold px-8 py-3 rounded shadow hover:bg-primary transition">Sourcing</a>
+              <a href="/ai-analysis" className="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded shadow hover:bg-blue-700 transition">AI Supply Chain Analysis</a>
               <a href="/about" className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded shadow hover:bg-secondary transition">About</a>
             </div>
           </div>

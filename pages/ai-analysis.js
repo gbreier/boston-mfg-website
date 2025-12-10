@@ -315,18 +315,12 @@ export default function AIAnalysis() {
               <div className="space-y-4 text-gray-300">
                 <div className="border-l-4 border-blue-500 pl-4 py-2">
                   <p className="font-semibold text-blue-200 mb-1">DSJ Global</p>
-                  <p className="text-sm mb-1">Supply Chain Talent Report 2025 - USA: Comprehensive analysis of supply chain hiring trends, salary benchmarks, and talent market dynamics</p>
-                  <a href="/DSJ-Global-Supply-Chain-Talent-Report-2025-USA.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 text-sm">
-                    Download Report (PDF)
-                  </a>
+                  <p className="text-sm">Supply Chain Talent Report 2025 - USA: Comprehensive analysis of supply chain hiring trends, salary benchmarks, and talent market dynamics</p>
                 </div>
 
                 <div className="border-l-4 border-blue-500 pl-4 py-2">
                   <p className="font-semibold text-blue-200 mb-1">Supply Chain Job Market Analysis</p>
-                  <p className="text-sm mb-1">Supply Chain Job Report: Current state of supply chain employment, key skills in demand, and workforce development trends</p>
-                  <a href="/Supply Chain Job Report.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 text-sm">
-                    Download Report (PDF)
-                  </a>
+                  <p className="text-sm">Supply Chain Job Report: Current state of supply chain employment, key skills in demand, and workforce development trends</p>
                 </div>
 
                 <div className="border-l-4 border-blue-500 pl-4 py-2">

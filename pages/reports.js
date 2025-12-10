@@ -3,6 +3,13 @@ import Link from 'next/link';
 
 const reports = [
   {
+    title: 'Supply Chain Resilience in 2025: Navigating Global Disruptions and Talent Challenges',
+    author: 'Guy Breier, CEO, BMG',
+    date: 'Dec 10, 2025',
+    summary: 'Comprehensive white paper examining critical trends reshaping manufacturing and supply chain operations including talent shortages, geopolitical tensions, digital transformation, and strategies for building resilient supply chains in an increasingly volatile environment.',
+    url: '/ai-analysis',
+  },
+  {
     title: 'U-Hawk Autonomous Black Hawk Conversion: Manufacturing & Operations Analysis',
     author: 'Guy Breier, CEO, BMG',
     date: 'Oct 20, 2025',
@@ -101,6 +108,28 @@ export default function Reports() {
                   {
                     "@type": "Article",
                     "position": 1,
+                    "headline": "Supply Chain Resilience in 2025: Navigating Global Disruptions and Talent Challenges",
+                    "description": "Comprehensive white paper examining critical trends reshaping manufacturing and supply chain operations including talent shortages, geopolitical tensions, and digital transformation.",
+                    "author": {
+                      "@type": "Person",
+                      "name": "Guy Breier"
+                    },
+                    "datePublished": "2025-12-10T00:00:00.000Z",
+                    "publisher": {
+                      "@type": "Organization",
+                      "name": "Boston Manufacturing Group"
+                    },
+                    "url": "https://boston-mfg.com/ai-analysis",
+                    "mainEntityOfPage": {
+                      "@type": "WebPage",
+                      "@id": "https://boston-mfg.com/ai-analysis"
+                    },
+                    "articleSection": "Supply Chain Management",
+                    "keywords": ["supply chain resilience", "supply chain disruption", "talent shortage", "geopolitical risk", "digital transformation", "supplier diversification"]
+                  },
+                  {
+                    "@type": "Article",
+                    "position": 2,
                     "headline": "U-Hawk Autonomous Black Hawk Conversion: Manufacturing & Operations Analysis",
                     "description": "Sikorsky's transformation of the UH-60L Black Hawk into a fully autonomous aircraft in just ten months marks a major leap in aerospace innovation.",
                     "author": {
@@ -122,7 +151,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 2,
+                    "position": 3,
                     "headline": "Nvidia's $100 Billion Deal: AI Enters a New Phase of Computing Power",
                     "description": "Nvidia's $100 billion commitment to OpenAI marks a pivotal shift in AI development, where computing power—not talent or ideas—has become the primary constraint.",
                     "author": {
@@ -144,7 +173,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 3,
+                    "position": 4,
                     "headline": "You've Got to See This: Smart Factory in Action",
                     "description": "Witness the seamless integration of robots, sensors, and real-time data at FUJI's Smart Factory. The future of manufacturing is unfolding—swifter, more intelligent, and exceptionally reliable.",
                     "author": {
@@ -166,7 +195,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 4,
+                    "position": 5,
                     "headline": "Toyota's $2M Investment in STEM Education: Opportunities and Questions",
                     "description": "Toyota has committed $2 million to boost STEM education in North Carolina through its Driving Possibilities initiative, raising important questions about corporate influence in education.",
                     "author": {
@@ -188,7 +217,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 5,
+                    "position": 6,
                     "headline": "Trust but Verify: Why Supplier Qualification Must Be Rooted in Process Capability",
                     "description": "When manufacturers assess suppliers, there's a tension between trust and verification. Learn why statistical process capability analysis is essential for supplier qualification.",
                     "author": {
@@ -210,7 +239,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 6,
+                    "position": 7,
                     "headline": "P2P Blog",
                     "description": "Welcome to the Boston Manufacturing Group (BMG) Prototype-to-Production™ blog. BMG supports manufacturing efforts that include sourcing, technical support, and quality control.",
                     "author": {
@@ -232,7 +261,7 @@ export default function Reports() {
                   },
                   {
                     "@type": "Article",
-                    "position": 7,
+                    "position": 8,
                     "headline": "Hardware startups and the best path to high-volume manufacturing",
                     "description": "A proper manufacturing process can position a hardware startup months and even years ahead of its competition.",
                     "author": {

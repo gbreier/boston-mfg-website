@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Supply Chain Disruption Evaluation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e3f2fd;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      margin-top: 2em;
+      padding: 2em 2.5em 2.5em 2.5em;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      max-width: 1400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    h1 {
+      color: #1976d2;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    .info-banner {
+      background: #e8f5e8;
+      padding: 1em;
+      border-radius: 8px;
+      margin-bottom: 1.5em;
+      border-left: 4px solid #4caf50;
+      text-align: center;
+      font-size: 0.95em;
+    }
+
+    /* Navigation */
+    .back-button {
+      margin-bottom: 1em;
+      padding: 0.5em 1.2em;
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      background: #1565c0;
+    }
+
+    /* Form Elements */
+    .form-group {
+      width: 100%;
+      margin-bottom: 1.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 0.5em;
+      color: #1976d2;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      font-size: 1em;
+      margin-bottom: 0.5em;
+      padding: 0.5em;
+      border: 1px solid #b0bec5;
+      border-radius: 6px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      border-radius: 6px;
+      border: 1px solid #b0bec5;
+      padding: 0.7em 1em;
+      resize: vertical;
+      font-size: 1em;
+      font-family: inherit;
+    }
+
+    .help-text {
+      color: #666;
+      margin-top: 0.3em;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    /* Buttons */
+    button {
+      padding: 0.7em 1.5em;
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: center;
+    }
+
+    button:hover {
+      background: #1565c0;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Results and Feedback */
+    #result {
+      margin-top: 1.5em;
+      width: 100%;
+      min-height: 2em;
+      word-break: break-word;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .loading-container {
+      background: #e3f2fd;
+      padding: 1em;
+      border-radius: 8px;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    .spinner {
+      border: 4px solid #e3f2fd;
+      border-top: 4px solid #1976d2;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1em;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .file-info {
+      background: #e8f5e8;
+      padding: 0.8em;
+      border-radius: 6px;
+      margin-top: 1em;
+      font-size: 0.9em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 700px) {
+      .container {
+        padding: 1em 0.5em 1.5em 0.5em;
+        max-width: 98vw;
+      }
+    }
+
+    .bom-table-container {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .bom-table thead th {
+      position: sticky;
+      top: 0;
+      background: #f5f5f5;
+      z-index: 2;
+    }
+    /* Logo Header */
+    .logo-header {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-header svg {
+      width: 40px;
+      height: 40px;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+    
+    .logo-header a {
+      cursor: pointer;
+      display: block;
+      pointer-events: auto;
+      z-index: 1000;
+      position: relative;
+    }
+    
+    .logo-header a:hover svg {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+
+    /* Adjust body padding to account for logo */
+    body {
+      padding-top: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .logo-header {
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+      }
+      
+      .logo-header svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo Header -->
+  <div class="logo-header">
+    <a href="/" style="text-decoration: none; color: inherit; cursor: pointer;" title="Back to Home">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#424242;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#212121;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#redGradient)" stroke-width="6"/>
+        <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6"/>
+        <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blackGradient)" stroke-width="6"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="container">
+    <a href="/static/index.html" class="back-button">← Back</a>
+    
+    <h1>Supply Chain Disruption Evaluation</h1>
+    
+    <div class="info-banner">
+      <strong>💡 Enhanced Analysis:</strong> Upload your BOM CSV files to get detailed, component-specific disruption scenarios. The system will analyze your specific parts, suppliers, and manufacturers to generate realistic scenarios.
+    </div>
+    
+    <form id="disruptionForm">
+      <div class="form-group">
+        <label for="bomFile">📋 BOM (Bill of Materials) - CSV Format:</label>
+        <input type="file" id="bomFile" name="bomFile" accept=".csv,.xlsx,.xls,.txt" />
+        <div class="help-text">Upload your BOM CSV file. The system will analyze components, suppliers, and costs to generate specific disruption scenarios.</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="supplierFile">🏭 Supplier Information:</label>
+        <input type="file" id="supplierFile" name="supplierFile" accept=".csv,.xlsx,.xls,.txt" />
+        <div class="help-text">Optional: Upload supplier lead times, availability, or risk assessments.</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="kpiFile">📈 Historical KPI Data:</label>
+        <input type="file" id="kpiFile" name="kpiFile" accept=".csv,.xlsx,.xls,.txt" />
+        <div class="help-text">Optional: Upload historical performance metrics or past disruption data.</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="openText">ℹ️ Additional Information:</label>
+        <textarea id="openText" name="openText" placeholder="Describe specific disruption concerns, supplier issues, or any relevant notes that should be considered in the analysis..."></textarea>
+        <div class="help-text">Examples: "Digi-Key experiencing delays", "Microchip supply shortage", "PCB manufacturing issues"</div>
+      </div>
+      
+      <button type="submit">🔍 Generate Disruption Analysis</button>
+    </form>
+    
+    <div id="result"></div>
+  </div>
+
+  <script src="global-ai-mode.js"></script>
+  <script>
+    // DOM Elements
+    const form = document.getElementById('disruptionForm');
+    const bomFileInput = document.getElementById('bomFile');
+    const supplierFileInput = document.getElementById('supplierFile');
+    const kpiFileInput = document.getElementById('kpiFile');
+    const resultDiv = document.getElementById('result');
+
+    // Event Listeners
+    form.addEventListener('submit', handleFormSubmit);
+    bomFileInput.addEventListener('change', (e) => handleFileSelection(e, 'bom'));
+    supplierFileInput.addEventListener('change', (e) => handleFileSelection(e, 'supplier'));
+    kpiFileInput.addEventListener('change', (e) => handleFileSelection(e, 'kpi'));
+
+    // Form Submission Handler
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const bomFile = bomFileInput.files[0];
+      const supplierFile = document.getElementById('supplierFile').files[0];
+      const kpiFile = document.getElementById('kpiFile').files[0];
+      const openText = document.getElementById('openText').value;
+      const analysisMode = getGlobalAIMode(); // Use global mode from main page
+      
+      let bomContent = '';
+      let kpiContent = '';
+      let bomPreview = '';
+      
+      // Read BOM file content
+      if (bomFile) {
+        try {
+          bomContent = await readFileAsText(bomFile);
+          bomPreview = createBOMPreview(bomContent);
+        } catch (error) {
+          console.error('Error reading BOM file:', error);
+          bomPreview = 'Error reading BOM file';
+        }
+      }
+
+      // Read KPI file content
+      if (kpiFile) {
+        try {
+          kpiContent = await readFileAsText(kpiFile);
+        } catch (error) {
+          console.error('Error reading KPI file:', error);
+        }
+      }
+      
+      // Show loading state with selected mode
+      showLoading(bomPreview, analysisMode);
+      
+      // Store data for result page
+      const disruptionData = {
+        bomFile: bomFile?.name || '',
+        supplierFile: supplierFile?.name || '',
+        kpiFile: kpiFile?.name || '',
+        openText,
+        bomContent,
+        kpiContent,
+        analysisMode
+      };
+      
+      localStorage.setItem('disruptionData', JSON.stringify(disruptionData));
+      
+      // Navigate to result page after delay
+      setTimeout(() => {
+        window.location.href = 'disruption-result.html?fromForm=true';
+      }, 1000);
+    }
+
+    // File Selection Handler
+    function handleFileSelection(e, fileType) {
+      const file = e.target.files[0];
+      if (file) {
+        showFileInfo(file, fileType);
+      }
+    }
+
+    // Utility Functions
+    function readFileAsText(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = e => resolve(e.target.result);
+        reader.onerror = reject;
+        reader.readAsText(file);
+      });
+    }
+
+    function createBOMPreview(content) {
+      const lines = content.split('\n').filter(line => line.trim());
+      if (lines.length > 1) {
+        const rows = lines.slice(1, 4); // Show first 3 rows as preview
+        const bomStats = calculateBOMStats(content);
+        return `Preview: ${rows.length} rows loaded (showing first 3) | 📊 ${bomStats.componentCount} components | $${bomStats.totalCost.toFixed(2)} total cost | ${bomStats.suppliers} suppliers | ⏱️ estimated lead time: ${bomStats.leadTime} days`;
+      }
+      return '';
+    }
+
+    /**
+     * Calculate estimated lead time based on suppliers in BOM
+     */
+    function calculateEstimatedLeadTime(bomText) {
+      const supplierLeadTimes = {
+        'tme': 5,
+        'digi-key': 3,
+        'digikey': 3,
+        'mouser': 5,
+        'jlcpcb': 7,
+        'pcbway': 7,
+        'oshpark': 10,
+        'adafruit': 5,
+        'sparkfun': 5,
+        'arrow': 7,
+        'avnet': 7,
+        'newark': 5,
+        'farnell': 5,
+        'element14': 5,
+        'rs-components': 5,
+        'allied': 5,
+        'mcmaster': 2,
+        'mcmaster-carr': 2,
+        'stockwell': 7,
+        'essentra': 5,
+        'richco': 7,
+        'hammond': 10,
+        'te connectivity': 7,
+        'microchip': 14,
+        'vishay': 10,
+        'samsung': 14,
+        'lite-on': 10
+      };
+
+      const lines = bomText.split('\n').filter(line => line.trim());
+      if (lines.length < 2) return 7;
+
+      const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+      const supplierIndex = headers.findIndex(h => h.toLowerCase().includes('supplier'));
+      
+      // Find lead time column indices
+      const leadTimeColumns = [
+        'Lead Time', 'Lead Time (days)', 'Avg Lead Time (days)', 
+        'Lead Time Days', 'Leadtime', 'lead_time', 'leadTime',
+        'Delivery Time', 'Delivery Time (days)', 'Supplier Lead Time'
+      ];
+      
+      const leadTimeIndex = headers.findIndex(h => 
+        leadTimeColumns.some(col => h.toLowerCase().includes(col.toLowerCase()))
+      );
+
+      let maxLeadTime = 0;
+
+      lines.slice(1).forEach(line => {
+        const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+        
+        // First priority: Check actual lead time data in BOM
+        if (leadTimeIndex !== -1 && values[leadTimeIndex]) {
+          const leadTimeValue = values[leadTimeIndex].trim();
+          if (leadTimeValue && !['', 'n/a', 'na', 'none', 'tbd'].includes(leadTimeValue.toLowerCase())) {
+            const matches = leadTimeValue.match(/\d+/);
+            if (matches) {
+              const actualLeadTime = parseInt(matches[0]);
+              if (actualLeadTime > 0) {
+                maxLeadTime = Math.max(maxLeadTime, actualLeadTime);
+                return; // Use actual data, skip supplier lookup
+              }
+            }
+          }
+        }
+        
+        // Second priority: Use supplier lookup table
+        if (supplierIndex !== -1) {
+          const supplier = values[supplierIndex];
+          if (supplier) {
+            const supplierLower = supplier.toLowerCase();
+            let leadTime = 7; // Default 7 days
+
+            for (const [supplierKey, leadTimeValue] of Object.entries(supplierLeadTimes)) {
+              if (supplierLower.includes(supplierKey) || supplierKey.includes(supplierLower)) {
+                leadTime = leadTimeValue;
+                break;
+              }
+            }
+
+            maxLeadTime = Math.max(maxLeadTime, leadTime);
+          }
+        }
+      });
+
+      return maxLeadTime || 7;
+    }
+
+    /**
+     * Calculate BOM statistics
+     */
+    function calculateBOMStats(bomText) {
+      const lines = bomText.split('\n').filter(line => line.trim());
+      if (lines.length < 2) return { componentCount: 0, totalCost: 0, suppliers: 0, leadTime: 7 };
+
+      const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+      const supplierIndex = headers.findIndex(h => h.toLowerCase().includes('supplier'));
+      
+      // Look for Total column first (already calculated total cost per component)
+      const totalIndex = headers.findIndex(h => h.toLowerCase().includes('total') && !h.toLowerCase().includes('unit'));
+      
+      // Look for Unit Cost and Quantity columns
+      const unitCostIndex = headers.findIndex(h => h.toLowerCase().includes('unit') && h.toLowerCase().includes('cost'));
+      const quantityIndex = headers.findIndex(h => h.toLowerCase().includes('qty') || h.toLowerCase().includes('quantity'));
+
+      const suppliers = new Set();
+      let totalCost = 0;
+
+      lines.slice(1).forEach(line => {
+        const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+        
+        if (supplierIndex !== -1 && values[supplierIndex]) {
+          suppliers.add(values[supplierIndex]);
+        }
+        
+        // Calculate cost per component
+        if (totalIndex !== -1 && values[totalIndex]) {
+          // Use pre-calculated total column
+          totalCost += parseFloat(values[totalIndex]) || 0;
+        } else if (unitCostIndex !== -1 && quantityIndex !== -1 && values[unitCostIndex] && values[quantityIndex]) {
+          // Calculate: unit cost × quantity
+          const unitCost = parseFloat(values[unitCostIndex]) || 0;
+          const quantity = parseFloat(values[quantityIndex]) || 1;
+          totalCost += unitCost * quantity;
+        } else if (unitCostIndex !== -1 && values[unitCostIndex]) {
+          // Fallback: use unit cost (assume quantity = 1)
+          totalCost += parseFloat(values[unitCostIndex]) || 0;
+        }
+      });
+
+      return {
+        componentCount: lines.length - 1,
+        totalCost: totalCost,
+        suppliers: suppliers.size,
+        leadTime: calculateEstimatedLeadTime(bomText)
+      };
+    }
+
+    function showLoading(bomPreview = '', mode = 'comprehensive') {
+      const modeLabels = {
+        'comprehensive': '🧠 Comprehensive Mode - Deep reasoning analysis',
+        'fast': '⚡ Fast Mode - Quick analysis'
+      };
+      const modeColors = {
+        'comprehensive': '#1976d2',
+        'fast': '#4caf50'
+      };
+      const modeLabel = modeLabels[mode] || modeLabels['comprehensive'];
+      const modeColor = modeColors[mode] || modeColors['comprehensive'];
+      
+      resultDiv.innerHTML = `
+        <div class="loading-container">
+          <div class="spinner"></div>
+          <div>Processing BOM data and generating disruption scenarios...</div>
+          <div style="font-size:0.95em;color:${modeColor};margin-top:1em;font-weight:600;">${modeLabel}</div>
+          ${bomPreview ? `<div style="font-size:0.9em;color:#666;margin-top:0.5em;">${bomPreview}</div>` : ''}
+        </div>
+      `;
+    }
+
+    function showFileInfo(file, fileType) {
+      const fileTypeLabels = {
+        'bom': 'BOM file',
+        'supplier': 'Supplier information file',
+        'kpi': 'Historical KPI file'
+      };
+      
+      const fileTypeEmojis = {
+        'bom': '📋',
+        'supplier': '🏭',
+        'kpi': '📈'
+      };
+      
+      const label = fileTypeLabels[fileType] || 'File';
+      const emoji = fileTypeEmojis[fileType] || '📁';
+      
+      // Check if there's already file info displayed
+      let existingFileInfo = resultDiv.querySelector('.file-info');
+      
+      if (existingFileInfo) {
+        // Update existing file info to show multiple files
+        const newFileInfo = `${emoji} ${label} selected: <strong>${file.name}</strong> (${(file.size / 1024).toFixed(1)} KB)`;
+        
+        // Check if this file type is already shown
+        if (existingFileInfo.innerHTML.includes(label)) {
+          // Replace the existing info for this file type
+          const lines = existingFileInfo.innerHTML.split('<br>');
+          const updatedLines = lines.filter(line => !line.includes(label));
+          updatedLines.push(newFileInfo);
+          existingFileInfo.innerHTML = updatedLines.join('<br>');
+        } else {
+          // Add new file info
+          existingFileInfo.innerHTML += '<br>' + newFileInfo;
+        }
+      } else {
+        // Create new file info
+        resultDiv.innerHTML = `
+          <div class="file-info">
+            ${emoji} ${label} selected: <strong>${file.name}</strong> (${(file.size / 1024).toFixed(1)} KB)
+          </div>
+        `;
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const lastDisruption = localStorage.getItem('lastDisruptionPageResult');
+      if (lastDisruption) {
+        const resultDiv = document.getElementById('result');
+        if (resultDiv) resultDiv.innerHTML = lastDisruption;
+      }
+    });
+  </script>
+</body>
+</html> 

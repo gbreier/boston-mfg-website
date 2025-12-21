@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enhanced Scenarios Table Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f3f6f9;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2em;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    /* Header */
+    h1 {
+      color: #1976d2;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+
+    /* Demo Sections */
+    .demo-section {
+      margin-bottom: 2em;
+      padding: 1.5em;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+    }
+
+    .demo-section h2 {
+      color: #1976d2;
+      margin-bottom: 1em;
+    }
+
+    .demo-section h3 {
+      color: #333;
+      margin-bottom: 0.8em;
+      font-size: 1.1em;
+    }
+
+    /* BOM Preview Tables */
+    .bom-preview {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 1.5em;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+    }
+
+    .bom-summary {
+      background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+      color: white;
+      padding: 1em 1.5em;
+      font-weight: 600;
+      font-size: 0.95em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .bom-table-container {
+      max-height: 320px;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .bom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      background: white;
+    }
+
+    .bom-table thead th {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #333;
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid #dee2e6;
+      font-size: 0.85em;
+      z-index: 10;
+    }
+
+    .bom-table tbody tr {
+      transition: all 0.2s ease;
+      border-bottom: 1px solid #f1f3f4;
+    }
+
+    .bom-table tbody tr:hover {
+      background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.1);
+    }
+
+    .bom-table tbody tr:nth-child(even) {
+      background: #fafbfc;
+    }
+
+    .bom-table tbody tr:nth-child(even):hover {
+      background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+    }
+
+    .bom-table td {
+      padding: 10px;
+      border-bottom: 1px solid #f1f3f4;
+      vertical-align: middle;
+    }
+
+    .bom-table .item-number {
+      font-weight: 600;
+      color: #1976d2;
+      text-align: center;
+      width: 50px;
+    }
+
+    .bom-table .description {
+      font-weight: 500;
+      color: #333;
+      max-width: 250px;
+    }
+
+    .bom-table .part-number {
+      font-family: 'Courier New', monospace;
+      background: #f8f9fa;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      color: #495057;
+      font-weight: 500;
+    }
+
+    .bom-table .manufacturer {
+      color: #6c757d;
+      font-weight: 500;
+    }
+
+    .bom-table .supplier {
+      display: inline-block;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.8em;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .bom-table .cost {
+      font-weight: 600;
+      color: #28a745;
+      text-align: right;
+    }
+
+    .bom-table .quantity {
+      text-align: center;
+      font-weight: 500;
+      color: #495057;
+    }
+
+    .component-type-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 0.75em;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+
+    .badge-semiconductor {
+      background: transparent;
+      color: #c62828;
+    }
+
+    .badge-passive {
+      background: transparent;
+      color: #2e7d32;
+    }
+
+    .badge-connector {
+      background: transparent;
+      color: #ef6c00;
+    }
+
+    .badge-mechanical {
+      background: transparent;
+      color: #7b1fa2;
+    }
+
+    .badge-pcb {
+      background: transparent;
+      color: #1565c0;
+    }
+
+    /* Buttons */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 0.8em 1.5em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      background: #1565c0;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Results */
+    .result {
+      margin-top: 1em;
+      padding: 1em;
+      border-radius: 6px;
+      background: #f8f9fa;
+      border-left: 4px solid #1976d2;
+    }
+
+    .result h3 {
+      margin-top: 0;
+      color: #1976d2;
+    }
+
+    /* Loading and Feedback */
+    .spinner {
+      border: 4px solid #e3f2fd;
+      border-top: 4px solid #1976d2;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      animation: spin 1s linear infinite;
+      margin: 1em auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .error {
+      color: #d32f2f;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      margin-top: 1em;
+      border: 1px solid #d32f2f;
+    }
+
+    /* Feature List */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      margin-bottom: 0.8em;
+      padding-left: 1.5em;
+      position: relative;
+    }
+
+    .feature-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .feature-list strong {
+      color: #1976d2;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1em;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .bom-preview {
+        font-size: 0.8em;
+        max-height: 150px;
+      }
+    }
+
+    .bom-table-container {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .bom-table thead th {
+      position: sticky;
+      top: 0;
+      background: #f5f5f5;
+      z-index: 2;
+    }
+
+    /* Logo Header */
+    .logo-header {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-header svg {
+      width: 40px;
+      height: 40px;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+    
+    .logo-header a {
+      cursor: pointer;
+      display: block;
+      pointer-events: auto;
+      z-index: 1000;
+      position: relative;
+    }
+    
+    .logo-header a:hover svg {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .logo-header {
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+      }
+      
+      .logo-header svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .back-button {
+      margin-bottom: 1em;
+      padding: 0.5em 1.2em;
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .back-button:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo Header -->
+  <div class="logo-header">
+    <a href="/" style="text-decoration: none; color: inherit; cursor: pointer;" title="Back to Home">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#424242;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#212121;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#redGradient)" stroke-width="6"/>
+        <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6"/>
+        <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blackGradient)" stroke-width="6"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="container">
+    <a href="index.html" class="back-button">← Back</a>
+    <h1>Enhanced Scenarios Table Demo</h1>
+    
+    <div class="demo-section">
+      <h2>📋 Sample BOM Data</h2>
+      <p>This demo uses the actual BOM data from your CSV files to generate realistic disruption scenarios.</p>
+      
+      <h3>Electronic Components (Simple_PCBA_BOM - Elec.csv):</h3>
+      <div class="bom-preview" id="elecBom">
+        Item,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total
+1,"Microcontroller (ATtiny85 SOIC-8)",ATTINY85-20SU,Microchip,Digi-Key,1,1.4,1.4
+2,"LED (Red 0805 SMD)",LTST-C170KRKT,Lite-On,Mouser,1,0.08,0.08
+3,"Resistor (330Ω 1% 0805)",CRCW0805330RFKEA,Vishay,Digi-Key,1,0.02,0.02
+4,"Capacitor (10uF 16V 0805)",CL21A106KAYNNNE,Samsung Electro-Mechanics,Mouser,1,0.04,0.04
+5,USB Mini-B Connector,1734035-2,TE Connectivity,Digi-Key,1,0.9,0.9
+6,"PCB (2-layer 1.6mm FR4 50x50mm)",Custom,JLCPCB,JLCPCB,1,1,1
+      </div>
+      
+      <h3>Mechanical Components (Simple_PCBA_BOM - Mech.csv):</h3>
+      <div class="bom-preview" id="mechBom">
+        Item,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total
+1,Aluminum Enclosure (100mm x 50mm x 25mm),1455C801,Hammond,Digi-Key,1,8.5,8.5
+2,M3 x 6mm Socket Head Cap Screw (Stainless),91290A110,McMaster-Carr,McMaster,4,0.1,0.4
+3,"Nylon PCB Standoff, M3, 10mm Height",NYL-M3-10,Essentra,Digi-Key,4,0.12,0.48
+4,Silicone Gasket Sheet (100mm x 50mm x 1mm),SGSK-10050,Stockwell Elastomerics,Stockwell,1,2.5,2.5
+5,Snap-fit Panel Mount,SPM-25,Richco,Mouser,2,0.3,0.6
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2>🔍 Generate Enhanced Scenarios</h2>
+      <p>Click the buttons below to test the enhanced scenarios table generation with different combinations of BOM data.</p>
+      
+      <div class="button-group">
+        <button onclick="testElectronicBOM()">Test with Electronic BOM Only</button>
+        <button onclick="testMechanicalBOM()">Test with Mechanical BOM Only</button>
+        <button onclick="testCombinedBOM()">Test with Combined BOM</button>
+        <button onclick="testWithDisruption()">Test with Specific Disruption</button>
+      </div>
+      
+      <div id="result"></div>
+    </div>
+    
+    <div class="demo-section">
+      <h2>✨ Enhanced Features</h2>
+      <ul class="feature-list">
+        <li><strong>Component-Specific Analysis:</strong> Scenarios now reference actual part numbers and suppliers from your BOM</li>
+        <li><strong>BOM Statistics:</strong> Automatic calculation of component count, total cost, and supplier diversity</li>
+        <li><strong>Realistic Scenarios:</strong> AI generates scenarios based on actual suppliers (Digi-Key, Mouser, JLCPCB, etc.)</li>
+        <li><strong>Enhanced Explanations:</strong> Detailed component-level explanations when you click "Explain"</li>
+        <li><strong>Visual Improvements:</strong> Better table formatting with component highlighting</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Sample BOM Data
+    const BOM_DATA = {
+      electronic: `Item,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total
+1,"Microcontroller (ATtiny85, SOIC-8)",ATTINY85-20SU,Microchip,Digi-Key,1,1.4,1.4
+2,"LED (Red, 0805 SMD)",LTST-C170KRKT,Lite-On,Mouser,1,0.08,0.08
+3,"Resistor (330Ω, 1%, 0805)",CRCW0805330RFKEA,Vishay,Digi-Key,1,0.02,0.02
+4,"Capacitor (10uF, 16V, 0805)",CL21A106KAYNNNE,Samsung Electro-Mechanics,Mouser,1,0.04,0.04
+5,USB Mini-B Connector,1734035-2,TE Connectivity,Digi-Key,1,0.9,0.9
+6,"PCB (2-layer, 1.6mm FR4, 50x50mm)",Custom,JLCPCB,JLCPCB,1,1,1`,
+
+      mechanical: `Item,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total
+1,Aluminum Enclosure (100mm x 50mm x 25mm),1455C801,Hammond,Digi-Key,1,8.5,8.5
+2,M3 x 6mm Socket Head Cap Screw (Stainless),91290A110,McMaster-Carr,McMaster,4,0.1,0.4
+3,"Nylon PCB Standoff, M3, 10mm Height",NYL-M3-10,Essentra,Digi-Key,4,0.12,0.48
+4,Silicone Gasket Sheet (100mm x 50mm x 1mm),SGSK-10050,Stockwell Elastomerics,Stockwell,1,2.5,2.5
+5,Snap-fit Panel Mount,SPM-25,Richco,Mouser,2,0.3,0.6`
+    };
+
+    // DOM Elements
+    const resultDiv = document.getElementById('result');
+
+    // Initialize page with BOM summaries
+    document.addEventListener('DOMContentLoaded', function() {
+      updateBOMSummaries();
+    });
+
+    /**
+     * Calculate estimated lead time based on suppliers in BOM
+     */
+    function calculateEstimatedLeadTime(bomText) {
+      const supplierLeadTimes = {
+        'tme': 5,
+        'digi-key': 3,
+        'digikey': 3,
+        'mouser': 5,
+        'jlcpcb': 7,
+        'pcbway': 7,
+        'oshpark': 10,
+        'adafruit': 5,
+        'sparkfun': 5,
+        'arrow': 7,
+        'avnet': 7,
+        'newark': 5,
+        'farnell': 5,
+        'element14': 5,
+        'rs-components': 5,
+        'allied': 5,
+        'mcmaster': 2,
+        'mcmaster-carr': 2,
+        'stockwell': 7,
+        'essentra': 5,
+        'richco': 7,
+        'hammond': 10,
+        'te connectivity': 7,
+        'microchip': 14,
+        'vishay': 10,
+        'samsung': 14,
+        'lite-on': 10
+      };
+
+      const lines = bomText.split('\n').filter(line => line.trim());
+      if (lines.length < 2) return 7;
+
+      const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+      const supplierIndex = headers.findIndex(h => h.toLowerCase().includes('supplier'));
+      
+      // Find lead time column indices
+      const leadTimeColumns = [
+        'Lead Time', 'Lead Time (days)', 'Avg Lead Time (days)', 
+        'Lead Time Days', 'Leadtime', 'lead_time', 'leadTime',
+        'Delivery Time', 'Delivery Time (days)', 'Supplier Lead Time'
+      ];
+      
+      const leadTimeIndex = headers.findIndex(h => 
+        leadTimeColumns.some(col => h.toLowerCase().includes(col.toLowerCase()))
+      );
+
+      let maxLeadTime = 0;
+
+      lines.slice(1).forEach(line => {
+        const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+        
+        // First priority: Check actual lead time data in BOM
+        if (leadTimeIndex !== -1 && values[leadTimeIndex]) {
+          const leadTimeValue = values[leadTimeIndex].trim();
+          if (leadTimeValue && !['', 'n/a', 'na', 'none', 'tbd'].includes(leadTimeValue.toLowerCase())) {
+            const matches = leadTimeValue.match(/\d+/);
+            if (matches) {
+              const actualLeadTime = parseInt(matches[0]);
+              if (actualLeadTime > 0) {
+                maxLeadTime = Math.max(maxLeadTime, actualLeadTime);
+                return; // Use actual data, skip supplier lookup
+              }
+            }
+          }
+        }
+        
+        // Second priority: Use supplier lookup table
+        if (supplierIndex !== -1) {
+          const supplier = values[supplierIndex];
+          if (supplier) {
+            const supplierLower = supplier.toLowerCase();
+            let leadTime = 7; // Default 7 days
+
+            for (const [supplierKey, leadTimeValue] of Object.entries(supplierLeadTimes)) {
+              if (supplierLower.includes(supplierKey) || supplierKey.includes(supplierLower)) {
+                leadTime = leadTimeValue;
+                break;
+              }
+            }
+
+            maxLeadTime = Math.max(maxLeadTime, leadTime);
+          }
+        }
+      });
+
+      return maxLeadTime || 7;
+    }
+
+    /**
+     * Calculate BOM statistics
+     */
+    function calculateBOMStats(bomText) {
+      const lines = bomText.split('\n').filter(line => line.trim());
+      if (lines.length < 2) return { componentCount: 0, totalCost: 0, suppliers: 0, leadTime: 7 };
+
+      const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+      const supplierIndex = headers.findIndex(h => h.toLowerCase().includes('supplier'));
+      
+      // Look for Total column first (already calculated total cost per component)
+      const totalIndex = headers.findIndex(h => h.toLowerCase().includes('total') && !h.toLowerCase().includes('unit'));
+      
+      // Look for Unit Cost and Quantity columns
+      const unitCostIndex = headers.findIndex(h => h.toLowerCase().includes('unit') && h.toLowerCase().includes('cost'));
+      const quantityIndex = headers.findIndex(h => h.toLowerCase().includes('qty') || h.toLowerCase().includes('quantity'));
+
+      const suppliers = new Set();
+      let totalCost = 0;
+
+      lines.slice(1).forEach(line => {
+        const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+        
+        if (supplierIndex !== -1 && values[supplierIndex]) {
+          suppliers.add(values[supplierIndex]);
+        }
+        
+        // Calculate cost per component
+        if (totalIndex !== -1 && values[totalIndex]) {
+          // Use pre-calculated total column
+          totalCost += parseFloat(values[totalIndex]) || 0;
+        } else if (unitCostIndex !== -1 && quantityIndex !== -1 && values[unitCostIndex] && values[quantityIndex]) {
+          // Calculate: unit cost × quantity
+          const unitCost = parseFloat(values[unitCostIndex]) || 0;
+          const quantity = parseFloat(values[quantityIndex]) || 1;
+          totalCost += unitCost * quantity;
+        } else if (unitCostIndex !== -1 && values[unitCostIndex]) {
+          // Fallback: use unit cost (assume quantity = 1)
+          totalCost += parseFloat(values[unitCostIndex]) || 0;
+        }
+      });
+
+      return {
+        componentCount: lines.length - 1,
+        totalCost: totalCost,
+        suppliers: suppliers.size,
+        leadTime: calculateEstimatedLeadTime(bomText)
+      };
+    }
+
+    /**
+     * Determine component type and badge class
+     */
+    function getComponentType(description) {
+      const desc = description.toLowerCase();
+      if (desc.includes('microcontroller') || desc.includes('processor') || desc.includes('mcu') || desc.includes('attiny') || desc.includes('ic')) {
+        return { type: 'Semiconductor', class: 'badge-semiconductor' };
+      } else if (desc.includes('resistor') || desc.includes('capacitor') || desc.includes('led')) {
+        return { type: 'Passive', class: 'badge-passive' };
+      } else if (desc.includes('connector') || desc.includes('usb')) {
+        return { type: 'Connector', class: 'badge-connector' };
+      } else if (desc.includes('pcb') || desc.includes('board')) {
+        return { type: 'PCB', class: 'badge-pcb' };
+      } else if (desc.includes('enclosure') || desc.includes('screw') || desc.includes('standoff') || desc.includes('gasket') || desc.includes('mount')) {
+        return { type: 'Mechanical', class: 'badge-mechanical' };
+      }
+      return { type: 'Other', class: 'badge-connector' };
+    }
+
+    /**
+     * Parse CSV data into array of objects
+     */
+    function parseCSVData(csvString) {
+      const lines = csvString.split('\n').filter(line => line.trim());
+      if (lines.length < 2) return [];
+      
+      const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+      const data = [];
+      
+      lines.slice(1).forEach(line => {
+        const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+        const row = {};
+        headers.forEach((header, index) => {
+          row[header] = values[index] || '';
+        });
+        data.push(row);
+      });
+      
+      return data;
+    }
+
+    /**
+     * Generate HTML table from BOM data
+     */
+    function generateBOMTable(bomData, title, icon) {
+      const data = parseCSVData(bomData);
+      if (data.length === 0) return '';
+
+      const stats = calculateBOMStats(bomData);
+      
+      let tableHTML = `
+        <div class="bom-summary">
+          ${icon} ${title}: ${stats.componentCount} components | $${stats.totalCost.toFixed(2)} total cost | ${stats.suppliers} suppliers | ⏱️ ${stats.leadTime} days lead time
+        </div>
+        <div class="bom-table-container">
+          <table class="bom-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Description</th>
+                <th>Part Number</th>
+                <th>Manufacturer</th>
+                <th>Supplier</th>
+                <th>Qty</th>
+                <th>Unit Cost</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+      data.forEach((row, index) => {
+        const componentType = getComponentType(row.Description || '');
+        const item = row.Item || (index + 1);
+        const description = row.Description || 'N/A';
+        const partNumber = row['Manufacturer Part #'] || 'N/A';
+        const manufacturer = row.Manufacturer || 'N/A';
+        const supplier = row.Supplier || 'N/A';
+        const qty = row.Qty || row.Quantity || '1';
+        const unitCost = row['Unit Cost (USD)'] || '0';
+        const total = row.Total || '0';
+
+        tableHTML += `
+          <tr>
+            <td class="item-number">${item}</td>
+            <td class="description">
+              ${description}
+              <span class="component-type-badge ${componentType.class}">${componentType.type}</span>
+            </td>
+            <td class="part-number">${partNumber}</td>
+            <td class="manufacturer">${manufacturer}</td>
+            <td class="supplier">${supplier}</td>
+            <td class="quantity">${qty}</td>
+            <td class="cost">$${parseFloat(unitCost).toFixed(2)}</td>
+            <td class="cost">$${parseFloat(total).toFixed(2)}</td>
+          </tr>
+        `;
+      });
+
+      tableHTML += `
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      return tableHTML;
+    }
+
+    /**
+     * Update BOM summaries with beautiful tables
+     */
+    function updateBOMSummaries() {
+      const elecBomDiv = document.getElementById('elecBom');
+      const mechBomDiv = document.getElementById('mechBom');
+
+      if (elecBomDiv) {
+        elecBomDiv.innerHTML = generateBOMTable(
+          BOM_DATA.electronic, 
+          'Electronic Components', 
+          '⚡'
+        );
+      }
+
+      if (mechBomDiv) {
+        mechBomDiv.innerHTML = generateBOMTable(
+          BOM_DATA.mechanical, 
+          'Mechanical Components', 
+          '🔧'
+        );
+      }
+    }
+
+    // API Functions
+    async function generateScenarios(bom, supplierInfo = '', kpi = '', openText = '') {
+      showLoading();
+      
+      try {
+        const response = await fetch('/api/disruption-analysis', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bom, supplierInfo, kpi, openText })
+        });
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          showError(data.error);
+        } else {
+          showResult(data.result);
+        }
+      } catch (error) {
+        showError(`Error: ${error.message}`);
+        console.error('API Error:', error);
+      }
+    }
+
+    // Test Functions
+    function testElectronicBOM() {
+      generateScenarios(BOM_DATA.electronic, '', '', 'Testing with electronic components BOM');
+    }
+
+    function testMechanicalBOM() {
+      generateScenarios(BOM_DATA.mechanical, '', '', 'Testing with mechanical components BOM');
+    }
+
+    function testCombinedBOM() {
+      const combinedBom = BOM_DATA.electronic + '\n' + BOM_DATA.mechanical;
+      generateScenarios(combinedBom, '', '', 'Testing with combined electronic and mechanical BOM');
+    }
+
+    function testWithDisruption() {
+      const combinedBom = BOM_DATA.electronic + '\n' + BOM_DATA.mechanical;
+      generateScenarios(
+        combinedBom, 
+        'Digi-Key experiencing 2-week delays, Mouser stock issues', 
+        'Historical lead time: 15 days average', 
+        'Microchip supply shortage affecting ATtiny85 availability'
+      );
+    }
+
+    // Utility Functions
+    function showLoading() {
+      resultDiv.innerHTML = '<div class="spinner"></div>';
+    }
+
+    function showResult(content) {
+      resultDiv.innerHTML = `
+        <div class="result">
+          <h3>Generated Scenarios:</h3>
+          ${content}
+        </div>
+      `;
+    }
+
+    function showError(message) {
+      resultDiv.innerHTML = `<div class="error">${message}</div>`;
+    }
+  </script>
+</body>
+</html> 

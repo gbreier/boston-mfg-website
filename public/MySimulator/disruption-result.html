@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disruption Analysis Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f6f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      margin-top: 2em;
+      padding: 2em 2.5em 2.5em 2.5em;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      max-width: 1400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    h1 {
+      color: #1976d2;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    /* Summary Section */
+    #summary {
+      width: 100%;
+      background: #e3f2fd;
+      border-radius: 8px;
+      padding: 1em 1.5em;
+      margin-bottom: 1.5em;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    #summary strong {
+      color: #1976d2;
+    }
+
+    .bom-summary {
+      background: #f0f8ff;
+      padding: 0.8em;
+      border-radius: 6px;
+      margin-bottom: 1em;
+      font-size: 0.9em;
+    }
+
+    .summary-item {
+      margin-bottom: 1em;
+    }
+
+    .summary-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .summary-label {
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 0.3em;
+    }
+
+    .summary-content {
+      font-family: monospace;
+      background: #f5f5f5;
+      padding: 0.3em;
+      border-radius: 3px;
+      word-break: break-word;
+    }
+
+    /* BOM Table */
+    .bom-table-container {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .bom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8em;
+    }
+
+    .bom-table thead th {
+      position: sticky;
+      top: 0;
+      background: #f5f5f5;
+      z-index: 2;
+    }
+
+    .bom-table th,
+    .bom-table td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      text-align: left;
+    }
+
+    .bom-table th {
+      font-weight: bold;
+    }
+
+    /* Country Origins Table */
+    #country-origins {
+      width: 100%;
+      margin: 1.5em 0;
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.5em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: none;
+    }
+
+    .country-origins-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 1em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .country-table-container {
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .country-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+    }
+
+    .country-table thead th {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+      color: white;
+      z-index: 2;
+      font-weight: bold;
+      padding: 12px;
+      text-align: left;
+      border-bottom: 2px solid #0d47a1;
+    }
+
+    .country-table tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    .country-table tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    .country-table tbody tr:hover {
+      background-color: #e3f2fd;
+    }
+
+    .country-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .country-name {
+      font-weight: 500;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .country-flag {
+      font-size: 1.2em;
+    }
+
+    .component-count {
+      font-weight: bold;
+      color: #1976d2;
+      text-align: center;
+    }
+
+    .component-percentage {
+      color: #666;
+      text-align: right;
+      font-size: 0.9em;
+    }
+
+    .country-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1em;
+      padding: 0.8em;
+      background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+      border-radius: 8px;
+      border-left: 4px solid #1976d2;
+    }
+
+    .total-countries {
+      font-weight: bold;
+      color: #1976d2;
+    }
+
+    .risk-indicator {
+      padding: 0.3em 0.8em;
+      border-radius: 15px;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+
+    .risk-low {
+      background: transparent;
+      color: #2e7d32;
+    }
+
+    .risk-medium {
+      background: transparent;
+      color: #ef6c00;
+    }
+
+    .risk-high {
+      background: transparent;
+      color: #c62828;
+    }
+
+    /* Results Section */
+    #result {
+      margin-top: 1.5em;
+      width: 100%;
+      min-height: 2em;
+      word-break: break-word;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Explanation Section */
+    #explanation {
+      margin-top: 2em;
+      width: 100%;
+      background: #fff;
+      border-radius: 8px;
+      padding: 1em 1.5em;
+      font-size: 1em;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: none;
+    }
+
+    /* Loading and Feedback */
+    .spinner {
+      border: 4px solid #e3f2fd;
+      border-top: 4px solid #1976d2;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      animation: spin 1s linear infinite;
+      margin: 1.5em auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .error {
+      color: #d32f2f;
+      background: #fff;
+      padding: 0.7em 1em;
+      border-radius: 6px;
+      margin-top: 1em;
+      text-align: center;
+      width: 100%;
+      border: 1px solid #d32f2f;
+    }
+
+    /* Tables */
+    table {
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      width: 100%;
+    }
+
+    th, td {
+      font-size: 0.8em;
+      white-space: nowrap;
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      padding: 6px;
+      border: 1px solid #ccc;
+    }
+
+    /* Action Buttons */
+    .explain-btn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0.3em 0.9em;
+      font-size: 0.8em;
+      cursor: pointer;
+      margin-left: 0.5em;
+      transition: background 0.2s;
+    }
+
+    .explain-btn:hover {
+      background: #1565c0;
+    }
+
+    .back-btn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1em;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-btn:hover {
+      background: #1565c0;
+    }
+
+    /* Tooltip */
+    .tooltip {
+      position: fixed;
+      z-index: 9999;
+      background: rgba(30,30,30,0.97);
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 7px;
+      font-size: 1em;
+      max-width: 400px;
+      white-space: pre-line;
+      pointer-events: none;
+      display: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 800px) {
+      .container {
+        padding: 1em 0.5em 1.5em 0.5em;
+        max-width: 98vw;
+      }
+
+      .bom-table-container {
+        max-height: 200px;
+      }
+
+      .bom-table {
+        font-size: 0.7em;
+      }
+
+      #country-origins {
+        padding: 1em;
+        margin: 1em 0;
+      }
+
+      .country-origins-title {
+        font-size: 1.1em;
+      }
+
+      .country-summary {
+        flex-direction: column;
+        gap: 0.5em;
+        text-align: center;
+      }
+
+      .country-table {
+        font-size: 0.8em;
+      }
+
+      .country-table th,
+      .country-table td {
+        padding: 8px 6px;
+      }
+
+      .country-name {
+        font-size: 0.9em;
+      }
+
+      .country-flag {
+        font-size: 1em;
+      }
+    }
+
+    /* Logo Header */
+    .logo-header {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-header svg {
+      width: 40px;
+      height: 40px;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+    
+    .logo-header a {
+      cursor: pointer;
+      display: block;
+      pointer-events: auto;
+      z-index: 1000;
+      position: relative;
+    }
+    
+    .logo-header a:hover svg {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+      .logo-header {
+        top: 10px;
+        left: 10px;
+        padding: 8px;
+      }
+      
+      .logo-header svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo Header -->
+  <div class="logo-header">
+    <a href="/" style="text-decoration: none; color: inherit; cursor: pointer;" title="Back to Home">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#424242;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#212121;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#redGradient)" stroke-width="6"/>
+        <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6"/>
+        <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blackGradient)" stroke-width="6"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="container">
+    <a href="/MySimulator/disruption.html" class="back-btn" style="align-self: flex-start; margin-bottom: 1em;">← Back to Disruption Analysis</a>
+    <h1>Disruption Analysis Result</h1>
+    <div id="summary"></div>
+    <div id="country-origins"></div>
+    <div id="result"></div>
+    <div id="explanation"></div>
+  </div>
+
+  <script src="/MySimulator/global-ai-mode.js"></script>
+  <script src="/MySimulator/api-config.js"></script>
+  <script>
+    // DOM Elements
+    const summaryDiv = document.getElementById('summary');
+    const resultDiv = document.getElementById('result');
+    const explanationDiv = document.getElementById('explanation');
+
+    // Data Variables
+    let bom = '';
+    let kpi = '';
+    let openText = '';
+    let bomArray = [];
+    let kpiArray = [];
+    let kpiFileName = '';
+
+    // Initialize page
+    initializePage();
+
+    function initializePage() {
+      // Clear supplier evaluation data when entering disruption analysis
+      clearSupplierEvaluationData();
+      
+      loadDataFromStorage();
+      
+      if (!hasValidBOM()) {
+        // Check if there's additional information to proceed with limited analysis
+        if (hasAdditionalInfo()) {
+          showLimitedAnalysisWarning();
+          renderCountryOrigins(); // This will be empty but that's OK
+        } else {
+          showNoBOMError();
+          return;
+        }
+      } else {
+        renderSummary();
+        renderCountryOrigins();
+      }
+      
+      // Check if we're coming back from mitigation plan or if we have stored results
+      const lastResult = localStorage.getItem('lastDisruptionResult');
+      const lastExplanation = localStorage.getItem('lastDisruptionExplanation');
+      
+      if (lastResult && !shouldRunNewAnalysis()) {
+        // Preserve existing results
+        resultDiv.innerHTML = lastResult;
+        addExplainButtonsToTable(resultDiv.querySelector('table'));
+        addCustomTooltipToTable(resultDiv.querySelector('table'));
+        
+        if (lastExplanation) {
+          explanationDiv.innerHTML = lastExplanation;
+          explanationDiv.style.display = 'block';
+        }
+      } else {
+        // Run new analysis
+        fetchDisruptionAnalysis();
+      }
+    }
+    
+    function shouldRunNewAnalysis() {
+      // Check if we're coming from the disruption form (has form data)
+      const urlParams = new URLSearchParams(window.location.search);
+      const fromForm = urlParams.has('fromForm') || 
+                       document.referrer.includes('disruption.html') ||
+                       !localStorage.getItem('lastDisruptionResult');
+      
+      return fromForm;
+    }
+    
+    // Clear supplier evaluation data
+    function clearSupplierEvaluationData() {
+      const keys = Object.keys(localStorage);
+      let clearedItems = 0;
+      
+      keys.forEach(key => {
+        if (key.startsWith('supplier_') || key.startsWith('evaluation_')) {
+          localStorage.removeItem(key);
+          clearedItems++;
+        }
+      });
+      
+      if (clearedItems > 0) {
+        console.log(`Cleared ${clearedItems} supplier evaluation data items`);
+      }
+    }
+
+    function loadDataFromStorage() {
+      // Get data from localStorage
+      bom = localStorage.getItem('bom') || '';
+      kpi = localStorage.getItem('kpi') || '';
+      openText = localStorage.getItem('openText') || '';
+      
+      // Try to get data from disruptionData if available (from file upload)
+      try {
+        const disruptionData = JSON.parse(localStorage.getItem('disruptionData') || '{}');
+        if (disruptionData.bomContent) {
+          bom = disruptionData.bomContent;
+        }
+        if (disruptionData.kpiContent) {
+          kpi = disruptionData.kpiContent;
+        }
+        if (disruptionData.openText) {
+          openText = disruptionData.openText;
+        }
+        if (disruptionData.kpiFile) {
+          kpiFileName = disruptionData.kpiFile;
+        }
+      } catch (error) {
+        console.log('Error parsing disruption data:', error);
+      }
+      
+      // Parse BOM and KPI data
+      parseBOMData();
+      parseKPIData();
+    }
+
+    function parseBOMData() {
+      try {
+        bomArray = JSON.parse(bom);
+      } catch {
+        // Try to parse as CSV if JSON parsing fails
+        try {
+          const lines = bom.split('\n').filter(line => line.trim());
+          if (lines.length > 1) {
+            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+            bomArray = lines.slice(1).map(line => {
+              const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+              const row = {};
+              headers.forEach((header, index) => {
+                row[header] = values[index] || '';
+              });
+              return row;
+            });
+          }
+        } catch (error) {
+          console.log('CSV parsing error:', error);
+        }
+      }
+    }
+
+    function parseKPIData() {
+      if (!kpi || kpi.trim() === '') {
+        kpiArray = [];
+        return;
+      }
+
+      try {
+        kpiArray = JSON.parse(kpi);
+      } catch {
+        // Try to parse as CSV if JSON parsing fails
+        try {
+          const lines = kpi.split('\n').filter(line => line.trim());
+          if (lines.length > 1) {
+            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+            kpiArray = lines.slice(1).map(line => {
+              const values = line.split(',').map(v => v.trim().replace(/"/g, ''));
+              const row = {};
+              headers.forEach((header, index) => {
+                row[header] = values[index] || '';
+              });
+              return row;
+            });
+          }
+        } catch (error) {
+          console.log('KPI CSV parsing error:', error);
+          kpiArray = [];
+        }
+      }
+    }
+
+    function hasValidBOM() {
+      return bom && (Array.isArray(bomArray) && bomArray.length > 0);
+    }
+
+    function hasAdditionalInfo() {
+      return openText && openText.trim() !== '';
+    }
+
+    function showNoBOMError() {
+      summaryDiv.innerHTML = `
+        <div class="error">No BOM found. Please upload a BOM first.</div>
+        <a href="/MySimulator/index.html" class="back-btn">Go to Upload Page</a>
+      `;
+      resultDiv.innerHTML = '';
+    }
+
+    function showLimitedAnalysisWarning() {
+      summaryDiv.innerHTML = `
+        <div class="warning" style="background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; padding: 1em; border-radius: 8px; margin-bottom: 1.5em;">
+          <strong>⚠️ Limited Analysis:</strong> This analysis is based only on the additional information provided, without BOM data. 
+          For comprehensive disruption analysis including component-specific risks, costs, and supplier intelligence, please upload a BOM file.
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">📋 BOM Details:</div>
+          <div class="summary-content">No BOM provided</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">📈 Historical KPIs:</div>
+          ${renderKPIData()}
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">ℹ️ Additional Info:</div>
+          <div class="summary-content">${openText || 'Not provided'}</div>
+        </div>
+      `;
+    }
+
+    function renderSummary() {
+      let bomHtml = '';
+      let bomStats = '';
+      
+      if (Array.isArray(bomArray) && bomArray.length > 0) {
+        // Calculate BOM statistics
+        const totalCost = bomArray.reduce((sum, item) => {
+          // First try to use pre-calculated Total column
+          let itemCost = parseFloat(item['Total'] || 0);
+          
+          // If no Total column, calculate from Unit Cost × Quantity
+          if (!itemCost && item['Unit Cost (USD)']) {
+            const unitCost = parseFloat(item['Unit Cost (USD)'] || 0);
+            const quantity = parseFloat(item['Quantity'] || item['Qty'] || 1);
+            itemCost = unitCost * quantity;
+          }
+          
+          return sum + itemCost;
+        }, 0);
+        
+        const manufacturers = new Set(bomArray.map(item => item['Manufacturer']).filter(Boolean));
+        
+        bomStats = `
+          <div class="bom-summary">
+            <strong>📊 BOM Summary:</strong> ${bomArray.length} components | $${totalCost.toFixed(2)} total cost | ${manufacturers.size} manufacturers
+          </div>
+        `;
+        
+        // Render as enhanced table
+        const headers = Object.keys(bomArray[0]);
+        bomHtml = `
+          <div class="bom-table-container">
+            <table class="bom-table">
+              <thead>
+                <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
+              </thead>
+              <tbody>
+                ${bomArray.map(row => '<tr>' + headers.map(h => `<td>${row[h] || ''}</td>`).join('') + '</tr>').join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      } else {
+        bomHtml = `<span class="summary-content">${bom}</span>`;
+      }
+      
+      summaryDiv.innerHTML = `
+        ${bomStats}
+        <div class="summary-item">
+          <div class="summary-label">📋 BOM Details:</div>
+          ${bomHtml}
+        </div>
+
+        <div class="summary-item">
+          <div class="summary-label">📈 Historical KPIs:</div>
+          ${renderKPIData()}
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">ℹ️ Additional Info:</div>
+          <div class="summary-content">${openText || 'Not provided'}</div>
+        </div>
+      `;
+
+      // Add tooltip functionality to BOM table
+      const bomTable = summaryDiv.querySelector('.bom-table');
+      if (bomTable) {
+        addCustomTooltipToTable(bomTable);
+      }
+
+      // Add tooltip functionality to KPI table
+      const kpiTable = summaryDiv.querySelector('.kpi-table');
+      if (kpiTable) {
+        addCustomTooltipToTable(kpiTable);
+      }
+    }
+
+    function renderKPIData() {
+      if (!kpi || kpi.trim() === '') {
+        return '<div class="summary-content">Not provided</div>';
+      }
+
+      if (Array.isArray(kpiArray) && kpiArray.length > 0) {
+        // Calculate KPI statistics
+        const totalRecords = kpiArray.length;
+        const kpiFileName_display = kpiFileName ? ` (${kpiFileName})` : '';
+        
+        const kpiStats = `
+          <div class="bom-summary" style="background: #fff;">
+            <strong>📊 KPI Summary:</strong> ${totalRecords} historical records${kpiFileName_display}
+          </div>
+        `;
+        
+        // Render as enhanced table
+        const headers = Object.keys(kpiArray[0]);
+        const kpiHtml = `
+          <div class="bom-table-container">
+            <table class="bom-table kpi-table">
+              <thead>
+                <tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>
+              </thead>
+              <tbody>
+                ${kpiArray.map(row => '<tr>' + headers.map(h => `<td>${row[h] || ''}</td>`).join('') + '</tr>').join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+        
+        return kpiStats + kpiHtml;
+      } else {
+        return `<div class="summary-content">${kpi}</div>`;
+      }
+    }
+
+    function renderCountryOrigins() {
+      const countryOriginsDiv = document.getElementById('country-origins');
+      
+      if (!Array.isArray(bomArray) || bomArray.length === 0) {
+        countryOriginsDiv.style.display = 'none';
+        return;
+      }
+
+      // Extract country information from BOM data
+      const countryData = extractCountryOrigins(bomArray);
+      
+      if (countryData.length === 0) {
+        countryOriginsDiv.style.display = 'none';
+        return;
+      }
+
+      const totalComponents = bomArray.length;
+      const totalCountries = countryData.length;
+      const totalMappedComponents = countryData.reduce((sum, country) => sum + country.count, 0);
+      const riskLevel = getRiskLevel(totalCountries);
+
+      // Verify counts match
+      console.log('Total BOM components:', totalComponents);
+      console.log('Total mapped components:', totalMappedComponents);
+      console.log('Countries found:', totalCountries);
+
+      countryOriginsDiv.innerHTML = `
+        <div class="country-origins-title">
+          🌍 Component Origins by Country
+        </div>
+        
+        <div class="country-summary">
+          <div class="total-countries">
+            ${totalCountries} countries represented across ${totalComponents} components
+            ${totalMappedComponents !== totalComponents ? `<br><small style="color: #666;">(${totalMappedComponents} components mapped)</small>` : ''}
+          </div>
+          <div class="risk-indicator ${riskLevel.class}">
+            ${riskLevel.text}
+          </div>
+        </div>
+        
+        <div class="country-table-container">
+          <table class="country-table">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th style="text-align: center;">Components</th>
+                <th style="text-align: right;">Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${countryData.map(country => `
+                <tr>
+                  <td>
+                    <div class="country-name">
+                      <span class="country-flag">${getCountryFlag(country.name)}</span>
+                      ${country.name}
+                    </div>
+                  </td>
+                  <td class="component-count">${country.count}</td>
+                  <td class="component-percentage">${country.percentage.toFixed(1)}%</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      countryOriginsDiv.style.display = 'block';
+    }
+
+    function extractCountryOrigins(bomData) {
+      const countryCount = {};
+      let processedCount = 0;
+      
+      bomData.forEach(item => {
+        // Try different possible field names for country/origin information
+        let country = item['Country'] || 
+                     item['Origin'] || 
+                     item['Country of Origin'] || 
+                     item['Manufacturer Country'] ||
+                     item['Source Country'] ||
+                     extractCountryFromManufacturer(item['Manufacturer']) ||
+                     'Unknown';
+        
+        // Clean and normalize country names
+        country = normalizeCountryName(country);
+        
+        // Count ALL components, including Unknown
+        countryCount[country] = (countryCount[country] || 0) + 1;
+        processedCount++;
+      });
+
+      // Debug: Log the counts
+      console.log('BOM Data length:', bomData.length);
+      console.log('Processed count:', processedCount);
+      console.log('Country breakdown:', countryCount);
+
+      // Convert to array and sort by count (descending)
+      return Object.entries(countryCount)
+        .map(([name, count]) => ({
+          name,
+          count,
+          percentage: (count / bomData.length) * 100
+        }))
+        .sort((a, b) => b.count - a.count);
+    }
+
+    function extractCountryFromManufacturer(manufacturer) {
+      if (!manufacturer || manufacturer.trim() === '') return 'Unknown';
+      
+      const manufacturerLower = manufacturer.toLowerCase().trim();
+      
+      // Common manufacturer to country mappings (expanded)
+      const manufacturerCountryMap = {
+        // USA
+        'texas instruments': 'USA',
+        'ti': 'USA',
+        'intel': 'USA',
+        'analog devices': 'USA',
+        'adi': 'USA',
+        'microchip': 'USA',
+        'maxim': 'USA',
+        'linear technology': 'USA',
+        'fairchild': 'USA',
+        'on semiconductor': 'USA',
+        'vishay': 'USA',
+        'motorola': 'USA',
+        'freescale': 'USA',
+        'cypress': 'USA',
+        'microsemi': 'USA',
+        'lattice': 'USA',
+        'xilinx': 'USA',
+        'altera': 'USA',
+        'broadcom': 'USA',
+        'qualcomm': 'USA',
+        'marvell': 'USA',
+        'micron': 'USA',
+        
+        // South Korea
+        'samsung': 'South Korea',
+        'sk hynix': 'South Korea',
+        'lg': 'South Korea',
+        'hynix': 'South Korea',
+        
+        // Japan
+        'sony': 'Japan',
+        'panasonic': 'Japan',
+        'toshiba': 'Japan',
+        'renesas': 'Japan',
+        'murata': 'Japan',
+        'tdk': 'Japan',
+        'kyocera': 'Japan',
+        'rohm': 'Japan',
+        'sharp': 'Japan',
+        'fujitsu': 'Japan',
+        'hitachi': 'Japan',
+        'mitsubishi': 'Japan',
+        'omron': 'Japan',
+        'nichicon': 'Japan',
+        'epson': 'Japan',
+        
+        // Germany
+        'infineon': 'Germany',
+        'bosch': 'Germany',
+        'siemens': 'Germany',
+        'osram': 'Germany',
+        'wago': 'Germany',
+        'phoenix contact': 'Germany',
+        'harting': 'Germany',
+        
+        // Netherlands
+        'nxp': 'Netherlands',
+        'philips': 'Netherlands',
+        
+        // Switzerland
+        'stmicroelectronics': 'Switzerland',
+        'st': 'Switzerland',
+        'u-blox': 'Switzerland',
+        
+        // Taiwan
+        'tsmc': 'Taiwan',
+        'mediatek': 'Taiwan',
+        'foxconn': 'Taiwan',
+        'ase group': 'Taiwan',
+        'realtek': 'Taiwan',
+        'via': 'Taiwan',
+        'winbond': 'Taiwan',
+        'macronix': 'Taiwan',
+        
+        // China
+        'huawei': 'China',
+        'xiaomi': 'China',
+        'byd': 'China',
+        'catl': 'China',
+        'hisilicon': 'China',
+        'allwinner': 'China',
+        'rockchip': 'China',
+        'goodix': 'China',
+        
+        // Other countries
+        'arm': 'United Kingdom',
+        'nordic': 'Norway',
+        'ericsson': 'Sweden',
+        'abb': 'Switzerland',
+        'schneider': 'France',
+        'legrand': 'France',
+        'thales': 'France',
+        'stm': 'Switzerland'
+      };
+
+      // Check for matches (case insensitive, partial matching)
+      for (const [mfg, country] of Object.entries(manufacturerCountryMap)) {
+        if (manufacturerLower.includes(mfg) || mfg.includes(manufacturerLower)) {
+          return country;
+        }
+      }
+
+      // If no match found, try to extract from common patterns
+      if (manufacturerLower.includes('semiconductor') || manufacturerLower.includes('micro') || manufacturerLower.includes('tech')) {
+        // Could be from various countries, return Unknown
+        return 'Unknown';
+      }
+
+      return 'Unknown';
+    }
+
+    function normalizeCountryName(country) {
+      if (!country || country === 'Unknown') return 'Unknown';
+      
+      const countryMappings = {
+        'US': 'USA',
+        'United States': 'USA',
+        'United States of America': 'USA',
+        'Korea': 'South Korea',
+        'Republic of Korea': 'South Korea',
+        'ROK': 'South Korea',
+        'Deutschland': 'Germany',
+        'Nederland': 'Netherlands',
+        'UK': 'United Kingdom',
+        'Great Britain': 'United Kingdom',
+        'PRC': 'China',
+        'People\'s Republic of China': 'China',
+        'Taiwan ROC': 'Taiwan',
+        'Republic of China': 'Taiwan'
+      };
+
+      return countryMappings[country] || country;
+    }
+
+    function getCountryFlag(countryName) {
+      const flagMap = {
+        'USA': '🇺🇸',
+        'China': '🇨🇳',
+        'Japan': '🇯🇵',
+        'South Korea': '🇰🇷',
+        'Germany': '🇩🇪',
+        'Taiwan': '🇹🇼',
+        'Netherlands': '🇳🇱',
+        'Switzerland': '🇨🇭',
+        'United Kingdom': '🇬🇧',
+        'France': '🇫🇷',
+        'Italy': '🇮🇹',
+        'Singapore': '🇸🇬',
+        'Malaysia': '🇲🇾',
+        'Thailand': '🇹🇭',
+        'Philippines': '🇵🇭',
+        'India': '🇮🇳',
+        'Israel': '🇮🇱',
+        'Sweden': '🇸🇪',
+        'Finland': '🇫🇮',
+        'Denmark': '🇩🇰',
+        'Norway': '🇳🇴',
+        'Austria': '🇦🇹',
+        'Belgium': '🇧🇪',
+        'Ireland': '🇮🇪',
+        'Canada': '🇨🇦',
+        'Australia': '🇦🇺',
+        'Unknown': '🏳️'
+      };
+
+      return flagMap[countryName] || '🌍';
+    }
+
+    function getRiskLevel(countryCount) {
+      if (countryCount <= 3) {
+        return { class: 'risk-high', text: 'High Risk - Limited Diversification' };
+      } else if (countryCount <= 6) {
+        return { class: 'risk-medium', text: 'Medium Risk - Moderate Diversification' };
+      } else {
+        return { class: 'risk-low', text: 'Low Risk - Good Diversification' };
+      }
+    }
+
+    async function fetchDisruptionAnalysis() {
+      // Clear old disruption analysis data before starting new analysis
+      clearOldDisruptionData();
+      
+      // Get analysis mode from global setting
+      const analysisMode = getGlobalAIMode();
+      const modeLabels = {
+        'comprehensive': '🧠 Comprehensive Mode',
+        'fast': '⚡ Fast Mode'
+      };
+      const modeColors = {
+        'comprehensive': '#1976d2',
+        'fast': '#4caf50'
+      };
+      const modeLabel = modeLabels[analysisMode] || modeLabels['comprehensive'];
+      const modeColor = modeColors[analysisMode] || modeColors['comprehensive'];
+      
+      resultDiv.innerHTML = `
+        <div class="spinner"></div>
+        <div style="text-align:center;margin-top:1em;font-size:0.95em;color:${modeColor};font-weight:600;">${modeLabel}</div>
+      `;
+      explanationDiv.innerHTML = ''; // Clear any old explanations
+      explanationDiv.style.display = 'none';
+      
+      let bomForBackend = bom;
+      if (Array.isArray(bomArray) && bomArray.length > 0) {
+        bomForBackend = JSON.stringify(bomArray, null, 2);
+      }
+      
+      try {
+        // Prepare KPI data for backend
+        let kpiForBackend = kpi;
+        if (Array.isArray(kpiArray) && kpiArray.length > 0) {
+          kpiForBackend = JSON.stringify(kpiArray, null, 2);
+        }
+
+        const response = await fetch('/api/disruption-analysis', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bom: bomForBackend, kpi: kpiForBackend, openText, mode: analysisMode })
+        });
+        
+        // Store BOM data for AI actions
+        localStorage.setItem('lastBOMData', bomForBackend);
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          resultDiv.innerHTML = `<div class="error">${data.error}</div>`;
+        } else {
+          // Add mode badge before results
+          const modeBadge = `
+            <div style="display:inline-block;padding:0.5em 1em;margin-bottom:1em;border-radius:8px;background:${modeColor};color:white;font-weight:600;font-size:0.9em;">
+              ${modeLabel} - Analysis Complete
+            </div>
+          `;
+          resultDiv.innerHTML = modeBadge + data.result;
+          localStorage.setItem('lastDisruptionResult', data.result);
+          addExplainButtonsToTable(resultDiv.querySelector('table'));
+          addCustomTooltipToTable(resultDiv.querySelector('table'));
+        }
+      } catch (error) {
+        resultDiv.innerHTML = '<div class="error">An error occurred. Please try again.</div>';
+        console.error('Disruption analysis error:', error);
+      }
+    }
+    
+    function clearOldDisruptionData() {
+      // Clear old disruption analysis results and explanations
+      localStorage.removeItem('lastDisruptionResult');
+      localStorage.removeItem('lastDisruptionExplanation');
+      
+      // Clear any mitigation plan data
+      const keys = Object.keys(localStorage);
+      keys.forEach(key => {
+        if (key.startsWith('lastMitigationPlan_')) {
+          localStorage.removeItem(key);
+        }
+      });
+      
+      console.log('Cleared old disruption analysis data');
+    }
+
+    function addExplainButtonsToTable(table) {
+      if (!table) return;
+      
+      const headerCells = Array.from(table.querySelectorAll('th'));
+      const scenarioIdIdx = headerCells.findIndex(th => th.textContent.toLowerCase().includes('scenario id'));
+      const descIdx = headerCells.findIndex(th => th.textContent.toLowerCase().includes('description'));
+      const affectedComponentsIdx = headerCells.findIndex(th => th.textContent.toLowerCase().includes('affected components'));
+      const delayIdx = headerCells.findIndex(th => th.textContent.toLowerCase().includes('delay'));
+      const probabilityIdx = headerCells.findIndex(th => th.textContent.toLowerCase().includes('probability'));
+      const detailsIdx = headerCells.findIndex(th => th.textContent.toLowerCase().includes('details'));
+      
+      if (scenarioIdIdx === -1 || descIdx === -1) return;
+      
+      // Add 'Action' header if not present
+      if (!headerCells.some(th => th.textContent.trim().toLowerCase() === 'action')) {
+        const actionTh = document.createElement('th');
+        actionTh.textContent = 'Action';
+        actionTh.style.fontWeight = 'bold';
+        headerCells[0].parentElement.appendChild(actionTh);
+      }
+      
+      Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+        // Only add if not already present
+        if (!row.querySelector('.explain-btn')) {
+          const scenarioId = row.children[scenarioIdIdx]?.textContent.trim();
+          const scenarioDescription = row.children[descIdx]?.textContent.trim();
+          const affectedComponents = affectedComponentsIdx !== -1 ? row.children[affectedComponentsIdx]?.textContent.trim() : '';
+          const possibleDelay = delayIdx !== -1 ? row.children[delayIdx]?.textContent.trim() : '';
+          const probability = probabilityIdx !== -1 ? row.children[probabilityIdx]?.textContent.trim() : '';
+          const explainableDetails = detailsIdx !== -1 ? row.children[detailsIdx]?.textContent.trim() : '';
+          
+          const btn = document.createElement('button');
+          btn.className = 'explain-btn';
+          btn.textContent = 'Explain';
+          btn.onclick = () => handleExplainClick(scenarioId, scenarioDescription, affectedComponents, possibleDelay, probability, explainableDetails);
+          
+          // Add button in a new cell at the end
+          const actionTd = document.createElement('td');
+          actionTd.appendChild(btn);
+          row.appendChild(actionTd);
+        }
+      });
+    }
+
+    async function handleExplainClick(scenarioId, scenarioDescription, affectedComponents = '', possibleDelay = '', probability = '', explainableDetails = '') {
+      // Clear old explanation data before showing new explanation
+      localStorage.removeItem('lastDisruptionExplanation');
+      
+      // Store scenario context for detailed mitigation plans
+      localStorage.setItem(`scenario_description_${scenarioId}`, scenarioDescription);
+      localStorage.setItem(`affected_components_${scenarioId}`, affectedComponents);
+      localStorage.setItem(`possible_delay_${scenarioId}`, possibleDelay);
+      localStorage.setItem(`probability_${scenarioId}`, probability);
+      localStorage.setItem(`explainable_details_${scenarioId}`, explainableDetails);
+      
+      explanationDiv.style.display = 'block';
+      explanationDiv.innerHTML = '<div class="spinner"></div>';
+      
+      try {
+        // Prepare KPI data for backend
+        let kpiForBackend = kpi;
+        if (Array.isArray(kpiArray) && kpiArray.length > 0) {
+          kpiForBackend = JSON.stringify(kpiArray, null, 2);
+        }
+
+        // Create comprehensive scenario data object
+        const scenarioData = {
+          scenarioId,
+          scenarioDescription,
+          affectedComponents,
+          possibleDelay,
+          probability,
+          explainableDetails,
+          bom,
+          kpi: kpiForBackend,
+          openText,
+          mode: getGlobalAIMode()
+        };
+
+        const response = await fetch('/api/disruption-explain', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(scenarioData)
+        });
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          explanationDiv.innerHTML = `<div class="error">${data.error}</div>`;
+        } else {
+          // Fix links in the explanation HTML
+          let explanationHTML = data.result;
+          // Fix mitigation-plan.html links
+          explanationHTML = explanationHTML.replace(/href=["']mitigation-plan\.html/g, 'href="/MySimulator/mitigation-plan.html');
+          explanationHTML = explanationHTML.replace(/href=["']\/mitigation-plan\.html/g, 'href="/MySimulator/mitigation-plan.html');
+          // Fix other relative links
+          explanationHTML = explanationHTML.replace(/href=["'](disruption|disruption-result|supplier-evaluation|contact|index|login|test-enhanced-scenarios)\.html/g, 'href="/MySimulator/$1.html');
+          
+          explanationDiv.innerHTML = `<strong>Explanation for ${scenarioId}:</strong><br>${explanationHTML}`;
+          localStorage.setItem('lastDisruptionExplanation', explanationDiv.innerHTML);
+          // Store detailed explanation for this specific scenario
+          localStorage.setItem(`scenario_explanation_${scenarioId}`, data.result);
+        }
+      } catch (error) {
+        explanationDiv.innerHTML = '<div class="error">An error occurred. Please try again.</div>';
+        console.error('Explanation error:', error);
+      }
+    }
+
+    function addCustomTooltipToTable(table) {
+      if (!table) return;
+      
+      let tooltip = document.getElementById('custom-tooltip-bubble');
+      if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.id = 'custom-tooltip-bubble';
+        tooltip.className = 'tooltip';
+        document.body.appendChild(tooltip);
+      }
+      
+      table.querySelectorAll('td,th').forEach(cell => {
+        cell.addEventListener('mouseenter', (e) => {
+          let text = '';
+          const link = cell.querySelector('a');
+          if (link) {
+            text = `${link.innerText} (${link.href})`;
+          } else {
+            text = cell.innerText;
+          }
+          tooltip.textContent = text;
+          tooltip.style.display = 'block';
+        });
+        
+        cell.addEventListener('mousemove', (e) => {
+          tooltip.style.left = (e.clientX + 15) + 'px';
+          tooltip.style.top = (e.clientY + 10) + 'px';
+        });
+        
+        cell.addEventListener('mouseleave', () => {
+          tooltip.style.display = 'none';
+        });
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Don't load old data automatically - let fetchDisruptionAnalysis() handle fresh data
+      // This ensures users always see new analysis results without old cached data
+    });
+  </script>
+</body>
+</html> 

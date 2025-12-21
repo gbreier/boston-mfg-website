@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mitigation Action Plan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    /* Logo Header */
+    .logo-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 0.5em 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+         .logo-header svg {
+       width: 48px;
+       height: 48px;
+       cursor: pointer;
+       transition: transform 0.3s ease, opacity 0.2s ease;
+     }
+     
+     .logo-header a {
+       cursor: pointer;
+       display: block;
+       pointer-events: auto;
+       z-index: 1000;
+       position: relative;
+     }
+     
+     .logo-header a:hover svg {
+       transform: scale(1.1);
+       opacity: 0.8;
+     }
+    
+    /* Adjust body padding to account for logo */
+    @media (max-width: 768px) {
+      .logo-header {
+        padding: 0.3em 0;
+      }
+      .logo-header svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f3f6f9;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px; /* Add padding to account for fixed logo header */
+    }
+    .container {
+      background: #fff;
+      margin-top: 2em;
+      padding: 2em 2.5em 2.5em 2.5em;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    h1 {
+      color: #1976d2;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    
+    /* User Input Form Styles */
+    .input-form {
+      width: 100%;
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.5em;
+      margin-bottom: 2em;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .form-section {
+      margin-bottom: 1.5em;
+    }
+    
+    .form-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .form-section h3 {
+      color: #1976d2;
+      margin-bottom: 0.8em;
+      font-size: 1.1em;
+    }
+    
+    .form-group {
+      margin-bottom: 1em;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.4em;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.6em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95em;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    
+    .form-group textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    
+    .form-group .help-text {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 0.3em;
+      line-height: 1.4;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 1em;
+    }
+    
+    .form-row .form-group {
+      flex: 1;
+    }
+    
+    .generate-btn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.8em 2em;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: center;
+      font-weight: 500;
+    }
+    
+    .generate-btn:hover {
+      background: #1565c0;
+    }
+    
+    .generate-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .spinner {
+      border: 4px solid #e3f2fd;
+      border-top: 4px solid #1976d2;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      animation: spin 1s linear infinite;
+      margin: 2em auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .error {
+      color: #d32f2f;
+      background: #fff;
+      padding: 0.7em 1em;
+      border-radius: 6px;
+      margin-top: 1em;
+      text-align: center;
+      width: 100%;
+      border: 1px solid #d32f2f;
+    }
+    .back-btn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 1.5em;
+      text-decoration: none;
+      display: inline-block;
+      align-self: flex-start;
+    }
+    .back-btn:hover {
+      background: #1565c0;
+    }
+    .pdf-btn {
+      position: absolute;
+      top: 2em;
+      right: 2.5em;
+      background: #43a047;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7em 1.2em;
+      font-size: 0.95em;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(67, 160, 71, 0.2);
+    }
+    .pdf-btn:hover {
+      background: #388e3c;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(67, 160, 71, 0.3);
+    }
+    .pdf-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    #plan {
+      width: 100%;
+      margin-top: 1.5em;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* AI Action Buttons */
+    .action-buttons {
+      display: flex;
+      gap: 0.5em;
+      margin: 0.5em 0;
+      flex-wrap: wrap;
+    }
+
+    .ai-action-btn {
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5em 1em;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+
+    .ai-action-btn:hover {
+      background: #45a049;
+      transform: translateY(-1px);
+    }
+
+    .ai-action-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .human-action-btn {
+      background: #2196f3;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5em 1em;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+
+    .human-action-btn:hover {
+      background: #1976d2;
+      transform: translateY(-1px);
+    }
+
+    .ai-content {
+      background: #f0f8f0;
+      border: 1px solid #4caf50;
+      border-radius: 8px;
+      padding: 1em;
+      margin: 1em 0;
+      white-space: pre-line;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .ai-content h3 {
+      color: #2e7d32;
+      margin-top: 0;
+    }
+
+    .human-content {
+      background: #e3f2fd;
+      border: 1px solid #2196f3;
+      border-radius: 8px;
+      padding: 1em;
+      margin: 1em 0;
+    }
+
+    .human-content h3 {
+      color: #1976d2;
+      margin-top: 0;
+    }
+    #plan table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 2em;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    #plan th, #plan td {
+      border: 2px solid #1976d2;
+      padding: 10px 8px;
+      text-align: left;
+      font-size: 1em;
+    }
+    #plan th {
+      background: #e3f2fd;
+      color: #1976d2;
+      font-weight: bold;
+    }
+    #plan table:last-of-type {
+      border: 3px solid #43a047;
+      box-shadow: 0 4px 16px rgba(67,160,71,0.08);
+    }
+    
+    /* PDF-specific styles */
+    @media print {
+      .pdf-btn, .back-btn, .input-form {
+        display: none !important;
+      }
+      .container {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+    
+    /* White paper specific styles */
+    .page-break-before {
+      page-break-before: always;
+    }
+    
+    .page-break-after {
+      page-break-after: always;
+    }
+    
+    .white-paper-header {
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      padding: 40px 0;
+      border-bottom: 2px solid #1976d2;
+      margin-bottom: 30px;
+    }
+    
+    .white-paper-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 28pt;
+      color: #1976d2;
+      text-align: center;
+      margin: 30px 0;
+      font-weight: bold;
+    }
+    
+    .white-paper-content {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .white-paper-content h1 {
+      color: #1976d2;
+      font-size: 20pt;
+      margin: 30px 0 15px 0;
+      border-bottom: 2px solid #1976d2;
+      padding-bottom: 10px;
+    }
+    
+    .white-paper-content h2 {
+      color: #1976d2;
+      font-size: 16pt;
+      margin: 25px 0 12px 0;
+      border-bottom: 1px solid #1976d2;
+      padding-bottom: 5px;
+    }
+    
+    .white-paper-content h3 {
+      color: #1976d2;
+      font-size: 14pt;
+      margin: 20px 0 10px 0;
+    }
+    
+    .white-paper-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 10pt;
+    }
+    
+    .white-paper-content th {
+      background: #1976d2;
+      color: white;
+      padding: 8px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+    
+    .white-paper-content td {
+      padding: 6px 8px;
+      border: 1px solid #ddd;
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo Header -->
+  <div class="logo-header">
+    <a href="/" style="text-decoration: none; color: inherit; cursor: pointer;" title="Back to Home">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="blackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#424242;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#212121;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#redGradient)" stroke-width="6"/>
+        <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6"/>
+        <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blackGradient)" stroke-width="6"/>
+      </svg>
+    </a>
+  </div>
+  
+  <div class="container">
+    <button id="pdfBtn" class="pdf-btn" onclick="downloadPDF()" disabled>
+      📄 Export PDF
+    </button>
+    <a href="/MySimulator/disruption-result.html" class="back-btn">← Back to Results</a>
+    <h1>Mitigation Action Plan</h1>
+    <div id="info"></div>
+    
+    <!-- User Input Form -->
+    <div id="inputForm" class="input-form">
+      <form id="mitigationForm">
+        <div class="form-section">
+          <h3>📋 Planning Context</h3>
+          <div class="form-group">
+            <label for="constraints">Constraints & Limitations:</label>
+            <textarea id="constraints" name="constraints" placeholder="Describe any budget constraints, resource limitations, regulatory requirements, or other restrictions that should be considered..."></textarea>
+            <div class="help-text">Examples: "Limited to $50K budget", "Must maintain FDA compliance", "Cannot change primary supplier due to contract"</div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="timelinePref">Preferred Timeline:</label>
+              <select id="timelinePref" name="timelinePref">
+                <option value="">Select timeline preference</option>
+                <option value="urgent">Urgent (immediate action needed)</option>
+                <option value="fast">Fast (within 2-4 weeks)</option>
+                <option value="standard">Standard (1-3 months)</option>
+                <option value="flexible">Flexible (can take longer for better results)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="budgetRange">Budget Considerations:</label>
+              <select id="budgetRange" name="budgetRange">
+                <option value="">Select budget range</option>
+                <option value="minimal">Minimal cost (focus on low-cost solutions)</option>
+                <option value="moderate">Moderate investment acceptable</option>
+                <option value="substantial">Substantial investment if justified</option>
+                <option value="unlimited">Budget not a primary constraint</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>🎯 Priorities & Objectives</h3>
+          <div class="form-group">
+            <label for="priorities">Key Priorities:</label>
+            <textarea id="priorities" name="priorities" placeholder="What are the most important objectives for this mitigation plan?"></textarea>
+            <div class="help-text">Examples: "Minimize production downtime", "Maintain quality standards", "Ensure regulatory compliance", "Reduce single-supplier dependency"</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="riskTolerance">Risk Tolerance:</label>
+            <select id="riskTolerance" name="riskTolerance">
+              <option value="">Select risk tolerance</option>
+              <option value="conservative">Conservative (minimize all risks)</option>
+              <option value="balanced">Balanced (reasonable risk/reward)</option>
+              <option value="aggressive">Aggressive (accept higher risk for better outcomes)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-section">
+          <h3>🏢 Organizational Context</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="teamSize">Implementation Team Size:</label>
+              <select id="teamSize" name="teamSize">
+                <option value="">Select team size</option>
+                <option value="small">Small team (1-3 people)</option>
+                <option value="medium">Medium team (4-8 people)</option>
+                <option value="large">Large team (9+ people)</option>
+                <option value="cross-functional">Cross-functional teams available</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="decisionAuthority">Decision Authority:</label>
+              <select id="decisionAuthority" name="decisionAuthority">
+                <option value="">Select authority level</option>
+                <option value="limited">Limited (need approval for most actions)</option>
+                <option value="moderate">Moderate (can make tactical decisions)</option>
+                <option value="high">High (can make strategic decisions)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="additionalContext">Additional Context:</label>
+            <textarea id="additionalContext" name="additionalContext" placeholder="Any other relevant information that should influence the mitigation plan..."></textarea>
+            <div class="help-text">Examples: Company size, industry requirements, previous experience with similar issues, stakeholder concerns</div>
+          </div>
+        </div>
+        
+        <button type="submit" class="generate-btn">🚀 Generate Mitigation Plan</button>
+      </form>
+    </div>
+    
+    <div id="plan" style="display: none;"></div>
+  </div>
+  
+  <script src="/MySimulator/global-ai-mode.js"></script>
+  <script src="/MySimulator/api-config.js"></script>
+  <script>
+    function getQueryParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || '';
+    }
+    
+    const scenarioId = getQueryParam('scenarioId');
+    const recommendation = getQueryParam('recommendation');
+    
+    // Retrieve comprehensive scenario information from localStorage
+    const scenarioDescription = localStorage.getItem(`scenario_description_${scenarioId}`) || 'No description available';
+    const affectedComponents = localStorage.getItem(`affected_components_${scenarioId}`) || 'Not specified';
+    const possibleDelay = localStorage.getItem(`possible_delay_${scenarioId}`) || 'Not specified';
+    const probability = localStorage.getItem(`probability_${scenarioId}`) || 'Not specified';
+    const explainableDetails = localStorage.getItem(`explainable_details_${scenarioId}`) || 'Not specified';
+    const scenarioExplanation = localStorage.getItem(`scenario_explanation_${scenarioId}`) || 'No detailed explanation available';
+    
+    document.getElementById('info').innerHTML =
+      `<div style="background: #f8f9fa; padding: 1.5em; border-radius: 8px; margin-bottom: 1.5em; border-left: 4px solid #1976d2;">` +
+      `<h3 style="margin-top: 0; color: #1976d2;">📋 Scenario Information</h3>` +
+      `<p><strong>Scenario ID:</strong> ${scenarioId || 'N/A'}</p>` +
+      `<p><strong>Description:</strong> ${scenarioDescription}</p>` +
+      `<p><strong>Affected Components:</strong> ${affectedComponents}</p>` +
+      `<p><strong>Possible Delay:</strong> ${possibleDelay}</p>` +
+      `<p><strong>Probability:</strong> ${probability}</p>` +
+      `<p><strong>Additional Details:</strong> ${explainableDetails}</p>` +
+      `</div>` +
+      `<div style="background: #e8f5e8; padding: 1.5em; border-radius: 8px; margin-bottom: 1.5em; border-left: 4px solid #2e7d32;">` +
+      `<h3 style="margin-top: 0; color: #2e7d32;">🔍 Detailed Analysis</h3>` +
+      `<div style="white-space: pre-line;">${scenarioExplanation}</div>` +
+      `</div>` +
+      `<div style="background: #fff; padding: 1.5em; border-radius: 8px; margin-bottom: 1.5em; border-left: 4px solid #ef6c00;">` +
+      `<h3 style="margin-top: 0; color: #ef6c00;">💡 Recommendation</h3>` +
+      `<p>${decodeURIComponent(recommendation || 'No recommendation provided')}</p>` +
+      `</div>`;
+
+    // Handle form submission
+    document.getElementById('mitigationForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Hide form and show loading
+      document.getElementById('inputForm').style.display = 'none';
+      document.getElementById('plan').style.display = 'block';
+      
+      // Collect form data
+      const formData = {
+        constraints: document.getElementById('constraints').value,
+        timelinePref: document.getElementById('timelinePref').value,
+        budgetRange: document.getElementById('budgetRange').value,
+        priorities: document.getElementById('priorities').value,
+        riskTolerance: document.getElementById('riskTolerance').value,
+        teamSize: document.getElementById('teamSize').value,
+        decisionAuthority: document.getElementById('decisionAuthority').value,
+        additionalContext: document.getElementById('additionalContext').value
+      };
+      
+      await fetchActionPlan(formData);
+    });
+
+    async function fetchActionPlan(userInput = {}) {
+      const planDiv = document.getElementById('plan');
+      const pdfBtn = document.getElementById('pdfBtn');
+      planDiv.innerHTML = '<div class="spinner"></div>';
+      pdfBtn.disabled = true;
+      
+      try {
+        const response = await fetch('/api/mitigation-plan', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            scenarioId, 
+            recommendation,
+            scenarioDescription: scenarioDescription,
+            affectedComponents: affectedComponents,
+            possibleDelay: possibleDelay,
+            probability: probability,
+            explainableDetails: explainableDetails,
+            scenarioExplanation: scenarioExplanation,
+            userInput: userInput,
+            mode: getGlobalAIMode()
+          })
+        });
+        const data = await response.json();
+        if (data.error) {
+          planDiv.innerHTML = `<div class="error">${data.error}</div>`;
+        } else {
+          planDiv.innerHTML = data.result;
+          localStorage.setItem(`lastMitigationPlan_${scenarioId}_${recommendation}`, data.result);
+          pdfBtn.disabled = false;
+          
+          // Add AI action buttons to newly generated content
+          setTimeout(() => addAIActionButtons(), 100);
+        }
+      } catch (error) {
+        planDiv.innerHTML = '<div class="error">An error occurred. Please try again.</div>';
+      }
+    }
+
+    function downloadPDF() {
+      const pdfBtn = document.getElementById('pdfBtn');
+      pdfBtn.disabled = true;
+      pdfBtn.innerHTML = '⏳ Generating...';
+      
+      // Create a white paper formatted version for PDF
+      createWhitePaperVersion();
+      
+      const whitePaperElement = document.getElementById('whitePaperVersion');
+      const elementHeight = whitePaperElement.scrollHeight || whitePaperElement.offsetHeight || window.innerHeight;
+      let canvasScale = 2;
+      const MAX_CANVAS_HEIGHT = 14000;
+      if (elementHeight * canvasScale > MAX_CANVAS_HEIGHT) {
+        canvasScale = Math.max(1.2, MAX_CANVAS_HEIGHT / elementHeight);
+      }
+
+      const opt = {
+        margin: [0.75, 0.75, 1.0, 0.75], // top, left, bottom, right - more space for header/footer
+        filename: `ChainVision_Mitigation_Plan_${scenarioId || 'Plan'}.pdf`,
+        image: { type: 'jpeg', quality: 0.95 },
+        html2canvas: { 
+          scale: canvasScale,
+          useCORS: true,
+          letterRendering: true,
+          scrollX: 0,
+          scrollY: 0
+        },
+        jsPDF: { 
+          unit: 'in', 
+          format: 'a4', 
+          orientation: 'portrait',
+          compress: true
+        },
+        pagebreak: { 
+          mode: ['css', 'legacy'],
+          before: '.page-break-before',
+          after: '.page-break-after',
+          avoid: ['tr', 'td', 'table']
+        }
+      };
+
+      html2pdf().set(opt).from(whitePaperElement).toPdf().get('pdf').then((pdf) => {
+        // Add page numbers and footers
+        const totalPages = pdf.internal.getNumberOfPages();
+        
+        for (let i = 1; i <= totalPages; i++) {
+          pdf.setPage(i);
+          
+          // Add footer with page number
+          pdf.setFontSize(10);
+          pdf.setTextColor(100, 100, 100);
+          pdf.text(`ChainVision Supply Chain Solutions | Page ${i} of ${totalPages}`, 
+                   pdf.internal.pageSize.getWidth() / 2, 
+                   pdf.internal.pageSize.getHeight() - 0.3, 
+                   { align: 'center' });
+          
+          // Add confidentiality notice
+          pdf.setFontSize(8);
+          pdf.text('CONFIDENTIAL - For Internal Use Only', 
+                   pdf.internal.pageSize.getWidth() / 2, 
+                   pdf.internal.pageSize.getHeight() - 0.15, 
+                   { align: 'center' });
+        }
+        
+        return pdf;
+      }).save().then(() => {
+        // Clean up the temporary white paper version
+        const tempElement = document.getElementById('whitePaperVersion');
+        if (tempElement) {
+          tempElement.remove();
+        }
+        
+        pdfBtn.disabled = false;
+        pdfBtn.innerHTML = '📄 Export PDF';
+      }).catch((error) => {
+        console.error('PDF generation failed:', error);
+        
+        // Clean up on error
+        const tempElement = document.getElementById('whitePaperVersion');
+        if (tempElement) {
+          tempElement.remove();
+        }
+        
+        pdfBtn.disabled = false;
+        pdfBtn.innerHTML = '📄 Export PDF';
+        alert('Failed to generate PDF. Please try again.');
+      });
+    }
+
+    function createWhitePaperVersion() {
+      // Remove any existing white paper version
+      const existingVersion = document.getElementById('whitePaperVersion');
+      if (existingVersion) {
+        existingVersion.remove();
+      }
+      
+      // Get current date for the document
+      const currentDate = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      
+      // Get the main content
+      const planContent = document.getElementById('plan').innerHTML;
+      const scenarioInfo = document.getElementById('info').innerHTML;
+      
+      // Create white paper formatted version
+      const whitePaperHTML = `
+        <div id="whitePaperVersion" style="
+          font-family: 'Times New Roman', Times, serif;
+          line-height: 1.6;
+          color: #333;
+          background: white;
+          max-width: 8.5in;
+          margin: 0 auto;
+          padding: 0;
+          font-size: 12pt;
+        ">
+          <!-- Header Section -->
+          <div style="
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #1976d2;
+            margin-bottom: 30px;
+          ">
+            <img src="/chainvision-logo.svg" alt="ChainVision Logo" style="
+              height: 60px;
+              margin-bottom: 20px;
+            " onerror="this.style.display='none';">
+            <h1 style="
+              color: #1976d2;
+              font-size: 24pt;
+              font-weight: bold;
+              margin: 0 0 10px 0;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            ">ChainVision Supply Chain Solutions</h1>
+            <div style="
+              font-size: 14pt;
+              color: #666;
+              font-weight: 300;
+            ">Advanced Supply Chain Risk Management & Mitigation</div>
+          </div>
+          
+          <!-- Document Title -->
+          <div style="
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+            border-radius: 8px;
+          ">
+            <h1 style="
+              font-size: 28pt;
+              color: #1976d2;
+              margin: 0 0 15px 0;
+              font-weight: bold;
+            ">Supply Chain Mitigation Action Plan</h1>
+            <div style="
+              font-size: 16pt;
+              color: #666;
+              margin-bottom: 10px;
+            ">Scenario: ${scenarioId || 'N/A'}</div>
+            <div style="
+              font-size: 12pt;
+              color: #888;
+            ">Document Generated: ${currentDate}</div>
+          </div>
+          
+          <!-- Executive Summary Box -->
+          <div style="
+            background: #f0f8ff;
+            border: 1px solid #1976d2;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+          ">
+            <h2 style="
+              color: #1976d2;
+              font-size: 16pt;
+              margin-top: 0;
+              margin-bottom: 15px;
+              border-bottom: 1px solid #1976d2;
+              padding-bottom: 5px;
+            ">📋 Executive Summary</h2>
+            <div style="font-size: 11pt; line-height: 1.5;">
+              This document presents a comprehensive mitigation action plan for supply chain disruption scenario ${scenarioId}. 
+              The plan incorporates real-time market intelligence, component-specific analysis, and user-defined constraints 
+              to provide actionable strategies for maintaining operational continuity.
+            </div>
+          </div>
+          
+          <!-- Scenario Information Section -->
+          <div class="page-break-after" style="
+            margin-bottom: 30px;
+          ">
+            <h2 style="
+              color: #1976d2;
+              font-size: 18pt;
+              margin-bottom: 20px;
+              border-bottom: 2px solid #1976d2;
+              padding-bottom: 10px;
+            ">Scenario Analysis</h2>
+            <div style="
+              font-size: 11pt;
+              line-height: 1.6;
+            ">
+              ${scenarioInfo.replace(/style="[^"]*"/g, '').replace(/<h3[^>]*>/g, '<h3 style="color: #1976d2; font-size: 14pt; margin: 20px 0 10px 0;">').replace(/background: [^;]+;/g, 'background: #f8f9fa;')}
+            </div>
+          </div>
+          
+          <!-- Main Content Section -->
+          <div style="
+            font-size: 11pt;
+            line-height: 1.6;
+          ">
+            ${formatContentForWhitePaper(planContent)}
+          </div>
+          
+          <!-- Footer Information -->
+          <div style="
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #1976d2;
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+          ">
+            <div style="margin-bottom: 10px;">
+              <strong>ChainVision Supply Chain Solutions</strong><br>
+              Advanced AI-Powered Supply Chain Risk Management
+            </div>
+            <div style="font-size: 9pt; color: #888;">
+              This document contains confidential and proprietary information. Distribution is restricted to authorized personnel only.
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // Create and append the white paper version to the body (hidden)
+      const whitePaperDiv = document.createElement('div');
+      whitePaperDiv.innerHTML = whitePaperHTML;
+      whitePaperDiv.style.position = 'absolute';
+      whitePaperDiv.style.left = '-9999px';
+      whitePaperDiv.style.top = '0';
+      document.body.appendChild(whitePaperDiv);
+    }
+    
+    function formatContentForWhitePaper(content) {
+      // Clean up and format the content for white paper style
+      let formattedContent = content;
+      
+      // Replace headers with white paper style headers
+      formattedContent = formattedContent.replace(/<h1[^>]*>/g, '<h1 style="color: #1976d2; font-size: 20pt; margin: 30px 0 15px 0; page-break-before: auto;">');
+      formattedContent = formattedContent.replace(/<h2[^>]*>/g, '<h2 style="color: #1976d2; font-size: 16pt; margin: 25px 0 12px 0; border-bottom: 1px solid #1976d2; padding-bottom: 5px;">');
+      formattedContent = formattedContent.replace(/<h3[^>]*>/g, '<h3 style="color: #1976d2; font-size: 14pt; margin: 20px 0 10px 0;">');
+      formattedContent = formattedContent.replace(/<h4[^>]*>/g, '<h4 style="color: #333; font-size: 12pt; margin: 15px 0 8px 0; font-weight: bold;">');
+      
+      // Format tables with professional styling
+      formattedContent = formattedContent.replace(/<table[^>]*>/g, '<table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 10pt; background: white; border: 1px solid #ddd;">');
+      formattedContent = formattedContent.replace(/<th[^>]*>/g, '<th style="background: #1976d2; color: white; padding: 8px; border: 1px solid #ddd; font-weight: bold; text-align: left;">');
+      formattedContent = formattedContent.replace(/<td[^>]*>/g, '<td style="padding: 6px 8px; border: 1px solid #ddd; vertical-align: top;">');
+      
+      // Format paragraphs and lists
+      formattedContent = formattedContent.replace(/<p[^>]*>/g, '<p style="margin: 8px 0; text-align: justify;">');
+      formattedContent = formattedContent.replace(/<ul[^>]*>/g, '<ul style="margin: 10px 0; padding-left: 20px;">');
+      formattedContent = formattedContent.replace(/<ol[^>]*>/g, '<ol style="margin: 10px 0; padding-left: 20px;">');
+      formattedContent = formattedContent.replace(/<li[^>]*>/g, '<li style="margin: 4px 0;">');
+      
+      // Format strong/bold text
+      formattedContent = formattedContent.replace(/<strong[^>]*>/g, '<strong style="color: #1976d2; font-weight: bold;">');
+      
+      // Remove action buttons and AI content (not needed in PDF)
+      formattedContent = formattedContent.replace(/<div class="action-buttons"[^>]*>[\s\S]*?<\/div>/g, '');
+      formattedContent = formattedContent.replace(/<div class="ai-content"[^>]*>[\s\S]*?<\/div>/g, '');
+      formattedContent = formattedContent.replace(/<div class="human-content"[^>]*>[\s\S]*?<\/div>/g, '');
+      
+      // Add page breaks before major sections
+      formattedContent = formattedContent.replace(/<h1[^>]*>Action Steps<\/h1>/g, '<h1 style="color: #1976d2; font-size: 20pt; margin: 30px 0 15px 0; page-break-before: always;">Action Steps</h1>');
+      formattedContent = formattedContent.replace(/<h2[^>]*>Component-Specific Actions<\/h2>/g, '<h2 class="page-break-before" style="color: #1976d2; font-size: 16pt; margin: 25px 0 12px 0; border-bottom: 1px solid #1976d2; padding-bottom: 5px;">Component-Specific Actions</h2>');
+      
+      return formattedContent;
+    }
+
+    // AI Action Functions
+    async function handleAIAction(actionType, actionDescription, button) {
+      button.disabled = true;
+      button.innerHTML = '⏳ Generating...';
+      
+      try {
+        const response = await fetch('/api/ai-action', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            actionType: actionType,
+            actionDescription: actionDescription,
+            scenarioId: scenarioId,
+            scenarioDescription: scenarioDescription,
+            affectedComponents: affectedComponents,
+            bomData: localStorage.getItem('lastBOMData') || '',
+            userContext: JSON.stringify({
+              constraints: document.getElementById('constraints')?.value || '',
+              priorities: document.getElementById('priorities')?.value || '',
+              additionalContext: document.getElementById('additionalContext')?.value || ''
+            }),
+            mode: getGlobalAIMode()
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          alert(`Error generating AI content: ${data.error}`);
+        } else {
+          // Create AI content display
+          const aiContentDiv = document.createElement('div');
+          aiContentDiv.className = 'ai-content';
+          aiContentDiv.innerHTML = `<h3>🤖 AI-Generated Action Content</h3>${data.result}`;
+          
+          // Insert after the action buttons
+          const actionButtonsDiv = button.closest('.action-buttons');
+          actionButtonsDiv.parentNode.insertBefore(aiContentDiv, actionButtonsDiv.nextSibling);
+        }
+      } catch (error) {
+        alert('Failed to generate AI content. Please try again.');
+        console.error('AI action error:', error);
+      } finally {
+        button.disabled = false;
+        button.innerHTML = '🤖 AI-Generated Action';
+      }
+    }
+
+    function handleHumanAction(actionDescription, button) {
+      // Create human action guidance
+      const humanContentDiv = document.createElement('div');
+      humanContentDiv.className = 'human-content';
+      humanContentDiv.innerHTML = `
+        <h3>👤 Manual Action Guidance</h3>
+        <p><strong>Action:</strong> ${actionDescription}</p>
+        <p><strong>Next Steps:</strong></p>
+        <ul>
+          <li>Review the action requirements above</li>
+          <li>Gather necessary resources and stakeholders</li>
+          <li>Execute the action according to your organization's procedures</li>
+          <li>Document progress and outcomes</li>
+          <li>Update relevant stakeholders on completion</li>
+        </ul>
+        <p><strong>Tip:</strong> Consider using the AI-generated action option for templates, checklists, and detailed guidance.</p>
+      `;
+      
+      // Insert after the action buttons
+      const actionButtonsDiv = button.closest('.action-buttons');
+      actionButtonsDiv.parentNode.insertBefore(humanContentDiv, actionButtonsDiv.nextSibling);
+    }
+
+    // Function to add AI action buttons to the mitigation plan
+    function addAIActionButtons() {
+      const planDiv = document.getElementById('plan');
+      if (!planDiv) return;
+      
+      // Find all action items that mention AI assistance
+      const planHTML = planDiv.innerHTML;
+      const aiAssistanceRegex = /\*\*AI Assistance Available\*\*:\s*YES[\s\S]*?\*\*AI Action Type\*\*:\s*([^*\n]+)[\s\S]*?\*\*Action\*\*:\s*([^*\n]+)/g;
+      
+      let match;
+      let buttonId = 0;
+      
+      while ((match = aiAssistanceRegex.exec(planHTML)) !== null) {
+        const actionType = match[1].trim();
+        const actionDescription = match[2].trim();
+        
+        // Create action buttons HTML
+        const buttonsHTML = `
+          <div class="action-buttons" data-action-id="${buttonId}">
+            <button class="ai-action-btn" onclick="handleAIAction('${actionType}', '${actionDescription}', this)">
+              🤖 AI-Generated Action
+            </button>
+            <button class="human-action-btn" onclick="handleHumanAction('${actionDescription}', this)">
+              👤 Manual Action
+            </button>
+          </div>
+        `;
+        
+        // Find the position to insert buttons (after the action description)
+        const actionEndIndex = match.index + match[0].length;
+        const insertPosition = planHTML.indexOf('\n', actionEndIndex);
+        
+        if (insertPosition !== -1) {
+          planDiv.innerHTML = planHTML.slice(0, insertPosition) + buttonsHTML + planHTML.slice(insertPosition);
+        }
+        
+        buttonId++;
+      }
+    }
+
+    // Check if we have cached results
+    window.addEventListener('DOMContentLoaded', () => {
+      const lastPlanKey = `lastMitigationPlan_${scenarioId}_${recommendation}`;
+      const lastPlan = localStorage.getItem(lastPlanKey);
+      if (lastPlan) {
+        // Show cached results and hide form
+        document.getElementById('inputForm').style.display = 'none';
+        document.getElementById('plan').style.display = 'block';
+        document.getElementById('plan').innerHTML = lastPlan;
+        document.getElementById('pdfBtn').disabled = false;
+        
+        // Add AI action buttons to cached content
+        setTimeout(() => addAIActionButtons(), 100);
+      }
+    });
+  </script>
+</body>
+</html> 

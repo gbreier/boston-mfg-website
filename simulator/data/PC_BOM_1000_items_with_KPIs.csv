@@ -1,0 +1,1001 @@
+Item,Category,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total,Avg Lead Time (days),On-Time Delivery (%),Defect Rate (%),Cost Variance (%)
+1,Electrical,Intel Core i5-12400F CPU,BX8071512400F,Intel,Digi-Key,1,150,150,30,92.31,1.89,1.07
+2,Electrical,ATX Motherboard LGA1700,PRIME-H610M-A,ASUS,Mouser,1,90,90,17,96.24,1.5,-1.69
+3,Electrical,16GB DDR4 3200MHz,CT16G4DFD832A,Crucial,Digi-Key,1,40,40,8,94.87,1.72,-2.09
+4,Electrical,1TB NVMe SSD,MZ-V8V1T0B/AM,Samsung,Mouser,1,60,60,25,96.55,1.01,-2.09
+5,Electrical,650W PSU 80+ Bronze,CP-9020177,Corsair,RS,1,55,55,18,99.39,1.02,1.43
+6,Electrical,ATX Mid Tower Case,CC-9011200-WW,Corsair,Stockwell,1,55,55,12,95.53,1,1.67
+7,Electrical,GPU - GTX 1650,ZT-T16500F-10L,Zotac,Digi-Key,1,180,180,27,95.27,1.45,1.35
+8,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,93.43,1.12,-0.98
+9,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,9,96.97,0.44,-1.23
+10,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,20,93.56,1.27,-0.77
+11,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,92.43,1.43,-2.31
+12,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,13,97.26,0.63,-0.94
+13,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,98.7,0.25,0.24
+14,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,98.03,1.7,1.4
+15,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,97.22,1.55,1.97
+16,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,22,93.89,0.4,-0.63
+17,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,97.54,0.22,-2.35
+18,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,30,99.18,0.47,1.53
+19,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,92.59,1.71,0.98
+20,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,92.01,1.12,-1.5
+21,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,96.2,0.56,0.07
+22,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,19,98.15,1.85,-2.9
+23,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,92.4,1.24,1.83
+24,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,98.53,1.51,0.02
+25,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,13,93.45,1.1,-2.39
+26,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,6,97.2,0.84,-1.58
+27,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,94.9,1.55,-1.82
+28,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,21,98.79,1.99,-0.43
+29,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,96.9,1.48,-2.06
+30,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,9,95.55,1.26,1.16
+31,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,9,92.68,1.97,-1.42
+32,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,95.37,1.05,-2.38
+33,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,97.47,1.83,1.21
+34,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,93.25,0.64,-0.57
+35,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,8,96.17,1.67,-1.02
+36,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,94.17,1.49,2.73
+37,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,16,95.15,1.11,-0.46
+38,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,24,96.23,1.4,2.95
+39,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,7,96.46,0.88,-1.76
+40,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,98.6,1.99,-0.85
+41,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,19,99.19,1.76,-1.24
+42,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,93.53,0.31,1.23
+43,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,96.81,0.74,-0.32
+44,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,8,95.27,1.3,-0.36
+45,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,93.56,0.45,-0.86
+46,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,23,97.46,1.04,-2.95
+47,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,97.66,0.23,1.35
+48,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,21,94.21,0.29,-0.17
+49,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,92.35,0.16,-2.94
+50,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,97.52,0.89,-1.67
+51,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,95.03,0.92,-2.72
+52,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,92.38,1.24,1.23
+53,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,99.32,0.15,-0.1
+54,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,8,95.91,1.67,2.66
+55,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,97.89,0.3,1.86
+56,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,98.05,0.58,-1.87
+57,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,13,93.56,1.95,-2.79
+58,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,97.85,1.4,1.05
+59,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,98.36,1.36,1.42
+60,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,21,93.85,1.36,-0.58
+61,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,98.38,1.58,0.57
+62,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,23,92.25,1.06,2.53
+63,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,92.74,1.78,1.09
+64,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,10,97.43,1.69,0.86
+65,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,93.6,0.4,-0.59
+66,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,96.41,1.68,1.5
+67,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,93.76,0.96,-1.18
+68,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,94.86,0.21,-1.67
+69,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,97.54,0.23,-0.43
+70,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,94.95,1.95,-0.73
+71,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,93.29,0.7,0.04
+72,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,92.36,0.45,-2.34
+73,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,94.5,0.16,1.04
+74,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,16,93.4,0.12,2.72
+75,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,93.2,0.33,1.81
+76,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,99.06,0.61,0.1
+77,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,95.71,1.36,-1.62
+78,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,98.69,0.26,1.34
+79,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,95.9,1.59,-2.85
+80,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,17,98.13,1.67,0.58
+81,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,98.78,0.41,2.95
+82,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,8,93.16,0.52,1.76
+83,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,97.96,1.09,-2.24
+84,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,28,92.11,0.2,-2.35
+85,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,7,98.57,1.37,-1.83
+86,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,94.7,0.43,0.02
+87,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,97.24,0.5,-2.18
+88,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,9,95.69,0.14,-2.77
+89,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,97.34,0.82,-0.65
+90,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,6,95.03,1.64,-2.84
+91,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,95.01,0.31,-0.48
+92,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,19,95.72,1.16,2.85
+93,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,23,98.68,1.21,0.95
+94,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,95.82,1.68,0.74
+95,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,92.34,1.77,2.27
+96,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,93.99,0.64,-1.38
+97,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,98.54,1.41,1.28
+98,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,93.08,0.31,-2.59
+99,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,8,92.83,1.21,-0.94
+100,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,97.03,0.45,1.56
+101,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,92.51,1.54,-0.54
+102,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,93.93,1.33,-0.23
+103,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,99.48,1.99,0.98
+104,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,96.77,1.17,-1.39
+105,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,13,99.39,0.12,0.91
+106,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,23,95.02,1.88,2.96
+107,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,92,1.02,-2.13
+108,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,97.41,1.03,2.29
+109,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,12,97.67,1.58,0.36
+110,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,92.43,1.17,1.08
+111,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,93.78,0.97,1.58
+112,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,17,95.02,1.6,-0.65
+113,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,23,92.73,0.3,2.77
+114,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,19,95.35,1.56,0.84
+115,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,93.62,0.51,-0.25
+116,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,98.31,1.9,2.26
+117,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,95.53,0.96,2.77
+118,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,96.73,0.27,2.52
+119,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,93.88,0.98,2.22
+120,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,92.15,0.25,0.29
+121,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,94.89,1.5,2.56
+122,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,94.48,1.91,0.17
+123,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,96.49,1.07,1.2
+124,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,94.52,0.15,1.76
+125,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,98.85,1.27,1.47
+126,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,96.41,1.32,-0.59
+127,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,94.88,0.89,1.12
+128,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,96.47,1.62,-1.87
+129,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,92.31,1.69,-1.6
+130,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,15,95.09,0.25,2.39
+131,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,14,94.61,1.24,2.98
+132,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,95.8,1.31,0.06
+133,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,5,96.01,1.54,0.4
+134,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,95.62,0.56,-1.63
+135,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,93.53,0.23,1.15
+136,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,97.72,1.28,1.88
+137,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,95.59,1.96,-2.1
+138,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,98.48,1.76,0.31
+139,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,22,99.25,1.76,-1.55
+140,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,97.34,0.77,-2.56
+141,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,97.25,0.97,2.13
+142,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,13,95.61,1.96,0.32
+143,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,94.83,1.22,-2.36
+144,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,93.18,1.4,-0.24
+145,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,92.96,0.18,-2.16
+146,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,97.33,0.71,2.37
+147,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,97.6,1.71,1.26
+148,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,93.77,0.32,0.38
+149,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,92.49,1.83,2.37
+150,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,98.21,0.3,-1.78
+151,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,8,94.57,1.68,0.49
+152,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,98.88,0.71,-2.49
+153,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,93.48,0.22,-2.27
+154,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,11,99.25,0.62,-2.64
+155,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,26,98.18,1.49,-1.92
+156,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,95.69,1.38,1.01
+157,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,97.2,0.91,-0.89
+158,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,93.84,0.98,-1.12
+159,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,93.4,0.86,-1.03
+160,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,95.13,0.35,-1.2
+161,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,94.47,1.15,-0.48
+162,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,98.25,0.26,0.04
+163,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,10,95.97,1.97,0.74
+164,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,23,92.16,0.69,1.33
+165,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,95.08,0.76,2.34
+166,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,97.92,0.17,2.28
+167,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,14,98.45,1.99,-2.27
+168,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,15,94.57,1.7,-1.46
+169,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,19,96.27,1.34,0.71
+170,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,17,93.27,0.9,-1.04
+171,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,94.02,1.32,1.9
+172,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,97,1.96,0.53
+173,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,94.91,1.29,-0.56
+174,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,11,96.27,0.94,0.97
+175,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,94.28,1.48,-2.15
+176,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,96.87,0.48,2.36
+177,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,93.02,1.68,2.56
+178,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,93.35,0.43,1.48
+179,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,93.77,1.94,-1.75
+180,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,96.47,0.74,0.29
+181,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,97.32,1.55,1.79
+182,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,93.78,0.83,-1.25
+183,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,94.05,1.23,-0.25
+184,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,18,92.55,0.23,-1.58
+185,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,96.77,1.03,-2.94
+186,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,9,96.61,1.18,0.81
+187,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,5,98.01,1.55,-2.76
+188,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,17,97.17,1.15,2.05
+189,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,20,98.86,1.76,-2.94
+190,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,94.68,1.19,1.94
+191,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,92.87,0.19,-1.2
+192,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,97,0.97,0.81
+193,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,97.49,1.01,1.76
+194,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,92.33,0.92,0.11
+195,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,99.11,0.71,2.64
+196,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,95.14,1.85,-0.82
+197,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,12,92.99,0.55,1.11
+198,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,16,94.8,1.03,-0.31
+199,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,20,93.5,1.44,-0.92
+200,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,95.57,1.56,1.39
+201,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,99.23,0.75,2.67
+202,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,99.01,0.19,-1.86
+203,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,19,96.73,0.73,-2.83
+204,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,93.42,1.8,-0.32
+205,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,25,99.01,0.76,-2.36
+206,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,96.02,1.63,0.97
+207,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,95.21,0.86,1.75
+208,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,15,97.66,1.98,0.87
+209,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,93.95,1.96,1.44
+210,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,94.68,1.25,-0.26
+211,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,27,95.76,0.81,-2.27
+212,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,94.64,1.75,-1.4
+213,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,21,92.19,1.5,-0.52
+214,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,92.91,1.13,-0.6
+215,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,98.41,0.73,2.26
+216,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,92.86,0.94,-2.78
+217,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,15,93.5,0.48,2.56
+218,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,92.48,1.46,-2.02
+219,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,26,96.38,1.82,-1.2
+220,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,96.69,1.21,-2.8
+221,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,94.06,0.28,2.11
+222,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,93.14,0.16,-2.34
+223,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,25,96.76,1.1,2.16
+224,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,94.3,1.08,-2.96
+225,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,98.65,0.96,0.21
+226,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,93.79,1.26,-0.47
+227,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,93.51,1.54,-0.22
+228,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,26,98.61,0.77,-0.09
+229,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,93.28,1.95,2.38
+230,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,99.25,0.87,-2.44
+231,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,98.44,0.44,-0.96
+232,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,93.24,1.84,2.23
+233,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,98.01,1.31,-2.68
+234,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,99.17,0.52,0.25
+235,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,97.54,1.29,-2.93
+236,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,93.77,1.55,0.78
+237,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,92.62,1.01,0.58
+238,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,21,95.23,0.39,-2.89
+239,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,92.44,0.58,0.52
+240,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,98.82,0.96,1.35
+241,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,93.99,1.4,-1.18
+242,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,95.37,1.03,0.5
+243,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,28,95.71,0.85,-0.47
+244,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,95.19,1.07,-2.19
+245,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,94.58,0.6,1
+246,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,22,92.31,1.6,-0.89
+247,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,98.39,0.74,2.26
+248,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,28,99.2,0.34,-2.52
+249,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,92.44,1.08,-0.51
+250,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,96.41,1.29,-2.69
+251,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,92.98,0.89,1.58
+252,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,17,95.73,1.52,-1.95
+253,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,93.05,1.6,1.56
+254,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,19,92.96,1.68,-1.39
+255,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,95.54,0.46,1.53
+256,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,95.78,0.4,-0.57
+257,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,26,98.58,0.49,1.3
+258,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,16,97.64,0.53,-1.08
+259,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,97.89,1.73,0.82
+260,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,92.03,1.12,2.5
+261,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,94.67,0.46,0.89
+262,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,93.36,1.17,2.57
+263,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,94.57,0.74,2.06
+264,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,95.44,1.24,0.65
+265,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,93.58,1.69,2.36
+266,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,13,98.78,0.46,-1.23
+267,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,98.77,0.24,2.51
+268,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,13,97.12,0.71,1.57
+269,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,97.67,1.24,-1.34
+270,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,92.01,0.17,-0.23
+271,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,98.91,0.2,0.3
+272,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,96.23,1.5,-0.42
+273,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,94.25,1.91,-2.23
+274,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,94.08,1.58,0.64
+275,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,94.84,0.79,0.19
+276,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,93.5,1.67,-1.11
+277,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,96.77,1.28,2.5
+278,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,22,94.53,1.26,-2.99
+279,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,11,94.24,1.45,0.62
+280,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,95.18,1.87,-1.92
+281,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,93.14,0.5,-2.82
+282,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,24,95.05,1.49,0.73
+283,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,92.14,0.27,2.9
+284,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,96.79,0.55,-1.64
+285,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,97.3,1.06,-1
+286,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,93.3,1.75,-1.81
+287,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,92.17,1.96,0.07
+288,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,92.56,0.48,-2.34
+289,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,94.21,1.5,-1.62
+290,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,98.11,1.42,-2.87
+291,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,95.09,1.43,2.73
+292,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,23,92.01,0.49,0.19
+293,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,96.25,1.39,2.7
+294,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,96.15,0.25,-2.9
+295,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,94.06,0.98,2.4
+296,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,96.75,0.8,-1.49
+297,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,93.05,0.36,2.81
+298,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,6,97.92,1.89,-1.95
+299,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,97.27,0.19,-0.56
+300,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,93.97,1.79,0.37
+301,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,92.61,1.38,1.2
+302,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,26,99.33,0.61,0.5
+303,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,99.37,1.42,2.1
+304,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,92.91,0.73,-1.36
+305,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,97.88,1.91,-0.76
+306,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,22,93.61,1.15,-2.03
+307,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,23,93.09,0.88,-2.27
+308,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,96.68,1.89,0.14
+309,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,15,94.99,1.02,-1.72
+310,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,95.15,1.19,-0.62
+311,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,13,97.11,0.33,2.22
+312,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,99.07,1.02,0.53
+313,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,27,93.28,1.6,0.5
+314,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,11,96.39,0.32,-2.01
+315,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,95.91,0.41,-0.44
+316,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,93.34,1.96,2.81
+317,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,93.78,1.57,-0.51
+318,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,92.75,1.49,2.87
+319,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,93.78,0.29,-0.2
+320,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,15,93.96,0.56,-0.51
+321,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,92.22,0.31,-2.47
+322,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,97.08,0.75,0.18
+323,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,9,98.95,1.25,1.1
+324,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,98.33,0.96,2.32
+325,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,98.68,1.75,-1.99
+326,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,99.23,1.47,0.01
+327,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,93.75,1.05,1.93
+328,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,93.39,0.99,1.75
+329,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,98.05,0.9,0.75
+330,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,22,98.49,0.96,0.87
+331,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,98.01,0.77,-2.58
+332,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,94.1,0.95,0.86
+333,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,95.36,1.13,-0.01
+334,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,94.26,1.75,-2.77
+335,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,97.62,1.84,-2.71
+336,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,10,96.83,1.98,0.8
+337,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,93.42,0.34,-0.3
+338,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,97.19,1.58,2.69
+339,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,96.54,1.28,1.81
+340,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,93.95,0.47,1.05
+341,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,98.51,1.21,1.57
+342,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,97.66,1.84,2.64
+343,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,97.81,0.96,0.42
+344,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,95.85,1.32,1.94
+345,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,99.04,0.77,-2.71
+346,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,11,92.15,0.41,-0.42
+347,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,95.56,1.19,-1.36
+348,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,95.08,1.22,1.39
+349,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,98.57,1.71,-1.32
+350,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,97.36,1.13,2.06
+351,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,19,93.41,0.76,-0.35
+352,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,97.9,0.9,1.54
+353,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,95.56,1.64,-1.2
+354,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,92.03,1.48,2.69
+355,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,94.79,0.77,2.16
+356,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,10,93.68,1.74,2.88
+357,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,96.11,1.53,0.89
+358,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,99.03,1.26,2.53
+359,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,94.98,1.94,0.87
+360,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,94.85,1.36,-2.03
+361,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,92.28,0.95,-1.32
+362,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,94.48,0.9,-0.85
+363,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,12,93.95,1.23,1.81
+364,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,96.02,1.76,1.95
+365,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,99.39,1.62,-1
+366,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,96.19,1.83,-0.23
+367,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,95.92,1.43,1.56
+368,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,96.42,1.9,-1.1
+369,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,92.65,1.36,1.1
+370,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,96.33,1.81,-2.63
+371,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,98.7,0.82,1.94
+372,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,97.69,0.53,-0.14
+373,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,98.94,0.88,1.15
+374,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,98.36,1.58,-0.34
+375,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,99.03,1.12,-0.79
+376,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,7,94.22,0.99,0.13
+377,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,17,93.81,1.3,-0.82
+378,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,98.94,1.74,1.25
+379,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,92.52,0.68,-1.91
+380,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,95.71,0.76,2.24
+381,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,92.96,1.51,-0.23
+382,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,93.07,1.89,-1.8
+383,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,7,95.08,1.01,-2.1
+384,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,92.44,1.77,2.94
+385,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,93.55,1.54,1.19
+386,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,97.6,1.95,-1.52
+387,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,95.25,1.7,0.27
+388,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,7,94.65,1.7,-2.31
+389,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,99.39,0.5,0.07
+390,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,98.57,1.07,1.8
+391,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,96.05,1.69,0.01
+392,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,93.85,1.31,-0.94
+393,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,98.65,0.61,1.55
+394,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,95.6,1.29,0.9
+395,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,95.53,0.29,2.32
+396,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,96,0.13,0.07
+397,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,98.19,0.72,-0.91
+398,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,92.25,0.9,-0.69
+399,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,94.01,0.99,-1.85
+400,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,98.41,0.59,-2.58
+401,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,98.02,0.12,0.65
+402,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,93.51,0.42,0.21
+403,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,96.85,1.9,1.55
+404,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,92.68,1.06,-2.83
+405,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,18,95.03,1.66,-1.6
+406,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,99.44,1.05,0.43
+407,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,98.66,0.79,2.88
+408,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,98.89,1.09,-0.73
+409,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,92.99,1.42,0.07
+410,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,97.69,0.1,1.2
+411,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,25,97.85,0.49,-1.99
+412,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,8,92.82,1.83,-1.31
+413,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,92.33,0.22,2.71
+414,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,92.6,1.06,0.52
+415,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,27,92.18,1.59,1.4
+416,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,99.39,1.93,0.57
+417,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,97.85,0.59,0.59
+418,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,27,96.15,0.46,-1.14
+419,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,6,92.75,0.41,0.54
+420,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,94.34,1.64,0.88
+421,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,15,94.69,1.5,0.6
+422,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,96.15,1.26,-1.32
+423,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,16,94.14,1.52,0.27
+424,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,95.55,0.62,-1.85
+425,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,93.81,0.94,-1.38
+426,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,94.37,0.34,0.49
+427,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,26,92.22,1.62,2.29
+428,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,93.18,0.11,-0.72
+429,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,97.76,0.35,-1.81
+430,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,9,97.1,0.33,2.09
+431,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,23,96.88,1.68,2.99
+432,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,92.05,1.94,-0.05
+433,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,8,97.06,1.1,-1.82
+434,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,94.53,0.91,2.85
+435,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,21,93.55,1.93,0.71
+436,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,8,97.13,0.27,1.73
+437,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,17,94.28,1.6,-2.4
+438,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,12,94.8,0.63,-0.91
+439,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,11,96.68,0.77,2.2
+440,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,28,98.54,0.44,-2.47
+441,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,97.78,1,0.88
+442,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,93.13,1.18,-0.44
+443,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,98.92,1.09,2.3
+444,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,97.63,0.13,0.66
+445,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,94.42,1.38,0.67
+446,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,98.09,1.65,0.09
+447,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,11,93.2,0.64,-0.63
+448,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,96.77,0.23,1.59
+449,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,23,97.6,0.67,1.2
+450,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,97.79,1.04,-1.16
+451,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,96.82,0.92,-0.65
+452,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,93.1,1.9,1.71
+453,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,94.79,0.88,2.16
+454,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,22,95.18,1.7,0.77
+455,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,93.55,1.48,2.59
+456,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,93,0.82,-1.12
+457,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,96.26,0.96,-0.73
+458,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,10,98.14,1.83,-2.3
+459,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,27,95.9,1.14,-2.19
+460,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,10,95.03,1.63,-0.15
+461,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,98.72,0.98,1.54
+462,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,97.88,0.71,1.87
+463,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,98.68,0.32,-1.98
+464,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,7,94.28,1.21,1.96
+465,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,97.61,0.9,2.64
+466,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,27,94.45,1.64,-2.91
+467,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,15,95.36,1.91,0.45
+468,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,95.15,0.69,-0.86
+469,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,92.08,0.62,-2.85
+470,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,9,99.08,0.42,2.62
+471,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,99.07,1.08,0.6
+472,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,25,94.72,1.69,-1.99
+473,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,14,95.32,1.4,-1.81
+474,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,24,98.81,1.61,2.78
+475,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,94.1,0.37,1.7
+476,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,94.56,0.21,2.61
+477,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,99.03,1.99,-0.29
+478,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,97.53,1.69,2.6
+479,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,20,98.88,0.81,-0.34
+480,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,97.05,1.45,1.94
+481,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,93.42,1.06,0.84
+482,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,97.03,0.67,-1.32
+483,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,99.43,1.26,-2.63
+484,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,94.8,0.13,-2.88
+485,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,23,95.14,0.4,-2.06
+486,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,8,94.47,0.71,2.53
+487,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,97.96,0.44,-2.87
+488,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,93.14,0.48,0.2
+489,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,94.73,0.96,-0.57
+490,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,11,92.68,0.55,1.24
+491,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,97.76,1.81,0.56
+492,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,97.06,0.86,1.81
+493,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,12,98.69,1.91,-2.57
+494,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,23,96.6,1.12,-0.61
+495,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,95.75,0.31,1.08
+496,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,97.61,0.49,1.5
+497,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,27,94.62,1.46,2.13
+498,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,15,93.56,1.95,-0.13
+499,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,95.72,0.15,-0.41
+500,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,13,97.3,1.22,1.38
+501,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,97.99,1.89,0.7
+502,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,8,95.14,0.94,0
+503,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,94.64,0.94,1.66
+504,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,13,99.45,1.08,-2.33
+505,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,97.86,1.48,2.13
+506,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,93.01,1,0.99
+507,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,95.61,1.96,-1.49
+508,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,94.47,0.38,-2.83
+509,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,17,93.35,0.97,1.45
+510,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,92.82,0.49,1.64
+511,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,99.46,0.45,-1.21
+512,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,94.47,0.69,0.89
+513,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,20,93.17,1.38,1.43
+514,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,20,93.51,0.92,1.41
+515,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,96.31,0.51,-1.09
+516,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,92.12,1.82,-0.56
+517,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,92.49,1.92,-1.76
+518,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,94.34,0.23,2.21
+519,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,97.36,0.33,0.93
+520,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,96.22,1.44,-0.21
+521,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,15,97.65,1.91,-1.84
+522,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,94.22,1.43,1.94
+523,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,99.26,1.37,0.73
+524,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,94.78,1.44,-2.54
+525,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,15,93.44,0.26,1.9
+526,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,94.41,1.19,2.62
+527,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,8,97.86,1.68,-0.75
+528,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,95.87,1.89,-1.39
+529,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,94.19,0.93,1.84
+530,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,94.01,0.1,2.38
+531,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,94.43,1.52,-1.8
+532,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,94.42,1.03,1.89
+533,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,95.18,1.45,0.41
+534,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,16,95.42,1.41,-2.22
+535,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,96.62,1.84,2.71
+536,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,95.53,1.36,2.4
+537,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,19,93.92,1.65,2.93
+538,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,7,92.04,0.89,-0.25
+539,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,27,96.26,0.3,-1.53
+540,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,97.69,1.64,2.15
+541,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,92.56,1.94,0.78
+542,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,9,96.55,0.47,2.6
+543,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,92.22,0.17,-2.47
+544,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,96.51,1.3,1.83
+545,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,26,93.05,0.25,0.85
+546,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,26,93.7,1.57,0.42
+547,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,92,1.29,2.36
+548,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,95.58,1.5,-0.7
+549,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,94.29,0.69,0.22
+550,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,92.13,1.06,-1.01
+551,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,95.56,1.59,2.37
+552,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,96.63,1.5,2.85
+553,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,23,98.45,1.71,-0.6
+554,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,99.11,1.43,-1.17
+555,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,93.56,0.43,-1.54
+556,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,98.79,0.14,0.71
+557,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,99.25,1.89,1.49
+558,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,96.12,1.31,0.86
+559,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,23,92.91,0.68,-0.48
+560,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,99.08,0.49,-1.07
+561,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,98.62,0.77,1.07
+562,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,96.04,1.91,0.91
+563,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,97.78,1,0.12
+564,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,28,93.05,0.13,-0.4
+565,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,96.9,1.85,3
+566,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,96,1.29,2.85
+567,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,8,94.07,1.48,2.18
+568,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,92.89,0.74,1
+569,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,92.96,0.14,1.46
+570,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,94.57,0.11,0.34
+571,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,97.1,0.12,-1.58
+572,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,95.57,1.6,2.36
+573,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,23,96.15,1.62,-2.12
+574,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,97.87,1.65,-1.86
+575,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,13,93.79,0.44,-2.83
+576,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,97.28,1.33,-0.62
+577,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,10,96.54,0.84,1.92
+578,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,95,1.08,2.53
+579,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,95.5,1.96,1.9
+580,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,13,93.31,0.18,-2.9
+581,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,92.06,0.6,-0.92
+582,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,94.51,1.87,0.81
+583,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,95.12,1.62,0.58
+584,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,92.25,0.78,-2.33
+585,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,97.58,0.42,-1.6
+586,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,93.53,1.71,2.97
+587,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,19,93.6,1.71,1.95
+588,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,28,94.64,1.34,2.94
+589,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,92.32,1.47,0.59
+590,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,99.06,1.69,1.33
+591,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,9,95.65,0.49,2.82
+592,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,97.57,1.12,2.22
+593,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,95.73,0.87,0.04
+594,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,7,96.95,0.66,-2.51
+595,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,96.08,0.55,-2.94
+596,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,96.42,1.88,-1.35
+597,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,95.14,1.14,2.3
+598,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,97.24,0.34,2.53
+599,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,95.59,1.74,-1.45
+600,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,96.74,1.95,0.68
+601,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,94.77,1.04,2.62
+602,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,92.71,1.66,-1.28
+603,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,94.04,1.76,1.01
+604,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,23,96.17,1.27,2.39
+605,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,96.79,0.95,2.22
+606,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,9,93.06,0.18,1.24
+607,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,94.27,1.16,2.51
+608,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,93.52,0.64,0.53
+609,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,97.7,1.93,-0.72
+610,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,99.04,0.32,0.42
+611,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,96.34,0.27,-0.46
+612,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,95.07,1.1,-0.91
+613,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,94.2,1.03,1.87
+614,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,95.29,0.46,-3
+615,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,28,99.02,0.88,-1.55
+616,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,92.76,0.14,2.47
+617,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,92.58,0.7,-0.64
+618,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,93.51,0.17,-1.82
+619,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,28,95.83,0.94,-2.52
+620,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,94.23,1.11,-2.72
+621,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,94.94,1.44,1.72
+622,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,97.49,1.68,1.35
+623,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,99.08,0.74,-1.51
+624,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,16,96.98,1.58,1.35
+625,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,96.18,0.83,-1.64
+626,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,13,98.45,1.6,-2
+627,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,11,96.16,1.66,1.15
+628,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,98.88,0.34,-0.39
+629,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,93.39,0.22,-2.71
+630,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,15,93.9,0.86,1.19
+631,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,94.64,0.22,0.14
+632,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,95.25,1.54,1.27
+633,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,97.09,0.1,-2.61
+634,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,96.22,1.1,2.6
+635,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,23,97.1,0.95,2.43
+636,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,28,95.4,0.97,-0.83
+637,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,93.29,1.34,-0.02
+638,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,94.64,0.74,0.54
+639,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,97.1,1.49,-0.22
+640,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,96.41,1.01,-1.38
+641,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,10,95.26,0.1,-2.17
+642,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,13,92.67,0.36,-0.14
+643,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,95.4,1.85,2.71
+644,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,98.52,1.02,1.43
+645,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,92.15,1.48,-0.74
+646,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,96.05,1.89,-2.71
+647,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,92.75,1.32,0.77
+648,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,8,92.29,1.81,1.04
+649,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,15,94.01,1.36,2.39
+650,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,93.28,1.96,2.61
+651,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,25,95.33,0.81,-0.81
+652,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,98.92,0.86,-0.88
+653,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,92.31,0.52,-0.18
+654,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,95.69,1.83,1.71
+655,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,93.5,0.89,1.08
+656,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,97,0.29,0.61
+657,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,98.69,1.37,2.14
+658,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,97.36,1.13,1.98
+659,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,95.37,1.44,-2.28
+660,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,98.47,1.15,-0.34
+661,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,97.69,0.61,-2.27
+662,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,28,92.41,1.69,0.89
+663,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,92.32,0.54,-1.1
+664,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,95.74,1.03,1.07
+665,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,97.21,0.56,-0.57
+666,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,10,92.11,1.18,-2.12
+667,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,94.83,0.38,0.24
+668,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,19,95.19,1.73,0.54
+669,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,9,98.72,0.18,-2.25
+670,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,96.4,0.72,2.7
+671,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,93.76,1.88,2.73
+672,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,25,94.26,0.92,1.63
+673,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,7,99.31,0.61,-2.34
+674,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,97.72,0.3,2.11
+675,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,8,98.85,0.27,2.07
+676,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,99.36,1.92,1.28
+677,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,96.45,0.42,-2.53
+678,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,95.19,1.44,-0.51
+679,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,16,97.43,1.67,-2.36
+680,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,15,96.3,0.61,-2.49
+681,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,94.76,1.93,1.07
+682,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,95.32,0.32,1.21
+683,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,95.5,1.37,-0.29
+684,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,96.23,1.7,2.45
+685,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,93.68,0.81,-0.64
+686,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,98.86,1.18,-0.19
+687,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,23,98.57,0.42,2.26
+688,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,21,97.2,1.94,2.56
+689,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,92.19,1.72,0.11
+690,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,96.99,1.17,1.29
+691,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,8,92.73,0.83,1.02
+692,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,97.83,0.57,-1.09
+693,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,97.7,1.48,2.07
+694,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,98.93,1.61,-1.26
+695,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,97.88,0.95,1.97
+696,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,27,92.2,1.58,-0.53
+697,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,98.1,0.12,-1.59
+698,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,96.03,0.39,0.91
+699,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,15,92.13,1.5,-0.9
+700,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,94.64,0.98,-0.51
+701,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,95.27,0.5,-2.11
+702,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,98.87,0.46,-0.11
+703,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,8,96.84,1.13,-2.37
+704,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,92.42,0.84,0.33
+705,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,95.65,0.28,2.17
+706,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,21,93.31,0.17,-2.13
+707,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,92.28,0.69,-1.55
+708,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,98.96,1.1,2.62
+709,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,14,99.34,1.21,2.92
+710,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,27,93.11,1.72,-2.53
+711,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,93.62,0.33,-0.06
+712,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,98.25,1.99,2.74
+713,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,21,99.14,0.88,0.74
+714,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,93.6,1.93,-0.75
+715,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,93.96,1.11,0.83
+716,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,98.91,0.49,0.49
+717,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,95.3,0.28,-1.09
+718,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,5,97.3,1.4,-1.74
+719,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,93.36,1.27,-1.64
+720,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,94.94,1.08,-2.82
+721,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,96.11,0.19,-2.66
+722,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,98.51,0.33,-2.38
+723,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,98.01,1.35,-0.61
+724,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,25,94.49,1.22,1.32
+725,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,92.22,1.36,-0.23
+726,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,7,99.45,1.52,1.04
+727,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,23,95.03,0.57,-2.61
+728,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,5,93.64,1.58,0.54
+729,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,93.13,0.79,1.95
+730,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,98.23,0.85,-1.9
+731,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,98.42,1.23,2.21
+732,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,24,93.98,1.03,-0.12
+733,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,26,94.9,1.1,-2.89
+734,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,96.04,0.19,-0.52
+735,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,24,95.94,0.25,2.49
+736,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,21,94.93,1.38,2.2
+737,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,98.13,0.29,-1.36
+738,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,98.37,1.85,2.47
+739,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,6,98.32,0.65,1.74
+740,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,95.1,0.77,-2.7
+741,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,24,93.39,1.81,-1.47
+742,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,25,97.7,1.05,-0.47
+743,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,97.49,0.79,1.22
+744,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,7,96.76,1.76,0.16
+745,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,93.45,0.56,-2.65
+746,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,23,96.54,0.93,-2.33
+747,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,95.28,1.48,2.44
+748,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,92.43,0.31,-2.83
+749,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,26,92.12,0.93,1.87
+750,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,97.08,1.49,2.17
+751,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,95.4,0.28,1.83
+752,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,14,98.59,0.97,2.89
+753,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,96.36,1.72,2.42
+754,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,93.82,1.55,-2.31
+755,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,97.21,1.83,-1.12
+756,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,96.8,1.06,0.07
+757,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,99.38,1.41,0.61
+758,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,96.13,0.27,-0.74
+759,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,15,93.11,1.97,-0.81
+760,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,17,96.55,0.89,-1.73
+761,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,94.33,0.23,-0.17
+762,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,95.2,0.51,-0.84
+763,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,95.8,1.37,-0.61
+764,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,99.26,1.46,-2.41
+765,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,98.94,1.85,2.27
+766,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,95.14,0.43,-0.54
+767,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,15,92.96,1.89,0.88
+768,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,98.94,1.75,0.53
+769,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,16,97.76,0.24,-0.07
+770,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,94.11,1.87,1.72
+771,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,98.19,1.57,1.11
+772,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,95.76,0.26,0.78
+773,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,93.23,1.48,-0.66
+774,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,15,92.73,0.9,-2.28
+775,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,11,94.79,0.32,-0.98
+776,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,12,96.86,0.24,0.02
+777,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,9,94.77,0.97,2.2
+778,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,93.2,0.42,-0.24
+779,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,96.83,0.73,0.85
+780,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,94.69,0.7,-1.67
+781,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,94.37,1.94,2.74
+782,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,28,97.21,0.52,0.63
+783,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,94.28,1.36,1.48
+784,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,28,99.31,0.47,-0.04
+785,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,92.59,1.73,0.01
+786,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,96.4,0.31,2.26
+787,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,11,94.8,0.89,-0.89
+788,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,92.84,1.48,1.46
+789,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,6,94.85,0.58,-1.9
+790,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,98.13,1.87,-2.54
+791,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,95.37,0.29,2.4
+792,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,26,98.4,0.6,-1.74
+793,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,93.19,1.33,-1.76
+794,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,12,95.05,1.93,-0.69
+795,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,98.07,1.79,-2.25
+796,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,98.08,0.7,2.22
+797,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,97.76,0.25,-0.92
+798,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,22,98.06,1.1,-0.52
+799,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,25,94.43,1.73,-0.14
+800,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,95.44,1.65,0.53
+801,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,26,94.42,0.95,0.72
+802,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,95.5,1.48,-2.25
+803,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,97.94,1.23,-0.8
+804,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,97.17,1.71,-2.61
+805,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,94.14,1.1,0.56
+806,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,20,94.11,0.28,0.85
+807,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,97.24,1.5,2.69
+808,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,98.63,0.64,2.82
+809,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,96.28,1.52,-0.9
+810,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,96.23,1.66,2.34
+811,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,94.67,0.61,0.18
+812,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,94.34,0.13,1.01
+813,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,95.81,1.17,0.38
+814,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,92.58,0.9,2.8
+815,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,97.09,1.76,-0.17
+816,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,12,92.33,1.49,-2.37
+817,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,95.75,0.89,-1.02
+818,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,93,0.51,-1.47
+819,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,27,95.08,0.65,0.19
+820,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,95.14,1.18,2.53
+821,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,96.34,0.45,0.42
+822,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,95.14,0.15,0.2
+823,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,27,95.86,1.35,2.42
+824,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,17,97.49,1.24,-1.24
+825,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,94.13,0.26,2.53
+826,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,6,93.27,0.84,2.72
+827,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,96.73,1.43,1.98
+828,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,96.55,1.23,2.75
+829,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,99.38,1.58,-0.05
+830,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,97.68,1.77,-1.83
+831,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,21,93.83,0.71,2.22
+832,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,25,93.06,1.8,-1.64
+833,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,11,97.34,2,0.31
+834,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,17,93.92,0.61,-0.21
+835,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,20,97.36,1.2,1.35
+836,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,96.77,1.42,2.11
+837,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,94.52,1.25,0.21
+838,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,92.89,1.87,-2.59
+839,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,96.21,0.39,-1.6
+840,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,13,96.58,0.84,-0.74
+841,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,98.56,1.38,-0.12
+842,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,95.88,1.73,1.57
+843,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,14,97.35,0.52,2.29
+844,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,16,98.89,0.31,2.35
+845,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,28,99.41,1.08,0.28
+846,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,21,92.54,0.45,2.9
+847,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,92.25,0.92,1.68
+848,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,98.83,0.65,-0.02
+849,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,28,95.49,0.18,-1.66
+850,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,97.79,1.96,-1.99
+851,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,97.57,0.33,1.55
+852,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,96.49,1.22,2.02
+853,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,30,94.87,0.72,2.53
+854,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,10,96.24,1.39,0.64
+855,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,93.79,1.73,2.42
+856,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,17,92.79,0.9,0.88
+857,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,98.07,1.1,0.56
+858,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,95.91,0.16,-2.84
+859,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,19,98.43,0.22,1.58
+860,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,27,94.73,1.91,2.17
+861,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,95.72,1.95,-2.23
+862,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,16,94.59,0.4,-0.6
+863,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,28,97,0.86,0.94
+864,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,96.78,0.75,-0.86
+865,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,94.64,1.29,-0.58
+866,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,98.49,0.19,0.79
+867,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,23,99.32,0.33,1.06
+868,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,16,99.46,1.48,1.82
+869,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,94.81,1.7,-0.87
+870,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,96.84,0.58,1.93
+871,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,93.12,0.24,1.01
+872,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,94.46,1.37,0.68
+873,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,92.53,0.73,1.18
+874,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,92.73,1.65,-2.15
+875,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,19,96.19,1.02,0.18
+876,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,95.45,1.09,1.66
+877,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,12,98.82,1.15,-2.29
+878,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,95.01,0.21,-0.4
+879,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,28,97.16,0.82,1.62
+880,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,97.9,0.17,1.63
+881,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,98.78,1.54,2.73
+882,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,28,99.04,0.16,1.44
+883,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,20,96.06,0.26,1.99
+884,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,97.01,0.6,-0.56
+885,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,92.36,0.58,2.8
+886,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,13,98.63,0.34,0.79
+887,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,18,92.54,0.36,-1.2
+888,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,27,98.64,1.39,2.17
+889,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,29,97.34,1.4,2.05
+890,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,93.75,1.83,-0.9
+891,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,15,97.21,0.32,2.71
+892,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,26,94.98,1.36,-0.98
+893,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,95.32,0.33,-1.06
+894,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,99.37,1.54,-2.81
+895,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,95.37,0.42,-0.8
+896,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,24,93.26,1.11,-2.08
+897,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,93.25,0.56,1.23
+898,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,27,93.08,0.95,-0.22
+899,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,95.52,0.36,0.03
+900,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,93.49,1.59,2.65
+901,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,5,98.29,1.87,0.06
+902,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,24,92.65,0.78,1.02
+903,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,12,97.7,0.66,-0.15
+904,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,11,94.78,0.85,1.88
+905,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,30,98.12,0.25,2.84
+906,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,20,96.68,1.6,0.98
+907,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,23,94.26,0.2,-2.95
+908,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,25,96.13,0.44,0.45
+909,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,97.17,0.4,0.15
+910,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,10,96.79,0.71,-0.74
+911,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,94.53,0.5,-1.03
+912,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,17,93,0.88,-1.7
+913,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,24,96.79,0.2,0.97
+914,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,96.6,0.6,1.43
+915,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,26,96.44,1.01,0.09
+916,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,27,97.23,1.82,-2.05
+917,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,92.76,0.29,0.75
+918,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,28,92.1,1.81,2.94
+919,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,6,92.11,0.69,1.44
+920,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,96.46,1.69,-1.13
+921,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,99.49,1.85,-0.4
+922,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,95.06,1.65,-1.17
+923,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,23,93.49,0.65,-2.09
+924,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,97.99,0.98,2.57
+925,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,94.09,0.7,1.24
+926,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,26,96.61,1.89,-1.5
+927,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,93.1,1.17,-0.88
+928,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,15,93.33,0.61,2.97
+929,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,14,95.8,0.6,-0.75
+930,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,21,93.45,1.59,-0.52
+931,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,98.03,0.48,2.88
+932,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,8,95.95,0.28,-1.23
+933,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,8,93.95,0.92,0.13
+934,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,18,94.79,1.55,-2
+935,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,92.6,1.52,2.37
+936,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,6,95.54,1.33,2.36
+937,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,8,98.42,1.82,-2.64
+938,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,95.09,1.23,2.63
+939,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,26,92.75,0.93,-2.85
+940,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,96.84,1.11,2.84
+941,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,6,99.48,1.41,-0.41
+942,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,92.92,0.47,2.46
+943,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,98.52,1.7,-2.1
+944,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,7,95.75,1.26,0.6
+945,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,29,94.51,0.67,0.11
+946,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,93.75,0.24,1.51
+947,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,96.67,1.92,-0.52
+948,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,24,98.89,1.62,-0.42
+949,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,28,99.12,1.39,0.79
+950,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,20,94.26,0.91,-0.18
+951,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,9,96.23,0.47,2.27
+952,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,8,98.28,1.13,-1.18
+953,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,14,92.73,0.45,-2.95
+954,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,22,93.69,1.78,-2.12
+955,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,9,97.65,1.31,1.23
+956,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,25,95.97,1.91,0.11
+957,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,18,96.43,0.6,-2.41
+958,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,19,94.4,1.2,0.52
+959,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,92.49,1.51,-2.32
+960,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,13,95.34,0.65,-0.61
+961,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,16,95.69,0.49,0.49
+962,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,6,96.74,1.5,-0.57
+963,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,19,99.04,1.35,1.25
+964,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,99.49,1.64,-0.59
+965,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,22,95.34,1.82,1.06
+966,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,15,93.16,1.22,-1.38
+967,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,12,93.44,1.46,0.71
+968,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,13,96.13,0.51,-2.98
+969,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,30,95.69,0.14,2.11
+970,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,26,97.71,1.37,-1.38
+971,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,5,92.89,1.75,1.33
+972,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,21,93.43,1.8,-0.76
+973,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,29,93.67,0.26,-1.92
+974,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,96.48,0.62,-2.91
+975,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,25,98.15,2,1.88
+976,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,5,94.21,1.49,0.36
+977,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,12,96,0.22,2.93
+978,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,22,92.68,1.75,-0.73
+979,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,10,92.04,0.99,0.38
+980,Electrical,Resistor 1k 1% 0603,RC0603FR-071KL,Yageo,Digi-Key,1,0.015,0.015,29,94.73,1.18,-2.4
+981,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,9,92.57,1.21,1.82
+982,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,22,95.2,1.23,1.05
+983,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,25,93.65,0.67,1.95
+984,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,98.32,1.31,1.15
+985,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,27,95.78,0.89,2.32
+986,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,97.05,0.65,-1.9
+987,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,11,92.61,0.93,-2.26
+988,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,7,98.66,0.58,0.94
+989,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,25,96.07,0.72,2.44
+990,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,30,96.64,1.14,0.71
+991,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,16,94.73,1.43,-2.65
+992,Mechanical,M3 standoff 10mm,94669A140,McMaster,McMaster,1,0.08,0.08,6,94.37,1.21,1.01
+993,Electrical,Resistor 10k 1% 0402,RC0402FR-0710KL,Yageo,Digi-Key,1,0.01,0.01,11,93.78,1.97,-0.81
+994,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,25,92.52,1.26,2.16
+995,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,18,92.41,1.84,-0.88
+996,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,30,97.79,0.6,0.77
+997,Mechanical,M3 screw 6mm,91239A110,McMaster,McMaster,1,0.03,0.03,14,97.26,1.65,-2.16
+998,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,95.68,0.63,-0.88
+999,Electrical,Cap 0.1uF 25V 0402,GRM155R71E104KE14,Murata,Mouser,1,0.02,0.02,7,97.02,0.5,1.13
+1000,Electrical,Inductor 1uH 0603,LQW18AN1N0C00,Murata,Mouser,1,0.05,0.05,13,97.49,1.63,1.27

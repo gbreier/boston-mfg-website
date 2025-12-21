@@ -1,0 +1,9 @@
+Supplier,Avg Lead Time (days),On-Time Delivery (%),Defect Rate (%),Cost Variance (%)
+Adafruit,16,86.17,0.55,-0.91
+Digi-Key,20,89.12,2.72,-2.9
+McMaster,10,90.29,4.41,2.31
+Misumi,8,89.56,2.51,-2.03
+Motion Industries,7,96.32,2.31,2.74
+Mouser,12,90.81,3.95,-0.97
+RS Components,19,98.92,2.77,-0.57
+Stockwell,5,96.82,0.91,-0.03

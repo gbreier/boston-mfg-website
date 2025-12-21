@@ -1,0 +1,6 @@
+Item,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total
+1,Aluminum Enclosure (100mm x 50mm x 25mm),1455C801,Hammond,Digi-Key,1,8.5,8.5
+2,M3 x 6mm Socket Head Cap Screw (Stainless),91290A110,McMaster-Carr,McMaster,4,0.1,0.4
+3,Nylon PCB Standoff M3 10mm Height,NYL-M3-10,Essentra,Digi-Key,4,0.12,0.48
+4,Silicone Gasket Sheet (100mm x 50mm x 1mm),SGSK-10050,Stockwell Elastomerics,Stockwell,1,2.5,2.5
+5,Snap-fit Panel Mount,SPM-25,Richco,Mouser,2,0.3,0.6

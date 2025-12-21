@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChainVision Solutions - Supply Chain Simulator</title>
+      <link rel="icon" href="/chainvision-logo.svg">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #222;
+      overflow-x: hidden;
+    }
+    
+    /* Animated background particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #2196f3 0%, #21cbf3 50%, #1e88e5 100%);
+      color: #fff;
+      padding: 60px 0 80px 0;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+      z-index: 1;
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .logo {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .logo:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .logo a {
+      cursor: pointer;
+      display: block;
+      pointer-events: auto;
+      z-index: 1000;
+      position: relative;
+    }
+    
+    .logo img {
+      width: 65px;
+      height: 65px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    
+    .header-text {
+      text-align: left;
+    }
+    
+    .header-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #fff 0%, #e3f2fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .logout-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      white-space: nowrap;
+      z-index: 1000;
+      font-family: inherit;
+    }
+    
+    .logout-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .logout-btn:active {
+      transform: translateY(0);
+    }
+    
+    @media (max-width: 800px) {
+      .logout-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+      .header-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+    }
+
+    .bmg-branding {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2em;
+      margin-top: 0.5em;
+      opacity: 1;
+    }
+
+    .bmg-branding-text {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #e3f2fd;
+      margin-right: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .bmg-logo {
+      width: 41px;
+      height: 27px;
+      opacity: 0.9;
+      transition: all 0.3s ease;
+    }
+
+    .bmg-branding:hover .bmg-logo {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    
+    .header-tagline {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.5em;
+      color: #e3f2fd;
+    }
+    
+    .header-desc {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-bottom: 0.2em;
+      color: #f0f8ff;
+    }
+    
+    /* Enhanced animated network illustration */
+    .network-graphic {
+      position: absolute;
+      right: 60px;
+      top: 40px;
+      width: 200px;
+      height: 150px;
+      opacity: 0.25;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .network-node {
+      animation: networkPulse 3s ease-in-out infinite;
+    }
+    
+    .network-connection {
+      stroke-dasharray: 5,5;
+      animation: networkFlow 4s linear infinite;
+    }
+    
+    @keyframes networkPulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+    
+    @keyframes networkFlow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 40; }
+    }
+    
+    /* Global Mode Selector Styling */
+    .global-mode-selector {
+      margin-top: 20px;
+      padding: 15px 25px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1.2s ease-out 0.3s both;
+    }
+    
+    .global-mode-selector label {
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .global-mode-selector select {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .global-mode-selector select:hover {
+      background: #fff;
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .global-mode-selector select:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    }
+    
+    @media (max-width: 800px) {
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .logo {
+        margin: 0 0 20px 0;
+      }
+      .network-graphic {
+        display: none;
+      }
+      .header-text {
+        text-align: center;
+      }
+      .header-title {
+        font-size: 2.2rem;
+      }
+    }
+    
+    .main-section {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(33,150,243,0.15);
+      padding: 48px 32px 40px 32px;
+      margin-top: -40px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      animation: slideInUp 0.8s ease-out 0.2s both;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .main-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(33,150,243,0.02) 0%, rgba(30,136,229,0.05) 100%);
+      border-radius: 24px;
+      z-index: -1;
+    }
+    
+    .main-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 36px;
+      position: relative;
+    }
+    
+    .main-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+      border-radius: 2px;
+    }
+    
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .button-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(33,150,243,0.1);
+      max-width: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .button-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(33,150,243,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .button-card:hover::before {
+      left: 100%;
+    }
+    
+    .button-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(33,150,243,0.2);
+    }
+    
+    .main-btn {
+      background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(33,150,243,0.3);
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.3s ease;
+    }
+    
+    .main-btn:hover::before {
+      left: 100%;
+    }
+    
+    .main-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(33,150,243,0.4);
+    }
+    
+    .btn-desc {
+      font-size: 1rem;
+      color: #546e7a;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .input-section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      border: 1px solid rgba(33,150,243,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .input-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+    }
+    
+    .input-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .part-input {
+      padding: 16px 20px;
+      border: 2px solid #e1f5fe;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      min-width: 280px;
+      max-width: 400px;
+      outline: none;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+    
+    .part-input:focus {
+      border: 2px solid #2196f3;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(33,150,243,0.2);
+      transform: translateY(-2px);
+    }
+    
+    .recommend-btn {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(255,107,107,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .recommend-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.3s ease;
+    }
+    
+    .recommend-btn:hover::before {
+      left: 100%;
+    }
+    
+    .recommend-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,107,107,0.4);
+    }
+    
+    /* Floating icons */
+    .floating-icon {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.1;
+      animation: floatIcon 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-10px) rotate(90deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+      75% { transform: translateY(-10px) rotate(270deg); }
+    }
+    
+    .icon-1 { top: 10%; left: 10%; animation-delay: 0s; }
+    .icon-2 { top: 20%; right: 15%; animation-delay: 2s; }
+    .icon-3 { bottom: 30%; left: 20%; animation-delay: 4s; }
+    .icon-4 { bottom: 20%; right: 10%; animation-delay: 6s; }
+    
+         @media (max-width: 600px) {
+       .header {
+         padding: 40px 0 60px 0;
+       }
+       .main-section {
+         padding: 32px 20px 28px 20px;
+         margin-top: -20px;
+       }
+      .main-title {
+        font-size: 1.8rem;
+      }
+      .button-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .input-row {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .part-input {
+        min-width: 250px;
+      }
+    }
+    
+    /* Loading animation for interactions */
+    .loading {
+      position: relative;
+      pointer-events: none;
+    }
+    
+    .loading::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border: 2px solid #fff;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+         @keyframes spin {
+       0% { transform: rotate(0deg); }
+       100% { transform: rotate(360deg); }
+     }
+     
+     /* News Ticker Styles */
+     .news-ticker {
+      position: fixed;
+       bottom: 0;
+      left: 0;
+       width: 100%;
+       height: 60px;
+       background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+      color: #fff;
+       overflow: hidden;
+       z-index: 1000;
+       box-shadow: 0 -4px 20px rgba(25,118,210,0.3);
+       display: flex;
+       align-items: center;
+       backdrop-filter: blur(10px);
+     }
+     
+     .news-ticker-label {
+       background: rgba(0,0,0,0.3);
+       padding: 0 24px;
+       height: 100%;
+       display: flex;
+       align-items: center;
+       font-weight: 700;
+       font-size: 0.9rem;
+       white-space: nowrap;
+       border-right: 2px solid rgba(255,255,255,0.3);
+       letter-spacing: 0.5px;
+       text-transform: uppercase;
+     }
+     
+     .news-ticker-content {
+       flex: 1;
+       height: 100%;
+       display: flex;
+       align-items: center;
+      overflow: hidden;
+       position: relative;
+     }
+     
+     .news-ticker-scroll {
+       display: flex;
+       align-items: center;
+       animation: scroll-left 120s linear infinite;
+      white-space: nowrap;
+       padding-left: 100%;
+     }
+     
+     .news-item {
+       margin-right: 80px;
+       font-size: 0.9rem;
+       display: inline-flex;
+       align-items: center;
+       font-weight: 500;
+       opacity: 0.95;
+     }
+     
+     .news-item::before {
+       content: "📊";
+       margin-right: 12px;
+       font-size: 1.1rem;
+     }
+     
+     .news-item:nth-child(2n)::before { content: "🚛"; }
+     .news-item:nth-child(3n)::before { content: "⚡"; }
+     .news-item:nth-child(4n)::before { content: "🌐"; }
+     .news-item:nth-child(5n)::before { content: "📈"; }
+     
+     @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+     
+     .news-ticker:hover .news-ticker-scroll {
+       animation-play-state: paused;
+     }
+     
+     .news-loading {
+       color: rgba(255,255,255,0.8);
+       font-style: italic;
+     }
+     
+     @media (max-width: 768px) {
+       .news-ticker {
+         height: 50px;
+       }
+       .news-ticker-label {
+         padding: 0 16px;
+         font-size: 0.8rem;
+       }
+       .news-item {
+         font-size: 0.8rem;
+         margin-right: 60px;
+       }
+       body {
+         padding-bottom: 50px;
+       }
+     }
+     
+     @media (min-width: 769px) {
+       body {
+         padding-bottom: 60px;
+       }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logout Button - Top Left -->
+  <button class="logout-btn" onclick="handleLogout()" title="Sign Out">logout</button>
+  
+  <!-- Animated background particles -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Floating icons -->
+  <div class="floating-icon icon-1">🔗</div>
+  <div class="floating-icon icon-2">📊</div>
+  <div class="floating-icon icon-3">⚡</div>
+  <div class="floating-icon icon-4">🎯</div>
+  
+  <div class="header">
+    <div class="header-content">
+      <div class="logo">
+        <a href="/" style="text-decoration: none; color: inherit; cursor: pointer;" title="Back to Home">
+          <svg width="65" height="65" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Red gradient -->
+            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+            </linearGradient>
+            <!-- Blue gradient -->
+            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+            </linearGradient>
+            <!-- Black gradient -->
+            <linearGradient id="blackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#424242;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#212121;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Left chain link - flies in from left (RED) -->
+          <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#redGradient)" stroke-width="6">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="-60,0; 0,0; 0,0; 0,0; 0,0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.15; 0.85; 0.95; 1"/>
+            <animate
+              attributeName="opacity"
+              values="0; 1; 1; 1; 0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.15; 0.85; 0.95; 1"/>
+          </ellipse>
+          
+          <!-- Center chain link - flies in from top (BLUE) -->
+          <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="0,-60; 0,0; 0,0; 0,0; 0,0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.2; 0.85; 0.95; 1"/>
+            <animate
+              attributeName="opacity"
+              values="0; 1; 1; 1; 0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.2; 0.85; 0.95; 1"/>
+          </ellipse>
+          
+          <!-- Right chain link - flies in from right (BLACK) -->
+          <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blackGradient)" stroke-width="6">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="60,0; 0,0; 0,0; 0,0; 0,0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.25; 0.85; 0.95; 1"/>
+            <animate
+              attributeName="opacity"
+              values="0; 1; 1; 1; 0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.25; 0.85; 0.95; 1"/>
+          </ellipse>
+        </svg>
+        </a>
+      </div>
+      <div class="header-text">
+        <div class="header-title">ChainVision Solutions</div>
+        <div class="bmg-branding">
+          <span class="bmg-branding-text">Powered by Boston Manufacturing Group Innovation</span>
+          <img src="bmg-logo.svg" alt="BMG Logo" class="bmg-logo">
+        </div>
+        <div class="header-tagline">AI-Driven Supply Chain Resilience &amp; Optimization</div>
+        <div class="header-desc">Empowering your business with actionable insights, risk mitigation, and supplier intelligence.</div>
+        
+        <!-- Global AI Mode Selector -->
+        <div class="global-mode-selector">
+          <label for="globalAIMode" style="font-size: 0.95em; margin-right: 10px; font-weight: 500;">🤖 AI Analysis Mode:</label>
+          <select id="globalAIMode" onchange="setGlobalAIMode(this.value)" style="padding: 8px 16px; font-size: 0.95em; border: 2px solid rgba(255,255,255,0.3); border-radius: 8px; background: rgba(255,255,255,0.95); color: #1976d2; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+            <option value="comprehensive">Comprehensive - Deep reasoning (2-3 min)</option>
+            <option value="fast">Fast - Quick analysis (10-30 sec)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Enhanced animated network illustration -->
+    <svg class="network-graphic" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect class="network-node" x="10" y="20" width="40" height="40" rx="8" fill="#1976d2"/>
+      <rect class="network-node" x="150" y="10" width="40" height="40" rx="8" fill="#4caf50"/>
+      <rect class="network-node" x="120" y="70" width="40" height="40" rx="8" fill="#ff9800"/>
+      <rect class="network-node" x="60" y="60" width="40" height="40" rx="8" fill="#9c27b0"/>
+      <circle class="network-node" cx="30" cy="40" r="8" fill="#fff"/>
+      <circle class="network-node" cx="170" cy="30" r="8" fill="#fff"/>
+      <circle class="network-node" cx="140" cy="90" r="8" fill="#fff"/>
+      <circle class="network-node" cx="80" cy="80" r="8" fill="#fff"/>
+      <polyline class="network-connection" points="30,40 170,30 140,90 80,80 30,40" stroke="#fff" stroke-width="2" fill="none"/>
+      <polyline class="network-connection" points="30,40 80,80" stroke="#fff" stroke-width="2" fill="none"/>
+      <polyline class="network-connection" points="170,30 140,90" stroke="#fff" stroke-width="2" fill="none"/>
+      </svg>
+  </div>
+  
+  <div class="main-section">
+    <div class="main-title">Supply Chain Simulator</div>
+    
+    <div class="button-row">
+      <div class="button-card">
+        <button class="main-btn" onclick="navigateWithAnimation(this, 'disruption.html')">
+          Advanced Disruption Analysis
+        </button>
+        <div class="btn-desc">Analyze your supply chain's BOM for risks, delays, and disruption scenarios using AI-driven insights.</div>
+      </div>
+      
+      <div class="button-card">
+        <button class="main-btn" onclick="navigateWithAnimation(this, 'test-enhanced-scenarios.html')">
+          Demo Enhanced Scenarios
+        </button>
+        <div class="btn-desc">See example disruption scenarios and mitigation strategies in action.</div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 30px;">
+      <button class="main-btn" onclick="navigateWithAnimation(this, 'contact.html')" style="background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); max-width: 200px; box-shadow: 0 4px 16px rgba(76,175,80,0.3);">
+        Contact Us
+      </button>
+    </div>
+    
+    <div class="input-section">
+      <form class="input-row" onsubmit="handleFormSubmit(event)">
+        <input class="part-input" id="partInput" type="text" placeholder="Enter part number (e.g., ATTINY85-20SU)" autocomplete="off" required>
+        <button class="recommend-btn" type="submit">Recommended Suppliers</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- News Ticker -->
+  <div class="news-ticker">
+    <div class="news-ticker-label">📈 Supply Chain News</div>
+    <div class="news-ticker-content">
+      <div class="news-ticker-scroll" id="newsTickerScroll">
+        <div class="news-item news-loading">Loading latest supply chain news...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Global AI Mode Management
+    function setGlobalAIMode(mode) {
+      localStorage.setItem('globalAIMode', mode);
+      console.log('Global AI mode set to:', mode);
+      
+      // Show visual feedback
+      const select = document.getElementById('globalAIMode');
+      select.style.background = mode === 'fast' ? 'rgba(76, 175, 80, 0.95)' : 'rgba(25, 118, 210, 0.95)';
+      select.style.color = '#fff';
+      
+      setTimeout(() => {
+        select.style.background = 'rgba(255,255,255,0.95)';
+        select.style.color = '#1976d2';
+      }, 300);
+    }
+    
+    function loadGlobalAIMode() {
+      const savedMode = localStorage.getItem('globalAIMode') || 'comprehensive';
+      const select = document.getElementById('globalAIMode');
+      if (select) {
+        select.value = savedMode;
+      }
+      return savedMode;
+    }
+    
+    // Load mode on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadGlobalAIMode();
+    });
+    
+    // Create animated particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // Navigation with loading animation
+    function navigateWithAnimation(button, url) {
+      button.classList.add('loading');
+      button.textContent = '';
+      
+      setTimeout(() => {
+        window.location.href = url;
+      }, 800);
+    }
+    
+    // Handle form submission with animation
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const partNumber = document.getElementById('partInput').value.trim();
+      const button = event.target.querySelector('.recommend-btn');
+      
+      if (!partNumber) return;
+      
+      button.classList.add('loading');
+      button.textContent = '';
+      
+      // Clear any existing supplier evaluation data before navigating
+      clearSupplierEvaluationData();
+      
+      setTimeout(() => {
+        window.location.href = 'supplier-evaluation.html?part=' + encodeURIComponent(partNumber);
+      }, 800);
+    }
+    
+    // Clear supplier evaluation data when navigating to other pages
+    function clearSupplierEvaluationData() {
+      // This ensures we start fresh when going to supplier evaluation
+      const supplierKeys = Object.keys(localStorage);
+      supplierKeys.forEach(key => {
+        if (key.startsWith('supplier_') || key.startsWith('evaluation_')) {
+          localStorage.removeItem(key);
+        }
+      });
+    }
+    
+    // Add hover effects to cards
+    document.querySelectorAll('.button-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-8px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+    
+    // Initialize particles when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      
+      // Add staggered animation to elements
+      const elements = document.querySelectorAll('.button-card, .input-section');
+      elements.forEach((el, index) => {
+        el.style.animationDelay = (index * 0.2) + 's';
+        el.style.animation = 'slideInUp 0.8s ease-out both';
+      });
+    });
+    
+         // Parallax effect for header
+     window.addEventListener('scroll', () => {
+       const scrolled = window.pageYOffset;
+       const header = document.querySelector('.header');
+       const networkGraphic = document.querySelector('.network-graphic');
+       
+       if (header) {
+         header.style.transform = `translateY(${scrolled * 0.5}px)`;
+       }
+       
+       if (networkGraphic) {
+         networkGraphic.style.transform = `translateY(${scrolled * 0.3}px) rotate(${scrolled * 0.1}deg)`;
+       }
+     });
+
+    // Supply Chain News Ticker (real-news-only)
+    class SupplyChainNewsTicker {
+      constructor() {
+        this.currentNews = [];
+        this.isLoading = false;
+        this.init();
+      }
+
+      async init() {
+        await this.fetchNews();
+        this.updateTicker();
+        setInterval(() => this.fetchNews(), 2 * 60 * 1000);
+      }
+
+      async fetchNews() {
+        if (this.isLoading) return;
+        this.isLoading = true;
+        try {
+          const response = await fetch('/api/generate-supply-chain-news', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: 'real-news-only' })
+          });
+          if (response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data.headlines)) {
+              // Expect objects: { title, url, source, publishedAt }
+              this.currentNews = data.headlines.filter(h => h && h.title);
+            } else {
+              this.currentNews = [];
+            }
+          } else {
+            this.currentNews = [];
+          }
+        } catch (e) {
+          console.log('News fetch failed:', e);
+          this.currentNews = [];
+        }
+        this.updateTicker();
+        this.isLoading = false;
+      }
+
+      updateTicker() {
+        const tickerElement = document.getElementById('newsTickerScroll');
+        if (!tickerElement) return;
+        if (!this.currentNews || this.currentNews.length === 0) {
+          tickerElement.innerHTML = `<div class="news-item news-loading">No live headlines available</div>`;
+          return;
+        }
+        tickerElement.innerHTML = this.currentNews.map(item => {
+          const title = this.truncateText(item.title || '', 120);
+          const url = item.url || '#';
+          const source = item.source ? ` <span style="opacity:0.8;">(${item.source})</span>` : '';
+          return `<div class="news-item"><a href="${url}" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;">${title}</a>${source}</div>`;
+        }).join('');
+      }
+
+      truncateText(text, maxLength) {
+        if (typeof text !== 'string') return '';
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength - 3) + '...';
+      }
+    }
+
+     // Initialize news ticker when page loads
+     document.addEventListener('DOMContentLoaded', () => {
+       new SupplyChainNewsTicker();
+     });
+     
+     // Authentication check - redirect to login if not authenticated
+     window.addEventListener('DOMContentLoaded', () => {
+       if (sessionStorage.getItem('authenticated') !== 'true') {
+         window.location.href = 'login.html';
+       } else {
+         // Initialize inactivity timer if authenticated
+         initInactivityTimer();
+       }
+     });
+     
+     // Logout function
+     function handleLogout() {
+       sessionStorage.removeItem('authenticated');
+       sessionStorage.removeItem('username');
+       clearTimeout(window.inactivityTimer);
+       window.location.href = 'login.html';
+     }
+     
+     // Inactivity timer - auto logout after 5 minutes
+     let inactivityTimer;
+     const INACTIVITY_TIMEOUT = 5 * 60 * 1000; // 5 minutes in milliseconds
+     
+     function initInactivityTimer() {
+       // Reset timer on any user activity
+       const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
+       
+       function resetTimer() {
+         clearTimeout(inactivityTimer);
+         inactivityTimer = setTimeout(() => {
+           // Auto logout after inactivity
+           alert('Your session has expired due to inactivity. You will be logged out.');
+           handleLogout();
+         }, INACTIVITY_TIMEOUT);
+       }
+       
+       // Set initial timer
+       resetTimer();
+       
+       // Add event listeners for user activity
+       events.forEach(event => {
+         document.addEventListener(event, resetTimer, true);
+       });
+       
+       // Also track visibility changes (tab switching)
+       document.addEventListener('visibilitychange', () => {
+         if (document.visibilityState === 'visible') {
+           resetTimer();
+         }
+       });
+     }
+  </script>
+</body>
+</html>

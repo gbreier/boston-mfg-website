@@ -7,7 +7,7 @@ const reports = [
     author: 'Guy Breier, CEO, BMG',
     date: 'Dec 10, 2025',
     summary: 'Comprehensive white paper examining critical trends reshaping manufacturing and supply chain operations including talent shortages, geopolitical tensions, digital transformation, and strategies for building resilient supply chains in an increasingly volatile environment.',
-    url: '/reports/supply-chain-resilience-2025',
+    url: '/ai-analysis',
   },
   {
     title: 'U-Hawk Autonomous Black Hawk Conversion: Manufacturing & Operations Analysis',
@@ -119,10 +119,10 @@ export default function Reports() {
                       "@type": "Organization",
                       "name": "Boston Manufacturing Group"
                     },
-                    "url": "https://boston-mfg.com/reports/supply-chain-resilience-2025",
+                    "url": "https://boston-mfg.com/ai-analysis",
                     "mainEntityOfPage": {
                       "@type": "WebPage",
-                      "@id": "https://boston-mfg.com/reports/supply-chain-resilience-2025"
+                      "@id": "https://boston-mfg.com/ai-analysis"
                     },
                     "articleSection": "Supply Chain Management",
                     "keywords": ["supply chain resilience", "supply chain disruption", "talent shortage", "geopolitical risk", "digital transformation", "supplier diversification"]

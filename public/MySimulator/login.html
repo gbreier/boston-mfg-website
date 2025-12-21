@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - ChainVision Solutions</title>
+  <link rel="icon" href="/chainvision-logo.svg">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #222;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Animated background particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #2196f3 0%, #21cbf3 50%, #1e88e5 100%);
+      color: #fff;
+      padding: 60px 0 80px 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+      z-index: 1;
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .logo {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .logo:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .logo img {
+      width: 65px;
+      height: 65px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    
+    .header-text {
+      text-align: left;
+    }
+    
+    .header-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #fff 0%, #e3f2fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .bmg-branding {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2em;
+      margin-top: 0.5em;
+      opacity: 1;
+    }
+
+    .bmg-branding-text {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #e3f2fd;
+      margin-right: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .bmg-logo {
+      width: 41px;
+      height: 27px;
+      opacity: 0.9;
+      transition: all 0.3s ease;
+    }
+
+    .bmg-branding:hover .bmg-logo {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    
+    .header-tagline {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.5em;
+      color: #e3f2fd;
+    }
+    
+    .header-desc {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-bottom: 0.2em;
+      color: #f0f8ff;
+    }
+    
+    /* Enhanced animated network illustration */
+    .network-graphic {
+      position: absolute;
+      right: 60px;
+      top: 40px;
+      width: 200px;
+      height: 150px;
+      opacity: 0.25;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .network-node {
+      animation: networkPulse 3s ease-in-out infinite;
+    }
+    
+    .network-connection {
+      stroke-dasharray: 5,5;
+      animation: networkFlow 4s linear infinite;
+    }
+    
+    @keyframes networkPulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+    
+    @keyframes networkFlow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 40; }
+    }
+    
+    @media (max-width: 800px) {
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .logo {
+        margin: 0 0 20px 0;
+      }
+      .network-graphic {
+        display: none;
+      }
+      .header-text {
+        text-align: center;
+      }
+      .header-title {
+        font-size: 2.2rem;
+      }
+    }
+    
+    /* Login Form Container */
+    .login-container {
+      position: relative;
+      z-index: 10;
+      margin-top: 280px;
+      max-width: 480px;
+      width: 90%;
+      animation: slideInUp 0.8s ease-out 0.3s both;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .login-card {
+      background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(33,150,243,0.25);
+      padding: 48px 40px;
+      position: relative;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .login-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(33,150,243,0.02) 0%, rgba(30,136,229,0.05) 100%);
+      border-radius: 24px;
+      z-index: -1;
+    }
+    
+    .login-title {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .login-subtitle {
+      text-align: center;
+      color: #546e7a;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: #37474f;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid #e1f5fe;
+      border-radius: 12px;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+      background: #fafafa;
+      font-family: inherit;
+    }
+    
+    .form-input:focus {
+      border: 2px solid #2196f3;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(33,150,243,0.2);
+      transform: translateY(-2px);
+    }
+    
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(33,150,243,0.3);
+      position: relative;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    
+    .login-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.3s ease;
+    }
+    
+    .login-btn:hover::before {
+      left: 100%;
+    }
+    
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(33,150,243,0.4);
+    }
+    
+    .login-btn:active {
+      transform: translateY(0);
+    }
+    
+    .login-btn.loading {
+      pointer-events: none;
+    }
+    
+    .login-btn.loading::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border: 2px solid #fff;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .error-message {
+      background: #ffebee;
+      color: #c62828;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      border-left: 4px solid #c62828;
+      display: none;
+      animation: shake 0.5s ease;
+    }
+    
+    .error-message.show {
+      display: block;
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+    
+    /* Floating icons */
+    .floating-icon {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.1;
+      animation: floatIcon 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-10px) rotate(90deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+      75% { transform: translateY(-10px) rotate(270deg); }
+    }
+    
+    .icon-1 { top: 10%; left: 10%; animation-delay: 0s; }
+    .icon-2 { top: 20%; right: 15%; animation-delay: 2s; }
+    .icon-3 { bottom: 30%; left: 20%; animation-delay: 4s; }
+    .icon-4 { bottom: 20%; right: 10%; animation-delay: 6s; }
+    
+    @media (max-width: 600px) {
+      .login-container {
+        margin-top: 240px;
+        width: 95%;
+      }
+      .login-card {
+        padding: 32px 24px;
+      }
+      .login-title {
+        font-size: 1.6rem;
+      }
+      .header {
+        padding: 40px 0 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated background particles -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Floating icons -->
+  <div class="floating-icon icon-1">🔗</div>
+  <div class="floating-icon icon-2">📊</div>
+  <div class="floating-icon icon-3">⚡</div>
+  <div class="floating-icon icon-4">🎯</div>
+  
+  <div class="header">
+    <div class="header-content">
+      <div class="logo">
+        <svg width="65" height="65" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Red gradient -->
+            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+            </linearGradient>
+            <!-- Blue gradient -->
+            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+            </linearGradient>
+            <!-- Black gradient -->
+            <linearGradient id="blackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#424242;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#212121;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Left chain link - flies in from left (RED) -->
+          <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#redGradient)" stroke-width="6">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="-60,0; 0,0; 0,0; 0,0; 0,0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.15; 0.85; 0.95; 1"/>
+            <animate
+              attributeName="opacity"
+              values="0; 1; 1; 1; 0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.15; 0.85; 0.95; 1"/>
+          </ellipse>
+          
+          <!-- Center chain link - flies in from top (BLUE) -->
+          <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="0,-60; 0,0; 0,0; 0,0; 0,0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.2; 0.85; 0.95; 1"/>
+            <animate
+              attributeName="opacity"
+              values="0; 1; 1; 1; 0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.2; 0.85; 0.95; 1"/>
+          </ellipse>
+          
+          <!-- Right chain link - flies in from right (BLACK) -->
+          <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blackGradient)" stroke-width="6">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="60,0; 0,0; 0,0; 0,0; 0,0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.25; 0.85; 0.95; 1"/>
+            <animate
+              attributeName="opacity"
+              values="0; 1; 1; 1; 0"
+              dur="5s"
+              repeatCount="indefinite"
+              keyTimes="0; 0.25; 0.85; 0.95; 1"/>
+          </ellipse>
+        </svg>
+      </div>
+      <div class="header-text">
+        <div class="header-title">ChainVision Solutions</div>
+        <div class="bmg-branding">
+          <span class="bmg-branding-text">Powered by Boston Manufacturing Group Innovation</span>
+          <img src="/MySimulator/bmg-logo.svg" alt="BMG Logo" class="bmg-logo">
+        </div>
+        <div class="header-tagline">AI-Driven Supply Chain Resilience &amp; Optimization</div>
+        <div class="header-desc">Empowering your business with actionable insights, risk mitigation, and supplier intelligence.</div>
+      </div>
+    </div>
+    
+    <!-- Enhanced animated network illustration -->
+    <svg class="network-graphic" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect class="network-node" x="10" y="20" width="40" height="40" rx="8" fill="#1976d2"/>
+      <rect class="network-node" x="150" y="10" width="40" height="40" rx="8" fill="#4caf50"/>
+      <rect class="network-node" x="120" y="70" width="40" height="40" rx="8" fill="#ff9800"/>
+      <rect class="network-node" x="60" y="60" width="40" height="40" rx="8" fill="#9c27b0"/>
+      <circle class="network-node" cx="30" cy="40" r="8" fill="#fff"/>
+      <circle class="network-node" cx="170" cy="30" r="8" fill="#fff"/>
+      <circle class="network-node" cx="140" cy="90" r="8" fill="#fff"/>
+      <circle class="network-node" cx="80" cy="80" r="8" fill="#fff"/>
+      <polyline class="network-connection" points="30,40 170,30 140,90 80,80 30,40" stroke="#fff" stroke-width="2" fill="none"/>
+      <polyline class="network-connection" points="30,40 80,80" stroke="#fff" stroke-width="2" fill="none"/>
+      <polyline class="network-connection" points="170,30 140,90" stroke="#fff" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
+  
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="login-title">Welcome Back</h1>
+      <p class="login-subtitle">Sign in to access ChainVision Solutions</p>
+      
+      <div class="error-message" id="errorMessage">
+        Invalid username or password. Please try again.
+      </div>
+      
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label class="form-label" for="username">Username</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            class="form-input" 
+            placeholder="Enter your username"
+            autocomplete="username"
+            required
+            autofocus
+          >
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-input" 
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+        
+        <button type="submit" class="login-btn" id="loginBtn">
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/MySimulator/api-config.js"></script>
+  <script>
+    // Create animated particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // Handle login form submission
+    function handleLogin(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+      const loginBtn = document.getElementById('loginBtn');
+      
+      // Hide error message
+      errorMessage.classList.remove('show');
+      
+      // Validate credentials
+      if (username === 'SCuser' && password === 'bmg') {
+        // Show loading state
+        loginBtn.classList.add('loading');
+        loginBtn.textContent = '';
+        
+        // Store authentication in sessionStorage
+        sessionStorage.setItem('authenticated', 'true');
+        sessionStorage.setItem('username', username);
+        
+        // Redirect to main page after a brief delay
+        setTimeout(() => {
+          window.location.href = '/MySimulator/index.html';
+        }, 800);
+      } else {
+        // Show error message
+        errorMessage.classList.add('show');
+        
+        // Shake animation
+        const loginCard = document.querySelector('.login-card');
+        loginCard.style.animation = 'none';
+        setTimeout(() => {
+          loginCard.style.animation = 'shake 0.5s ease';
+        }, 10);
+        
+        // Clear password field
+        document.getElementById('password').value = '';
+        document.getElementById('password').focus();
+      }
+    }
+    
+    // Check if already authenticated
+    window.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      
+      // If already authenticated, redirect to main page
+      if (sessionStorage.getItem('authenticated') === 'true') {
+        window.location.href = '/MySimulator/index.html';
+      }
+    });
+  </script>
+</body>
+</html>
+

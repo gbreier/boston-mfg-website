@@ -1,0 +1,7 @@
+Item,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total
+1,Microcontroller (ATtiny85 SOIC-8),ATTINY85-20SU,Microchip,Digi-Key,1,1.4,1.4
+2,LED (Red 0805 SMD),LTST-C170KRKT,Lite-On,Mouser,1,0.08,0.08
+3,Resistor (330Ω 1% 0805),CRCW0805330RFKEA,Vishay,Digi-Key,1,0.02,0.02
+4,Capacitor (10uF 16V 0805),CL21A106KAYNNNE,Samsung Electro-Mechanics,Mouser,1,0.04,0.04
+5,USB Mini-B Connector,1734035-2,TE Connectivity,Digi-Key,1,0.9,0.9
+6,PCB (2-layer 1.6mm FR4 50x50mm),Custom,JLCPCB,JLCPCB,1,1,1

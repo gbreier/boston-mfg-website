@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Evaluation - ChainVision Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .evaluation-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .part-info {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #2a5298;
+        }
+
+        .part-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .part-details h2 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .component-description {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .component-description h3 {
+            color: #2a5298;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .description-content {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .description-text {
+            font-size: 0.95rem;
+        }
+
+        .description-text h3 {
+            color: #2a5298;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .description-text h4 {
+            color: #34495e;
+            margin: 0.8rem 0 0.4rem 0;
+            font-size: 1rem;
+        }
+
+        .description-text ul, .description-text ol {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .description-text li {
+            margin: 0.3rem 0;
+        }
+
+        .description-text strong {
+            color: #2a5298;
+        }
+
+        .bullet {
+            color: #2a5298;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .description-text p {
+            margin: 0.4rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .logo-fallback {
+            max-width: 120px;
+            max-height: 80px;
+            opacity: 0.7;
+            filter: grayscale(20%);
+        }
+
+        .logo-caption {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .part-image {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .part-image h3 {
+            color: #2a5298;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .image-container {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        .component-img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .loading-placeholder {
+            text-align: center;
+            color: #666;
+        }
+
+        .description-spinner, .image-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2a5298;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        .image-not-found {
+            color: #888;
+            font-style: italic;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .part-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        .evaluation-criteria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .criteria-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #28a745;
+            transition: transform 0.3s ease;
+        }
+
+        .criteria-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .criteria-card h3 {
+            color: #28a745;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .supplier-comparison {
+            margin: 2rem 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .comparison-table td strong {
+            color: #2a5298;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+            color: #333;
+        }
+        
+        .comparison-table tr:hover td {
+            color: #333;
+        }
+        
+        .comparison-table tr:hover .score-badge {
+            opacity: 0.9;
+        }
+
+        .best-supplier {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            color: white !important;
+        }
+        
+        .best-supplier td {
+            color: white !important;
+        }
+        
+        .best-supplier:hover {
+            background: linear-gradient(135deg, #218838 0%, #1ea085 100%) !important;
+            color: white !important;
+        }
+        
+        .best-supplier:hover td {
+            color: white !important;
+        }
+
+        .recommendation-card {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .recommendation-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-card .supplier-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2a5298;
+            border: 2px solid #2a5298;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading-content {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .loading-content h3 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2a5298;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        /* Verification Status Styles */
+        .verification-status-container {
+            margin: 2rem 0;
+        }
+
+        .verification-status {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid #2a5298;
+        }
+
+        .verification-status h3 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .verification-status p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .verified-suppliers, .not-verified-suppliers {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .verified-suppliers {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 4px solid #28a745;
+        }
+
+        .not-verified-suppliers {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            border-left: 4px solid #dc3545;
+        }
+
+        .verified-suppliers h4 {
+            color: #155724;
+            margin-bottom: 0.5rem;
+        }
+
+        .not-verified-suppliers h4 {
+            color: #721c24;
+            margin-bottom: 0.5rem;
+        }
+
+        .verification-status ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .verification-status li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        /* Research-Added Suppliers Styles */
+        .research-added-container {
+            margin: 2rem 0;
+        }
+
+        .research-added-status {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 5px solid #1976d2;
+        }
+
+        .research-added-status h3 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .research-added-status p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .research-added-suppliers {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .research-added-suppliers h4 {
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .research-added-suppliers ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .research-added-suppliers li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .research-note {
+            background: rgba(25, 118, 210, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            color: #0d47a1;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        /* Ranking Header Styles */
+        .ranking-header {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #f39c12;
+            text-align: center;
+        }
+
+        .ranking-header h3 {
+            color: #d68910;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .ranking-header p {
+            color: #85650d;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Supplier Selection Styles */
+        .supplier-selection-content {
+            padding: 2rem;
+        }
+
+        .supplier-selection-content h3 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .supplier-selection-content > p {
+            margin-bottom: 2rem;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .supplier-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .supplier-checkbox-group {
+            position: relative;
+        }
+
+        .supplier-checkbox-group input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .supplier-checkbox-group label {
+            display: block;
+            cursor: pointer;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        .supplier-checkbox-group label:hover {
+            border-color: #2a5298;
+            background: #f0f4ff;
+        }
+
+        .supplier-checkbox-group input[type="checkbox"]:checked + label {
+            border-color: #2a5298;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f0f4ff 100%);
+            box-shadow: 0 2px 8px rgba(42, 82, 152, 0.2);
+        }
+
+        .supplier-option {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .supplier-option strong {
+            color: #2a5298;
+            font-size: 1.1rem;
+        }
+
+        .supplier-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .supplier-checkbox-group input[type="checkbox"]:checked + label .supplier-option strong {
+            color: #1976d2;
+        }
+
+        .supplier-checkbox-group input[type="checkbox"]:checked + label::before {
+            content: "✓";
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #2a5298;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .selection-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .selection-actions .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .selection-actions .btn-primary {
+            background: linear-gradient(135deg, #2a5298 0%, #1976d2 100%);
+            color: white;
+        }
+
+        .selection-actions .btn-primary:hover {
+            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(42, 82, 152, 0.3);
+        }
+
+        .selection-actions .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .selection-actions .btn-secondary:hover {
+            background: #e0e0e0;
+            transform: translateY(-1px);
+        }
+
+        .selection-note {
+            background: #fff;
+            border: 1px solid #ffb74d;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .selection-note p {
+            margin: 0;
+            color: #e65100;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .supplier-checkboxes {
+                grid-template-columns: 1fr;
+            }
+            
+            .selection-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .selection-actions .btn {
+                justify-content: center;
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #dc3545;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .score-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .score-excellent { background: #28a745; color: white; }
+        .score-good { background: transparent; color: #ffc107; }
+        .score-fair { background: #fd7e14; color: white; }
+        .score-poor { background: #dc3545; color: white; }
+
+        .order-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+        }
+
+        .order-link:hover {
+            background: linear-gradient(135deg, #0056b3, #004085);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,123,255,0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .best-supplier .order-link {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            box-shadow: 0 2px 4px rgba(40,167,69,0.3);
+        }
+
+        .best-supplier .order-link:hover {
+            background: linear-gradient(135deg, #1e7e34, #155724);
+            box-shadow: 0 4px 8px rgba(40,167,69,0.4);
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.7em 1.5em;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 1.5em;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+
+        .back-btn:hover {
+            background: #1565c0;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Additional responsive styles for manufacturer column */
+        @media (max-width: 1200px) {
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .header h1 { font-size: 2rem; }
+            .action-buttons { flex-direction: column; }
+            .comparison-table { 
+                font-size: 0.8rem;
+                overflow-x: auto;
+                display: block;
+                white-space: nowrap;
+            }
+            .order-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Logo Header */
+        .logo-header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-header svg {
+            width: 40px;
+            height: 40px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.2s ease;
+        }
+        
+        .logo-header a {
+            cursor: pointer;
+            display: block;
+            pointer-events: auto;
+            z-index: 1000;
+            position: relative;
+        }
+        
+        .logo-header a:hover svg {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+            .logo-header {
+                top: 10px;
+                left: 10px;
+                padding: 8px;
+            }
+            
+            .logo-header svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Header -->
+    <div class="logo-header">
+        <a href="/" style="text-decoration: none; color: inherit; cursor: pointer;" title="Back to Home">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="blackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#424242;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#212121;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#redGradient)" stroke-width="6"/>
+                <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6"/>
+                <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blackGradient)" stroke-width="6"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="header">
+        <h1>🔍 Supplier Evaluation</h1>
+        <p>AI-Powered Supplier Analysis & Recommendation</p>
+    </div>
+
+    <div class="container">
+        <a href="/" class="back-btn">← Back to Home</a>
+        
+        <!-- Loading Section -->
+        <div id="loadingSection" class="evaluation-card">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h3>🔍 Analyzing Component & Finding Suppliers</h3>
+                <p>Please wait while we gather supplier information...</p>
+            </div>
+        </div>
+
+        <!-- Supplier Selection Section -->
+        <div id="supplierSelectionSection" class="evaluation-card" style="display: none;">
+            <div class="supplier-selection-content">
+                <h3>📋 Select Predetermined Suppliers</h3>
+                <p>Choose which of these predetermined suppliers you want to include in the evaluation (optional):</p>
+                
+                <div class="supplier-checkboxes">
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="digikey" name="suppliers" value="Digi-Key">
+                        <label for="digikey">
+                            <div class="supplier-option">
+                                <strong>Digi-Key</strong>
+                                <span class="supplier-description">Global electronic components distributor</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="mouser" name="suppliers" value="Mouser">
+                        <label for="mouser">
+                            <div class="supplier-option">
+                                <strong>Mouser Electronics</strong>
+                                <span class="supplier-description">Authorized distributor of semiconductors and electronic components</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="arrow" name="suppliers" value="Arrow">
+                        <label for="arrow">
+                            <div class="supplier-option">
+                                <strong>Arrow Electronics</strong>
+                                <span class="supplier-description">Global provider of products, services and solutions</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="newark" name="suppliers" value="Newark">
+                        <label for="newark">
+                            <div class="supplier-option">
+                                <strong>Newark</strong>
+                                <span class="supplier-description">High service distributor of technology products</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="rs" name="suppliers" value="RS Components">
+                        <label for="rs">
+                            <div class="supplier-option">
+                                <strong>RS Components</strong>
+                                <span class="supplier-description">Global distributor of electronics and maintenance products</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="farnell" name="suppliers" value="Farnell">
+                        <label for="farnell">
+                            <div class="supplier-option">
+                                <strong>Farnell</strong>
+                                <span class="supplier-description">Electronic component distributor</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="allied" name="suppliers" value="Allied Electronics">
+                        <label for="allied">
+                            <div class="supplier-option">
+                                <strong>Allied Electronics</strong>
+                                <span class="supplier-description">Industrial automation and control products</span>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="supplier-checkbox-group">
+                        <input type="checkbox" id="mcmaster" name="suppliers" value="McMaster-Carr">
+                        <label for="mcmaster">
+                            <div class="supplier-option">
+                                <strong>McMaster-Carr</strong>
+                                <span class="supplier-description">Industrial hardware, fasteners, and maintenance supplies</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="selection-actions">
+                    <button onclick="selectAllSuppliers()" class="btn btn-secondary">✓ Select All</button>
+                    <button onclick="clearAllSuppliers()" class="btn btn-secondary">✗ Clear All</button>
+                    <button onclick="proceedWithEvaluation()" class="btn btn-primary">🚀 Proceed with Evaluation</button>
+                </div>
+                
+                <div class="selection-note">
+                    <p><strong>Note:</strong> Selected predetermined suppliers will be verified to ensure they have the specific component available on their website before being included in the evaluation. They will then be combined with AI-found suppliers and ranked by overall score. The system will present the top 8 highest-rated suppliers for comparison.</p>
+                    <p><strong>NEW:</strong> If fewer than 5 suppliers are available (either from your selection or AI findings), the system will automatically add research-based supplier recommendations tailored to your component type to ensure a comprehensive evaluation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Processing Section -->
+        <div id="processingSection" class="evaluation-card" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h3>⚙️ Processing Supplier Evaluation</h3>
+                <p>Analyzing selected suppliers and AI recommendations...</p>
+            </div>
+        </div>
+
+        <div id="evaluationResults" style="display: none;">
+            <div class="part-info">
+                <div class="part-header">
+                    <div class="part-details">
+                        <h2 id="partNumber">Part Number: Loading...</h2>
+                        <div class="component-description">
+                            <h3>📋 Component Description</h3>
+                            <div id="partDescription" class="description-content">
+                                <div class="loading-placeholder">
+                                    <div class="description-spinner"></div>
+                                    <p>Analyzing component specifications and features...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-image">
+                        <h3>📷 Component Image</h3>
+                        <div id="componentImage" class="image-container">
+                            <div class="loading-placeholder">
+                                <div class="image-spinner"></div>
+                                <p>Searching for component image...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="evaluation-card">
+                <h2>📊 Evaluation Criteria</h2>
+                <div class="evaluation-criteria">
+                    <div class="criteria-card">
+                        <h3>💰 Cost Competitiveness</h3>
+                        <p>Unit price, volume discounts, and total cost of ownership</p>
+                    </div>
+                    <div class="criteria-card">
+                        <h3>⚡ Delivery Performance</h3>
+                        <p>Lead times, on-time delivery history, and shipping options</p>
+                    </div>
+                    <div class="criteria-card">
+                        <h3>🏆 Quality & Reliability</h3>
+                        <p>Product quality, return rates, and supplier reputation</p>
+                    </div>
+                    <div class="criteria-card">
+                        <h3>📦 Stock Availability</h3>
+                        <p>Inventory levels, stock consistency, and supply stability</p>
+                    </div>
+                    <div class="criteria-card">
+                        <h3>🌐 Geographic Reach</h3>
+                        <p>Global presence, local support, and regional advantages</p>
+                    </div>
+                    <div class="criteria-card">
+                        <h3>🔧 Technical Support</h3>
+                        <p>Engineering support, documentation, and customer service</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="evaluation-card supplier-comparison">
+                <h2>📈 Supplier Comparison Analysis</h2>
+                <div id="comparisonTable">
+                    <!-- Dynamic table will be inserted here -->
+                </div>
+            </div>
+
+            <div id="recommendationCard" class="recommendation-card">
+                <h2>🏅 Recommended Supplier</h2>
+                <div class="supplier-name" id="recommendedSupplier">Analyzing...</div>
+                <p id="recommendationReason">Based on comprehensive analysis of all evaluation criteria</p>
+            </div>
+
+            <div class="action-buttons">
+                <a href="#" id="orderNowBtn" class="btn btn-primary">📦 Order from Recommended Supplier</a>
+                <a href="#" id="compareAllBtn" class="btn btn-secondary">📊 View Detailed Comparison</a>
+                <a href="/" class="btn btn-secondary">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <div id="errorSection" style="display: none;">
+            <div class="error-message">
+                <h3>❌ Evaluation Error</h3>
+                <p id="errorMessage">Unable to complete supplier evaluation</p>
+            </div>
+            <div class="action-buttons">
+                <a href="/" class="btn btn-primary">🏠 Back to Home</a>
+                <button onclick="retryEvaluation()" class="btn btn-secondary">🔄 Retry Evaluation</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/MySimulator/global-ai-mode.js"></script>
+  <script src="/MySimulator/api-config.js"></script>
+    <script>
+        class SupplierEvaluator {
+            constructor() {
+                this.partNumber = this.getPartNumberFromURL();
+                this.suppliers = [];
+                this.evaluation = null;
+                this.selectedSuppliers = [];
+                this.supplierData = null;
+                this.init();
+            }
+
+            getPartNumberFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('part') || 'Unknown';
+            }
+
+            async init() {
+                if (this.partNumber === 'Unknown') {
+                    this.showError('No part number specified');
+                    return;
+                }
+
+                try {
+                    // Start component analysis in parallel (but don't block on it)
+                    // We'll let it load in the background
+                    this.loadComponentInfo().catch(err => {
+                        console.error('Component info loading failed (non-blocking):', err);
+                    });
+                    
+                    // First get supplier information from AI
+                    await this.getSupplierInformation();
+                    
+                    // Show supplier selection interface
+                    this.showSupplierSelection();
+                } catch (error) {
+                    this.showError(error.message);
+                }
+            }
+
+            async getSupplierInformation() {
+                const supplierResponse = await fetch('/api/find-supplier', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ partNumber: this.partNumber })
+                });
+
+                if (!supplierResponse.ok) {
+                    throw new Error('Failed to fetch supplier information');
+                }
+
+                const supplierData = await supplierResponse.json();
+                
+                if (supplierData.error) {
+                    throw new Error(supplierData.error);
+                }
+
+                this.supplierData = supplierData.result;
+            }
+
+            showSupplierSelection() {
+                // Hide loading, show supplier selection
+                document.getElementById('loadingSection').style.display = 'none';
+                document.getElementById('supplierSelectionSection').style.display = 'block';
+            }
+
+            async evaluateSuppliers() {
+                try {
+                    console.log('Starting supplier evaluation...');
+                    // Show processing section
+                    document.getElementById('supplierSelectionSection').style.display = 'none';
+                    document.getElementById('processingSection').style.display = 'block';
+
+                    // Get AI evaluation with selected suppliers
+                    console.log('Fetching evaluation from API...');
+                    const evaluationResponse = await fetch('/api/evaluate-suppliers', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            partNumber: this.partNumber,
+                            supplierData: this.supplierData,
+                            selectedSuppliers: this.selectedSuppliers,
+                            mode: getGlobalAIMode()
+                        })
+                    });
+
+                    console.log('Evaluation response status:', evaluationResponse.status);
+
+                    if (!evaluationResponse.ok) {
+                        throw new Error('Failed to get supplier evaluation');
+                    }
+
+                    const evaluationData = await evaluationResponse.json();
+                    console.log('Evaluation data received:', evaluationData);
+                    
+                    if (evaluationData.error) {
+                        throw new Error(evaluationData.error);
+                    }
+
+                    console.log('Displaying results...');
+                    this.displayResults(this.supplierData, evaluationData);
+                    console.log('Results displayed successfully');
+                } catch (error) {
+                    console.error('Error in evaluateSuppliers:', error);
+                    this.showError(error.message || 'Failed to evaluate suppliers');
+                }
+            }
+
+            async loadComponentInfo() {
+                try {
+                    console.log(`Loading component info for: ${this.partNumber}`);
+                    
+                    // Get detailed component description using AI
+                    const response = await fetch('/api/component-info', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ partNumber: this.partNumber })
+                    });
+
+                    console.log(`Component info response status: ${response.status}`);
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log('Component info data:', data);
+                        console.log('Description length:', data.description ? data.description.length : 'null');
+                        console.log('Image URL:', data.imageUrl);
+                        console.log('Image URL type:', typeof data.imageUrl);
+                        
+                        // Check if we got valid data
+                        if (data && data.description) {
+                            this.updateComponentDescription(data.description);
+                            // Always update image, even if imageUrl is null (will show placeholder)
+                            this.updateComponentImage(data.imageUrl || null);
+                        } else if (data && data.error) {
+                            console.error('API returned error:', data.error);
+                            this.updateComponentDescription(data.description || `Error: ${data.error}`);
+                            this.updateComponentImage(null);
+                        } else {
+                            console.error('Invalid data structure:', data);
+                            this.updateComponentDescription('Frontend Error: Invalid API response structure');
+                            this.updateComponentImage(null);
+                        }
+                    } else {
+                        const errorText = await response.text();
+                        console.error('Component info API error:', errorText);
+                        
+                        this.updateComponentDescription('Unable to fetch detailed component information at this time.');
+                        this.updateComponentImage(null);
+                    }
+                } catch (error) {
+                    console.error('Error loading component info:', error);
+                    this.updateComponentDescription(`JavaScript Error: ${error.message}`);
+                    this.updateComponentImage(null);
+                }
+            }
+
+            updateComponentDescription(description) {
+                console.log('updateComponentDescription called with:', description);
+                const descriptionElement = document.getElementById('partDescription');
+                console.log('Description element found:', !!descriptionElement);
+                if (description) {
+                    // Process the description to make it more visually appealing
+                    const processedDescription = description
+                        .replace(/•/g, '<span class="bullet">•</span>')
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    descriptionElement.innerHTML = `<div class="description-text">${processedDescription}</div>`;
+                    console.log('Description updated successfully');
+                } else {
+                    console.log('No description provided, using default');
+                    descriptionElement.innerHTML = `
+                        <div class="description-text">
+                            <p><span class="bullet">•</span> <strong>Component:</strong> ${this.partNumber}</p>
+                            <p><span class="bullet">•</span> <strong>Status:</strong> Analysis in progress</p>
+                            <p><span class="bullet">•</span> <strong>Info:</strong> Refer to datasheet for details</p>
+                        </div>
+                    `;
+                }
+            }
+
+            updateComponentImage(imageUrl) {
+                const imageContainer = document.getElementById('componentImage');
+                
+                if (!imageContainer) {
+                    console.error('Component image container not found');
+                    return;
+                }
+                
+                console.log('Updating component image with URL:', imageUrl);
+                
+                // Create a fallback SVG placeholder
+                const createSVGPlaceholder = (partNumber) => {
+                    // Escape part number for XML
+                    const safePartNumber = String(partNumber || 'Component').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    
+                    const svg = `<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="200" height="150" fill="#6c5ce7"/>
+                        <rect x="10" y="10" width="180" height="130" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="5,5"/>
+                        <text x="100" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Component</text>
+                        <text x="100" y="95" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">${safePartNumber}</text>
+                    </svg>`;
+                    
+                    try {
+                        return 'data:image/svg+xml;base64,' + btoa(svg);
+                    } catch (e) {
+                        console.error('Error encoding SVG:', e);
+                        // Fallback to URL encoding if btoa fails
+                        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+                    }
+                };
+                
+                if (imageUrl && imageUrl.trim() !== '') {
+                    console.log('Using provided image URL:', imageUrl);
+                    const fallbackUrl = createSVGPlaceholder(this.partNumber);
+                    imageContainer.innerHTML = `
+                        <img src="${imageUrl}" alt="Component ${this.partNumber}" class="component-img" 
+                             onerror="console.error('Image load failed:', this.src); this.onerror=null; this.src='${fallbackUrl}'; this.alt='Component Placeholder';" 
+                             onload="console.log('Image loaded successfully:', this.src);" />
+                    `;
+                } else {
+                    // Generate a placeholder image for the specific component
+                    console.log('No image URL provided, using placeholder');
+                    const placeholderUrl = createSVGPlaceholder(this.partNumber);
+                    imageContainer.innerHTML = `
+                        <img src="${placeholderUrl}" alt="Component ${this.partNumber}" class="component-img" />
+                        <p class="logo-caption">Component placeholder</p>
+                    `;
+                }
+            }
+
+            displayResults(supplierHTML, evaluation) {
+                // Hide processing, show results
+                document.getElementById('processingSection').style.display = 'none';
+                document.getElementById('evaluationResults').style.display = 'block';
+
+                // Update part information
+                document.getElementById('partNumber').textContent = `Part Number: ${this.partNumber}`;
+
+                // Display verification status if predetermined suppliers were selected
+                this.displayVerificationStatus(evaluation);
+                
+                // Display research-added suppliers info
+                this.displayResearchAddedSuppliers(evaluation);
+
+                // Display comparison table
+                this.displayComparisonTable(evaluation.comparison);
+
+                // Display recommendation
+                document.getElementById('recommendedSupplier').textContent = evaluation.recommendedSupplier || 'Multiple suppliers recommended';
+                document.getElementById('recommendationReason').textContent = evaluation.recommendationReason || 'Based on comprehensive analysis';
+
+                // Update action buttons
+                const orderBtn = document.getElementById('orderNowBtn');
+                if (evaluation.orderLink) {
+                    orderBtn.href = evaluation.orderLink;
+                } else {
+                    orderBtn.href = `https://www.digikey.com/en/products/search?keywords=${encodeURIComponent(this.partNumber)}`;
+                }
+            }
+
+            displayVerificationStatus(evaluation) {
+                // Only show verification status if predetermined suppliers were selected
+                if (this.selectedSuppliers && this.selectedSuppliers.length > 0) {
+                    const verificationContainer = document.getElementById('verificationStatus');
+                    if (!verificationContainer) {
+                        // Create verification status container if it doesn't exist
+                        const container = document.createElement('div');
+                        container.id = 'verificationStatus';
+                        container.className = 'verification-status-container';
+                        
+                        // Insert before the comparison table
+                        const comparisonSection = document.querySelector('.supplier-comparison');
+                        comparisonSection.parentNode.insertBefore(container, comparisonSection);
+                    }
+
+                    const verifiedSuppliers = evaluation.comparison.map(s => s.name);
+                    const notVerified = this.selectedSuppliers.filter(s => !verifiedSuppliers.includes(s));
+
+                    let statusHTML = `
+                        <div class="verification-status">
+                            <h3>🔍 Supplier Verification Results</h3>
+                            <p>We verified which predetermined suppliers have ${this.partNumber} available on their websites:</p>
+                    `;
+
+                    if (verifiedSuppliers.length > 0) {
+                        statusHTML += `
+                            <div class="verified-suppliers">
+                                <h4>✅ Verified Suppliers (included in evaluation):</h4>
+                                <ul>
+                                    ${verifiedSuppliers.map(s => `<li>${s} - Component found on website</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
+
+                    if (notVerified.length > 0) {
+                        statusHTML += `
+                            <div class="not-verified-suppliers">
+                                <h4>❌ Suppliers Not Verified (excluded from evaluation):</h4>
+                                <ul>
+                                    ${notVerified.map(s => `<li>${s} - Component not found on website</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
+
+                    statusHTML += '</div>';
+                    document.getElementById('verificationStatus').innerHTML = statusHTML;
+                }
+            }
+
+            displayResearchAddedSuppliers(evaluation) {
+                // Display research-added suppliers if any
+                if (evaluation.researchAddedSuppliers && evaluation.researchAddedSuppliers.length > 0) {
+                    let researchContainer = document.getElementById('researchAddedStatus');
+                    if (!researchContainer) {
+                        // Create research status container if it doesn't exist
+                        researchContainer = document.createElement('div');
+                        researchContainer.id = 'researchAddedStatus';
+                        researchContainer.className = 'research-added-container';
+                        
+                        // Insert before the comparison table
+                        const comparisonSection = document.querySelector('.supplier-comparison');
+                        if (comparisonSection) {
+                            comparisonSection.parentNode.insertBefore(researchContainer, comparisonSection);
+                        }
+                    }
+                    
+                    let researchHTML = `
+                        <div class="research-added-status">
+                            <h3>🔬 Research-Based Supplier Additions</h3>
+                            <p>${evaluation.researchReason}</p>
+                            <div class="research-added-suppliers">
+                                <h4>📊 Automatically Added Suppliers:</h4>
+                                <ul>
+                                    ${evaluation.researchAddedSuppliers.map(s => `<li>${s} - Recommended for this component type based on industry research</li>`).join('')}
+                                </ul>
+                            </div>
+                            <p class="research-note">These suppliers were added to ensure a comprehensive evaluation with at least 5 options. They are scored using research-based performance metrics and ranked alongside your selected suppliers.</p>
+                        </div>
+                    `;
+                    
+                    researchContainer.innerHTML = researchHTML;
+                }
+            }
+
+            displayComparisonTable(comparison) {
+                const tableContainer = document.getElementById('comparisonTable');
+                
+                if (!comparison || comparison.length === 0) {
+                    tableContainer.innerHTML = '<p>No supplier comparison data available</p>';
+                    return;
+                }
+
+                let tableHTML = `
+                    <div class="ranking-header">
+                        <h3>🏆 Top ${comparison.length} Suppliers Ranked by Overall Score</h3>
+                        <p>Suppliers are automatically ranked from highest to lowest overall score</p>
+                    </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Supplier</th>
+                                <th>Manufacturer</th>
+                                <th>Cost Score</th>
+                                <th>Delivery Score</th>
+                                <th>Quality Score</th>
+                                <th>Availability</th>
+                                <th>Overall Score</th>
+                                <th>Recommendation</th>
+                                <th>Order Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                comparison.forEach((supplier, index) => {
+                    const isRecommended = supplier.recommended || supplier.overallScore >= 85;
+                    const rowClass = isRecommended ? 'best-supplier' : '';
+                    const orderLink = supplier.orderLink || `https://www.digikey.com/en/products/search?keywords=${encodeURIComponent(this.partNumber)}`;
+                    const rank = index + 1;
+                    const rankIcon = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
+                    
+                    tableHTML += `
+                        <tr class="${rowClass}">
+                            <td><strong>${rankIcon}</strong></td>
+                            <td><strong>${supplier.name}</strong></td>
+                            <td>${supplier.manufacturer || 'Various'}</td>
+                            <td>${this.getScoreBadge(supplier.costScore)}</td>
+                            <td>${this.getScoreBadge(supplier.deliveryScore)}</td>
+                            <td>${this.getScoreBadge(supplier.qualityScore)}</td>
+                            <td>${supplier.availability || 'In Stock'}</td>
+                            <td><strong>${this.getScoreBadge(supplier.overallScore)}</strong></td>
+                            <td>${isRecommended ? '🏅 Recommended' : '✓ Alternative'}</td>
+                            <td><a href="${orderLink}" target="_blank" rel="noopener noreferrer" class="order-link">📦 Order Now</a></td>
+                        </tr>
+                    `;
+                });
+
+                tableHTML += '</tbody></table>';
+                tableContainer.innerHTML = tableHTML;
+            }
+
+            getScoreBadge(score) {
+                if (typeof score !== 'number') return score;
+                
+                let className = '';
+                if (score >= 90) className = 'score-excellent';
+                else if (score >= 80) className = 'score-good';
+                else if (score >= 70) className = 'score-fair';
+                else className = 'score-poor';
+
+                return `<span class="score-badge ${className}">${score}</span>`;
+            }
+
+            showError(message) {
+                document.getElementById('loadingSection').style.display = 'none';
+                document.getElementById('errorSection').style.display = 'block';
+                document.getElementById('errorMessage').textContent = message;
+            }
+        }
+
+        // Clear old data from other pages
+        function clearOldPageData() {
+            let clearedItems = 0;
+            
+            // Clear disruption analysis data
+            const disruptionKeys = ['lastDisruptionResult', 'lastDisruptionExplanation', 'bom', 'kpi', 'openText', 'disruptionData'];
+            disruptionKeys.forEach(key => {
+                if (localStorage.getItem(key)) {
+                    localStorage.removeItem(key);
+                    clearedItems++;
+                }
+            });
+            
+            // Clear mitigation plan data (search for all mitigation plan keys)
+            const keys = Object.keys(localStorage);
+            keys.forEach(key => {
+                if (key.startsWith('lastMitigationPlan_')) {
+                    localStorage.removeItem(key);
+                    clearedItems++;
+                }
+            });
+            
+            // Show clearing message if data was cleared
+            if (clearedItems > 0) {
+                const clearingMessage = document.getElementById('clearingMessage');
+                if (clearingMessage) {
+                    clearingMessage.style.display = 'block';
+                    // Hide the message after 3 seconds
+                    setTimeout(() => {
+                        clearingMessage.style.display = 'none';
+                    }, 3000);
+                }
+                console.log(`Cleared ${clearedItems} items of old disruption analysis and mitigation plan data`);
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Clear old data first
+            clearOldPageData();
+            
+            // Then initialize supplier evaluator
+            supplierEvaluator = new SupplierEvaluator();
+        });
+
+        function retryEvaluation() {
+            location.reload();
+        }
+
+        // Global supplier evaluator instance
+        let supplierEvaluator = null;
+
+        // Supplier selection functions
+        function selectAllSuppliers() {
+            const checkboxes = document.querySelectorAll('input[name="suppliers"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = true;
+            });
+        }
+
+        function clearAllSuppliers() {
+            const checkboxes = document.querySelectorAll('input[name="suppliers"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+
+        function proceedWithEvaluation() {
+            // Get selected suppliers
+            const checkboxes = document.querySelectorAll('input[name="suppliers"]:checked');
+            const selectedSuppliers = Array.from(checkboxes).map(cb => cb.value);
+            
+            // Store selected suppliers in the evaluator instance
+            if (supplierEvaluator) {
+                supplierEvaluator.selectedSuppliers = selectedSuppliers;
+                
+                // Proceed with evaluation
+                supplierEvaluator.evaluateSuppliers().catch(error => {
+                    supplierEvaluator.showError(error.message);
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

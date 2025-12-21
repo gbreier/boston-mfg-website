@@ -13,6 +13,13 @@ out/
 .env.test.local
 .env.production.local
 backend/.env
+simulator/ChatGPT.API.env
+simulator/venv/
+simulator/**/__pycache__/
+simulator/**/*.pyc
+simulator/**/*.pyo
+simulator/**/*.pyd
+simulator/.pytest_cache/
 
 # OS files
 .DS_Store

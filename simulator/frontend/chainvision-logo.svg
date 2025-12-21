@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Blue gradient -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Left chain link - flies in from left -->
+  <ellipse cx="25" cy="40" rx="10" ry="15" fill="none" stroke="url(#blueGradient)" stroke-width="6">
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="-60,0; 0,0; 0,0; 0,0; 0,0"
+      dur="5s"
+      repeatCount="indefinite"
+      keyTimes="0; 0.3; 0.7; 0.9; 1"/>
+    <animate
+      attributeName="opacity"
+      values="0; 1; 1; 1; 0"
+      dur="5s"
+      repeatCount="indefinite"
+      keyTimes="0; 0.3; 0.7; 0.9; 1"/>
+  </ellipse>
+  
+  <!-- Center chain link - flies in from top -->
+  <ellipse cx="40" cy="40" rx="15" ry="10" fill="none" stroke="url(#blueGradient)" stroke-width="6">
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0,-60; 0,0; 0,0; 0,0; 0,0"
+      dur="5s"
+      repeatCount="indefinite"
+      keyTimes="0; 0.4; 0.7; 0.9; 1"/>
+    <animate
+      attributeName="opacity"
+      values="0; 1; 1; 1; 0"
+      dur="5s"
+      repeatCount="indefinite"
+      keyTimes="0; 0.4; 0.7; 0.9; 1"/>
+  </ellipse>
+  
+  <!-- Right chain link - flies in from right -->
+  <ellipse cx="55" cy="40" rx="10" ry="15" fill="none" stroke="url(#blueGradient)" stroke-width="6">
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="60,0; 0,0; 0,0; 0,0; 0,0"
+      dur="5s"
+      repeatCount="indefinite"
+      keyTimes="0; 0.5; 0.7; 0.9; 1"/>
+    <animate
+      attributeName="opacity"
+      values="0; 1; 1; 1; 0"
+      dur="5s"
+      repeatCount="indefinite"
+      keyTimes="0; 0.5; 0.7; 0.9; 1"/>
+  </ellipse>
+</svg> 

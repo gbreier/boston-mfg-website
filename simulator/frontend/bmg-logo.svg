@@ -1,0 +1,21 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Red B section -->
+  <rect x="0" y="0" width="38" height="40" fill="#C41E3A"/>
+  <rect x="2" y="2" width="34" height="36" stroke="#fff" stroke-width="2" fill="none"/>
+  <text x="19" y="26" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">B</text>
+  
+  <!-- Blue M section -->
+  <rect x="40" y="0" width="38" height="40" fill="#1976D2"/>
+  <rect x="42" y="2" width="34" height="36" stroke="#fff" stroke-width="2" fill="none"/>
+  <text x="59" y="26" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">M</text>
+  
+  <!-- Gray G section -->
+  <rect x="80" y="0" width="38" height="40" fill="#757575"/>
+  <rect x="82" y="2" width="34" height="36" stroke="#fff" stroke-width="2" fill="none"/>
+  <text x="99" y="26" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">G</text>
+  
+  <!-- Bottom text -->
+  <text x="19" y="38" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="4" font-weight="normal">BOSTON</text>
+  <text x="59" y="38" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="4" font-weight="normal">MANUFACTURING</text>
+  <text x="99" y="38" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="4" font-weight="normal">GROUP</text>
+</svg> 

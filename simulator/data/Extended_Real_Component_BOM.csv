@@ -1,0 +1,41 @@
+Item,Level,Category,Description,Manufacturer Part #,Manufacturer,Supplier,Qty,Unit Cost (USD),Total
+1,Component,Electrical,ATmega328P Microcontroller,ATMEGA328P-AU,Microchip,Digi-Key,2,2.1,4.2
+2,Component,Electrical,Red LED 0805,LTST-C170KRKT,Lite-On,Mouser,20,0.08,1.6
+3,Component,Electrical,10uF Capacitor 0805,CL21A106KAYNNNE,Samsung,Mouser,25,0.05,1.25
+4,Component,Electrical,330Ω Resistor 0805,CRCW0805330RFKEA,Vishay,Digi-Key,25,0.01,0.25
+5,Component,Electrical,5V Regulator LDO,LD1117S50TR,STMicroelectronics,Digi-Key,4,0.4,1.6
+6,Component,Electrical,USB Type-C Receptacle,USB4085-GF-A,GCT,Digi-Key,2,1.1,2.2
+7,Component,Electrical,16MHz Oscillator,ABM8G-16.000MHZ-B4Y-T,Abracon,Mouser,3,0.35,1.05
+8,Component,Electrical,N-Channel MOSFET,IRLZ44N,Infineon,Mouser,6,0.95,5.7
+9,Component,Electrical,Schottky Diode 1A,SS14,ON Semiconductor,Mouser,10,0.1,1
+10,Component,Electrical,Header 1x10,61301011121,Wurth,Digi-Key,3,0.15,0.45
+11,Component,Electrical,ESP32 Wi-Fi Module,ESP32-WROOM-32D,Espressif,Mouser,2,3.25,6.5
+12,Component,Electrical,Voltage Divider Resistors,ERA-3AEB102V,Panasonic,Digi-Key,20,0.03,0.6
+13,Component,Electrical,SMD Button,EVQ-P7A01P,Panasonic,Mouser,10,0.2,2
+14,Component,Electrical,Current Sensor,ACS712ELCTR-20A-T,Allegro Microsystems,Mouser,1,2.5,2.5
+15,Component,Electrical,"I2C OLED Display 0.96""",SSD1306,Adafruit,Adafruit,1,6.95,6.95
+16,Component,Electrical,Lithium Battery Charger,MCP73831T-2ACI/OT,Microchip,Digi-Key,2,0.6,1.2
+17,Component,Electrical,Logic Level Shifter,TXS0108EPWR,Texas Instruments,Mouser,2,1.1,2.2
+18,Component,Electrical,Voltage Reference IC,LM4040AIZ-5.0,Texas Instruments,Digi-Key,2,0.5,1
+19,Component,Electrical,Optocoupler,PC817X2NSZ9F,Sharp,Mouser,4,0.2,0.8
+20,Component,Electrical,SMA Connector,132134,Amphenol RF,Digi-Key,2,1.2,2.4
+21,Component,Mechanical,M3x6mm SHCS,91290A110,McMaster-Carr,McMaster,40,0.1,4
+22,Component,Mechanical,M3 Nylon Standoff,NYM3-10,Essentra,Digi-Key,20,0.12,2.4
+23,Component,Mechanical,Aluminum Enclosure,1455C801,Hammond,Digi-Key,2,8.5,17
+24,Component,Mechanical,Thermal Pad,BER231036,Bergquist,Mouser,2,2.25,4.5
+25,Component,Mechanical,Snap-in Panel Mount,SPM-25,Richco,Mouser,6,0.3,1.8
+26,Component,Mechanical,TO-220 Heatsink,530002B00000G,Aavid Thermalloy,Digi-Key,3,1,3
+27,Component,Mechanical,40mm Fan 12V,MB40201VX-000U-A99,Sunon,Digi-Key,2,6,12
+28,Component,Mechanical,Rubber Foot,SJ61A1,3M,Digi-Key,8,0.2,1.6
+29,Component,Mechanical,Silicone Gasket,S100-100X1,Stockwell Elastomerics,Stockwell,2,3,6
+30,Component,Mechanical,DIN Rail Clip,1200733,Phoenix Contact,Digi-Key,2,1.5,3
+31,Component,Mechanical,Compression Spring,9287K122,McMaster-Carr,McMaster,4,0.45,1.8
+32,Component,Mechanical,Ball Bearing 8mm,608-2RS,SKF,Motion Industries,2,2.75,5.5
+33,Component,Mechanical,Knurled Nut M3,BNS-3,WDS,RS Components,10,0.25,2.5
+34,Component,Mechanical,Steel Shaft 100mm,SS100-8MM,Misumi,Misumi,1,3.5,3.5
+35,Component,Mechanical,Cable Tie Mount,CTM1-18R-C,Panduit,Mouser,10,0.08,0.8
+36,Component,Mechanical,Hex Nut M3,90710A005,McMaster-Carr,McMaster,30,0.03,0.9
+37,Component,Mechanical,Spacer 5mm Aluminum,S5MM-AL,Keystone,Digi-Key,10,0.2,2
+38,Component,Mechanical,Thumb Screw M3,98807A103,McMaster-Carr,McMaster,5,0.5,2.5
+39,Component,Mechanical,Cable Gland PG7,PG7,Heyco,Digi-Key,5,0.4,2
+40,Component,Mechanical,Wall Mount Bracket,BRK-MNT-001,Bud Industries,Mouser,2,1.75,3.5

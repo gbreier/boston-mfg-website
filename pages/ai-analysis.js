@@ -8,18 +8,38 @@ export default function AIAnalysis() {
   useEffect(() => {
     // Check if the simulator API is available
     const checkService = async () => {
-      // In production without SIMULATOR_BACKEND_URL, always show Coming Soon
-      if (process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_SIMULATOR_ENABLED) {
-        setServiceAvailable(false);
-        setLoading(false);
-        return;
+      // If on production domain (not localhost), try to connect to local server first
+      const isLocalhost = typeof window !== 'undefined' && 
+        (window.location.hostname === 'localhost' || 
+         window.location.hostname === '127.0.0.1');
+
+      if (!isLocalhost) {
+        // On production domain, try direct connection to localhost:8000
+        try {
+          const response = await fetch('http://localhost:8000/api/model-modes', {
+            method: 'GET',
+          });
+          if (response.ok) {
+            // Local server is running, store this preference
+            localStorage.setItem('useLocalSimulator', 'true');
+            setServiceAvailable(true);
+            setLoading(false);
+            return;
+          }
+        } catch (error) {
+          // Local server not available, clear preference and show Coming Soon
+          localStorage.removeItem('useLocalSimulator');
+          setServiceAvailable(false);
+          setLoading(false);
+          return;
+        }
       }
 
+      // For localhost development, use the proxy
       try {
         const response = await fetch('/api/MySimulator/model-modes', {
           method: 'GET',
         });
-        // If we get here without error, service is available
         if (response.ok) {
           setServiceAvailable(true);
         } else {
@@ -36,6 +56,7 @@ export default function AIAnalysis() {
   }, []);
 
   const handleLaunchApp = () => {
+    // Always open /MySimulator page - the api-config.js will route API calls appropriately
     window.open('/MySimulator', '_blank');
   };
 

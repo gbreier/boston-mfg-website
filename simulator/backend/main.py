@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -6,6 +7,22 @@ import os
 from . import helpers
 
 app = FastAPI()
+
+# Add CORS middleware to allow requests from boston-mfg.com and localhost
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://www.boston-mfg.com",
+        "https://boston-mfg.com",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Serve static files from the frontend directory
 app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), '../frontend'), html=True), name="static")

@@ -8,6 +8,13 @@ export default function AIAnalysis() {
   useEffect(() => {
     // Check if the simulator API is available
     const checkService = async () => {
+      // In production without SIMULATOR_BACKEND_URL, always show Coming Soon
+      if (process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_SIMULATOR_ENABLED) {
+        setServiceAvailable(false);
+        setLoading(false);
+        return;
+      }
+
       try {
         const response = await fetch('/api/MySimulator/model-modes', {
           method: 'GET',

@@ -7,11 +7,11 @@ export default async function handler(req, res) {
   
   // Get the base URL for the Python backend
   // In production, set SIMULATOR_BACKEND_URL environment variable
-  // For local development, defaults to 0.0.0.0:8000
+  // For local development, defaults to localhost:8000
   const backendUrl = process.env.SIMULATOR_BACKEND_URL || 
     (process.env.NODE_ENV === 'production' 
-      ? 'http://0.0.0.0:8000'  // Update this for production
-      : 'http://0.0.0.0:8000');
+      ? 'http://127.0.0.1:8000'  // Update this for production
+      : 'http://127.0.0.1:8000');
   
   // Construct the full URL
   const url = `${backendUrl}/api/${apiPath}`;

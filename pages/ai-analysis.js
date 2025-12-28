@@ -118,53 +118,17 @@ export default function AIAnalysis() {
             </div>
           </div>
         ) : (
-          // Service Not Available - Show Instructions
+          // Service Not Available - Show Coming Soon
           <div className="max-w-6xl mx-auto px-4 py-16">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-12 text-center border-2 border-blue-400">
               <div className="mb-8">
-                <div className="inline-flex items-center gap-2 bg-yellow-500 text-yellow-900 px-6 py-3 rounded-full text-lg font-semibold mb-6">
-                  <span className="animate-pulse">⚙️</span>
-                  Simulator Not Running
+                <div className="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold mb-6">
+                  <span className="text-2xl">🚀</span>
+                  Coming Soon
                 </div>
                 <h1 className="text-5xl font-bold text-white mb-4">AI Supply Chain Analysis</h1>
                 <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
                   Revolutionary AI system that analyzes your Bill of Materials, historical KPIs, and market intelligence to generate realistic supply chain disruption scenarios and actionable mitigation strategies.
-                </p>
-              </div>
-
-              <div className="bg-gray-700 rounded-xl p-8 mb-8 max-w-4xl mx-auto text-left">
-                <h2 className="text-2xl font-bold text-white mb-4">🚀 Start the Simulator</h2>
-                <p className="text-gray-300 mb-4">
-                  The AI Supply Chain Simulator is integrated into this project. To use it, you need to start the simulator server:
-                </p>
-                <div className="bg-gray-800 rounded-lg p-4 mb-4">
-                  <h3 className="text-lg font-semibold text-blue-300 mb-2">Quick Start:</h3>
-                  <ol className="list-decimal list-inside space-y-2 text-gray-300 text-sm">
-                    <li>Navigate to the <code className="bg-gray-900 px-2 py-1 rounded">simulator</code> directory</li>
-                    <li>Install Python dependencies: <code className="bg-gray-900 px-2 py-1 rounded">pip install -r requirements.txt</code></li>
-                    <li>Set up your OpenAI API key in <code className="bg-gray-900 px-2 py-1 rounded">ChatGPT.API.env</code></li>
-                    <li>Run the simulator: <code className="bg-gray-900 px-2 py-1 rounded">python start.py</code></li>
-                    <li>Or use the startup script: <code className="bg-gray-900 px-2 py-1 rounded">./start-simulator.sh</code></li>
-                  </ol>
-                </div>
-                <div className="bg-blue-900/30 rounded-lg p-4 border border-blue-500">
-                  <p className="text-blue-200 text-sm">
-                    <strong>Note:</strong> The simulator is integrated into the website and accessible at <code className="bg-gray-900 px-2 py-1 rounded">/MySimulator</code>. 
-                    Click the button below to launch the application.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6 mb-8">
-                <button
-                  onClick={handleLaunchApp}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xl font-bold px-12 py-5 rounded-xl shadow-lg hover:from-blue-700 hover:to-indigo-700 transition duration-300 transform hover:scale-105"
-                >
-                  🚀 Launch AI Analysis Tool
-                </button>
-                
-                <p className="text-gray-400 text-sm">
-                  This will open the AI Supply Chain Analysis application in a new tab (requires simulator to be running)
                 </p>
               </div>
 

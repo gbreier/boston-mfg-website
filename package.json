@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start-backend": "cd simulator && python3 start.py",
+    "start-all": "npm run start-backend & npm run dev"
   },
   "dependencies": {
     "next": "^14.2.29",
